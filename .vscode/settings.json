@@ -1,0 +1,15 @@
+{
+    "explorer.excludeGitIgnore": true,
+    "files.exclude": {
+        "**/*.meta": true,
+        "UIElementsSchema/": true,
+        "Assets/Plugins": true
+    },
+    "files.readonlyInclude": {
+        "**/*.meta": true,
+        "Packages/packages-lock.json": true,
+        "Assets/Plugins/": true,
+        "UIElementsSchema/**": true,
+        "FMODProject/**": true
+    }
+}
