@@ -17,7 +17,7 @@ namespace Shovel
         {
             mainCamera = Camera.main;
 
-            // weird
+            // weird.
             point.asset.Enable();
         }
 
