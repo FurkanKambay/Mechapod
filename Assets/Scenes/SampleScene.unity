@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -295,7 +296,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.21875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -340,6 +341,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_AssetsPPU: 32
+  m_RefResolutionX: 480
+  m_RefResolutionY: 270
+  m_CropFrame: 0
+  m_GridSnapping: 1
+  m_FilterMode: 1
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &611774385
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,11 +770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8125
+      value: -1.875
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.8125
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.z
@@ -791,11 +816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.90625
+      value: -0.5625
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4375
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1084,10 +1109,10 @@ MonoBehaviour:
   minionPrefab: {fileID: 7568818204668901788, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
   moveSpeed: 1
   spawnPoints:
-  - {x: -1.8125, y: 1, z: 0}
-  - {x: -0.90625, y: 1.4375, z: 0}
-  - {x: -0.78389454, y: 2.5185905, z: 0}
-  - {x: -2.8594217, y: 1.1191173, z: 0}
+  - {x: -1.875, y: 0.8125, z: 0}
+  - {x: -0.5625, y: 1.5, z: 0}
+  - {x: 0.09375, y: 2.4375, z: 0}
+  - {x: -3.25, y: 0.75, z: 0}
 --- !u!114 &1718554347
 MonoBehaviour:
   m_ObjectHideFlags: 0
