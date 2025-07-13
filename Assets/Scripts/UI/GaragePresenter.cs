@@ -22,9 +22,8 @@ namespace Shovel.UI
             continueButton.clicked += ContinueButton_Clicked;
         }
 
-        private void ContinueButton_Clicked()
-        {
-        }
+        private void OnEnable() => GameManager.Instance.OnPhaseChange += GameManager_PhaseChange;
+        private void OnDisable() => GameManager.Instance.OnPhaseChange -= GameManager_PhaseChange;
 
         private void Update()
         {
@@ -33,5 +32,11 @@ namespace Shovel.UI
                 root.visible = !root.visible;
 #endif
         }
+
+        private void GameManager_PhaseChange() =>
+            root.visible = !GameManager.Instance.IsNight;
+
+        private void ContinueButton_Clicked() =>
+            GameManager.Instance.NextPhase();
     }
 }
