@@ -2,7 +2,7 @@
 }
 
 .background {
-    background-image: url("project://database/Assets/Art/garage_screen_v1.jpg?fileID=2800000&guid=b919f636414802642b57a7274dd4395b&type=3#garage_screen_v1");
+    background-image: url("project://database/Assets/Art/Background/Garage_480x270.png?fileID=2800000&guid=5bba343e42211714992f878cf4ca7620&type=3#Garage_480x270");
     -unity-background-scale-mode: scale-and-crop;
     position: absolute;
     width: 100%;
