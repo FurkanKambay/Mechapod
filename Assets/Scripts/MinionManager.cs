@@ -1,0 +1,63 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Shovel
+{
+    public class MinionMouse : MonoBehaviour
+    {
+        [Header("References - Scene")]
+        [SerializeField] private PlayerInput input;
+        [SerializeField] private List<Rigidbody2D> minions;
+
+        [Header("References - Assets")]
+        [SerializeField] private Rigidbody2D minionPrefab;
+
+        [Header("Config - Minions")]
+        [SerializeField] private float moveSpeed;
+
+        [Header("Config - Spawning")]
+        [SerializeField] private Vector3[] spawnPoints;
+
+        public Vector3[] SpawnPoints => spawnPoints;
+
+        private void Update()
+        {
+            Vector2 targetPoint = input.AimPosition;
+            float   deltaTime   = Time.deltaTime;
+
+            foreach (Rigidbody2D minion in minions)
+            {
+                if (!minion)
+                    continue;
+
+                Vector2 newPosition = Vector2.MoveTowards(minion.position, targetPoint, moveSpeed * deltaTime);
+                minion.MovePosition(newPosition);
+            }
+        }
+
+        public void AddMinions(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                var minion = Instantiate(minionPrefab, spawnPoints[i], Quaternion.identity, transform);
+                minion.name = $"Minion {minions.Count + i + 1}";
+                minions.Add(minion);
+            }
+        }
+
+        public void ResetPositions()
+        {
+            print("resetting minion positions");
+
+            for (var i = 0; i < minions.Count; i++)
+            {
+                Rigidbody2D minion = minions[i];
+
+                if (!minion)
+                    continue;
+
+                minion.transform.position = spawnPoints[i];
+            }
+        }
+    }
+}

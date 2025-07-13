@@ -698,11 +698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.25
+      value: -1.8639307
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 1.3914309
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.z
@@ -744,11 +744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -1.1352618
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 1.7865319
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1034,7 +1034,14 @@ MonoBehaviour:
   minions:
   - {fileID: 935846484}
   - {fileID: 969377967}
+  minionPrefab: {fileID: 7568818204668901788, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
   moveSpeed: 1
+  spawnPoints:
+  - {x: -1.8639307, y: 1.3914309, z: 0}
+  - {x: -1.1352618, y: 1.7865319, z: 0}
+  - {x: -0.78389454, y: 2.5185905, z: 0}
+  - {x: -2.8594217, y: 1.1191173, z: 0}
+  - {x: -3.664618, y: 1.3996449, z: 0}
 --- !u!114 &1718554347
 MonoBehaviour:
   m_ObjectHideFlags: 0
