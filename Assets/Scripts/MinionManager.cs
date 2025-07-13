@@ -39,8 +39,16 @@ namespace Shovel
         {
             for (int i = 0; i < count; i++)
             {
-                var minion = Instantiate(minionPrefab, spawnPoints[i], Quaternion.identity, transform);
-                minion.name = $"Minion {minions.Count + i + 1}";
+                int spawnedIndex = minions.Count + i;
+
+                if (spawnedIndex >= spawnPoints.Length)
+                {
+                    Debug.Log("Exceeded max minions");
+                    return;
+                }
+
+                var minion = Instantiate(minionPrefab, spawnPoints[spawnedIndex], Quaternion.identity, transform);
+                minion.name = $"Minion {spawnedIndex + 1}";
                 minions.Add(minion);
             }
         }
