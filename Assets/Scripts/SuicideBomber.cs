@@ -14,7 +14,8 @@ namespace Shovel
             var golemHealth = other.collider.GetComponent<Health>();
             golemHealth.health -= damageAmount;
 
-            print("explode");
+            // TODO: particles, sound
+            Destroy(gameObject);
         }
     }
 }

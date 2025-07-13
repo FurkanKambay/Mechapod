@@ -6,5 +6,10 @@ namespace Shovel
     {
         public int maxHealth;
         public int health;
+
+        private void Awake()
+        {
+            health = maxHealth;
+        }
     }
 }
