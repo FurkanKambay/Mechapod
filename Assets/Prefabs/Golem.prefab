@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7853032348944446423}
   - component: {fileID: 6878567571270666461}
-- component: {fileID: 8786735418732223490}
+  - component: {fileID: 8786735418732223490}
   m_Layer: 3
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
