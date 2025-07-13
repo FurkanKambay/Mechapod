@@ -7,20 +7,31 @@ namespace Shovel
     {
         [Header("References")]
         [SerializeField] private PlayerInput input;
-        [SerializeField] private Transform[] minions;
+        [SerializeField] private Rigidbody2D[] minions;
+
+        [Header("Config")]
+        [SerializeField] private float moveSpeed;
+        [SerializeField] private float stopDistance;
 
         private void Update()
         {
-            foreach (Transform minion in minions)
+            Vector2 targetPoint = input.AimPosition;
+            float   deltaTime   = Time.deltaTime;
+
+            foreach (Rigidbody2D minion in minions)
             {
-                // TODO: move towards mouse
+                if (!minion)
+                    continue;
+
+                Vector2 newPosition = Vector2.MoveTowards(minion.position, targetPoint, moveSpeed * deltaTime);
+                minion.MovePosition(newPosition);
             }
         }
 
         private void OnDrawGizmos()
         {
-            Handles.color = Color.blue;
-            Handles.DrawSolidDisc(input.AimPosition, Vector3.forward, 0.1f);
+            // Handles.color = Color.blue;
+            // Handles.DrawSolidDisc(input.AimPosition, Vector3.forward, 0.1f);
         }
     }
 }
