@@ -14,8 +14,9 @@ namespace Shovel.UI
 
         private void Awake()
         {
-            root         = document.rootVisualElement;
-            root.visible = false;
+            document.enabled = true;
+            root             = document.rootVisualElement;
+            root.visible     = false;
 
             continueButton         =  root.Q<Button>("ContinueButton");
             continueButton.clicked += ContinueButton_Clicked;
