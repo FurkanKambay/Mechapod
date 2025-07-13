@@ -22,7 +22,7 @@ namespace Shovel.UI
             continueButton.clicked += ContinueButton_Clicked;
         }
 
-        private void OnEnable() => GameManager.Instance.OnPhaseChange += GameManager_PhaseChange;
+        private void OnEnable()  => GameManager.Instance.OnPhaseChange += GameManager_PhaseChange;
         private void OnDisable() => GameManager.Instance.OnPhaseChange -= GameManager_PhaseChange;
 
         private void Update()
