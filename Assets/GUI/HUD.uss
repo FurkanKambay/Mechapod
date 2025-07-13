@@ -1,0 +1,14 @@
+:root {
+}
+
+.container {
+    position: absolute;
+    bottom: 64px;
+    left: 64px;
+    font-size: 40px;
+    flex-direction: row;
+    color: rgb(255, 255, 255);
+}
+
+.day-number {
+}
