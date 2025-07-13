@@ -22,7 +22,16 @@ namespace Shovel.Editor
                 Handles.Label(spawnPoints[i], $"{i + 1}", EditorStyles.whiteLargeLabel);
 
                 EditorGUI.BeginChangeCheck();
-                Vector3 newPoint = Handles.FreeMoveHandle(spawnPoints[i], 0.3f, Vector3.zero, Handles.CircleHandleCap);
+
+                Vector3 newPoint = Handles.FreeMoveHandle(
+                    spawnPoints[i],
+                    0.3f,
+                    snap: Vector3.one / 32f, // snap doesn't work
+                    Handles.CircleHandleCap
+                );
+
+                newPoint.x = Mathf.Round(newPoint.x * 32f) / 32f;
+                newPoint.y = Mathf.Round(newPoint.y * 32f) / 32f;
 
                 if (!EditorGUI.EndChangeCheck())
                     continue;
