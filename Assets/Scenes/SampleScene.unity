@@ -1035,7 +1035,6 @@ MonoBehaviour:
   - {fileID: 935846484}
   - {fileID: 969377967}
   moveSpeed: 1
-  stopDistance: 0.5
 --- !u!114 &1718554347
 MonoBehaviour:
   m_ObjectHideFlags: 0

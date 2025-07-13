@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 namespace Shovel
@@ -11,7 +10,6 @@ namespace Shovel
 
         [Header("Config")]
         [SerializeField] private float moveSpeed;
-        [SerializeField] private float stopDistance;
 
         private void Update()
         {
