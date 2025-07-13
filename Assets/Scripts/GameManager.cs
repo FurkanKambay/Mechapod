@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Shovel
@@ -5,6 +6,8 @@ namespace Shovel
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
+
+        public event Action OnPhaseChange;
 
         [Header("References")]
         [SerializeField] private MinionManager minionManager;
@@ -33,6 +36,8 @@ namespace Shovel
             isNight = !isNight;
 
             Time.timeScale = isNight ? 1f : 0f;
+
+            OnPhaseChange?.Invoke();
         }
     }
 }
