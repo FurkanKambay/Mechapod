@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace Shovel.Editor
 {
-    [CustomEditor(typeof(MinionMouse))]
-    public class MinionMouseEditor : UnityEditor.Editor
+    [CustomEditor(typeof(MinionManager))]
+    public class MinionManagerEditor : UnityEditor.Editor
     {
         private void OnSceneGUI()
         {
             Handles.color = Color.orangeRed;
 
-            var minionMouse = target as MinionMouse;
+            var minionMouse = target as MinionManager;
 
             if (!minionMouse)
                 return;
@@ -38,7 +38,7 @@ namespace Shovel.Editor
         {
             base.OnInspectorGUI();
 
-            var minionMouse = target as MinionMouse;
+            var minionMouse = target as MinionManager;
 
             if (!minionMouse)
                 return;

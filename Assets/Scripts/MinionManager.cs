@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Shovel
 {
-    public class MinionMouse : MonoBehaviour
+    public class MinionManager : MonoBehaviour
     {
         [Header("References - Scene")]
         [SerializeField] private PlayerInput input;
@@ -47,8 +47,6 @@ namespace Shovel
 
         public void ResetPositions()
         {
-            print("resetting minion positions");
-
             for (var i = 0; i < minions.Count; i++)
             {
                 Rigidbody2D minion = minions[i];

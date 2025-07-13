@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea4d50a35d5a0048a0cc091d85deaa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionMouse: {fileID: 1718554346}
+  minionManager: {fileID: 1718554346}
   dayNumber: 1
   isNight: 0
 --- !u!4 &917948523

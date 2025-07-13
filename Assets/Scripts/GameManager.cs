@@ -7,7 +7,7 @@ namespace Shovel
         public static GameManager Instance { get; private set; }
 
         [Header("References")]
-        [SerializeField] private MinionMouse minionMouse;
+        [SerializeField] private MinionManager minionManager;
 
         [Header("State")]
         [SerializeField, Min(1)] private int dayNumber = 1;
