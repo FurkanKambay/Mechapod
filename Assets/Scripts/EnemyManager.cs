@@ -6,11 +6,8 @@ namespace Shovel
     {
         public static EnemyManager Instance { get; private set; }
 
-        [Header("References - Scene")]
+        [Header("References")]
         [SerializeField] private Health golem;
-
-        [Header("Config - Enemies")]
-        [SerializeField] private float moveSpeed;
 
         private Transform golemTransform;
 
@@ -22,7 +19,7 @@ namespace Shovel
 
         private void FixedUpdate()
         {
-            MoveAll(golemTransform.position, moveSpeed);
+            MoveAll(golemTransform.position);
         }
     }
 }

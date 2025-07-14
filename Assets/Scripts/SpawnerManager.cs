@@ -5,18 +5,20 @@ namespace Shovel
 {
     public abstract class SpawnerManager : MonoBehaviour
     {
-        [Header("References - Scene")]
-        [SerializeField] protected List<Rigidbody2D> entities;
-
-        [Header("References - Assets")]
+        [Header("Base - References")]
         [SerializeField] protected Rigidbody2D entityPrefab;
 
-        [Header("Config - Spawning")]
+        [Header("Base - Config")]
+        [SerializeField] protected float moveSpeed;
         [SerializeField] protected Vector3[] spawnPoints;
+
+        [Header("Base - State")]
+        [SerializeField] protected string dummy;
+        [SerializeField] protected List<Rigidbody2D> entities;
 
         public Vector3[] SpawnPoints => spawnPoints;
 
-        protected void MoveAll(Vector2 targetPoint, float moveSpeed)
+        protected void MoveAll(Vector2 targetPoint)
         {
             foreach (Rigidbody2D entity in entities)
             {

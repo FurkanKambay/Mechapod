@@ -321,17 +321,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72289ce945b615041abe65a13ea752ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 7568818204439522877}
-  - {fileID: 396731360}
-  - {fileID: 148826555}
   entityPrefab: {fileID: 5588034906588662549, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
+  moveSpeed: 0.8
   spawnPoints:
   - {x: 3.34375, y: -0.9375, z: 0}
   - {x: 5.0625, y: 0.125, z: 0}
   - {x: 1.3125, y: -1.96875, z: 0}
+  dummy: 
+  entities:
+  - {fileID: 7568818204439522877}
+  - {fileID: 396731360}
+  - {fileID: 148826555}
   golem: {fileID: 1635832950}
-  moveSpeed: 0.8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,18 +1578,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5d5bae4cb0db64893b76f88a6400c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entities:
-  - {fileID: 935846484}
-  - {fileID: 969377967}
-  - {fileID: 0}
   entityPrefab: {fileID: 7568818204668901788, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+  moveSpeed: 1
   spawnPoints:
   - {x: -1.875, y: 0.8125, z: 0}
   - {x: -0.5625, y: 1.5, z: 0}
   - {x: 0.09375, y: 2.4375, z: 0}
   - {x: -3.25, y: 0.75, z: 0}
+  dummy: 
+  entities:
+  - {fileID: 935846484}
+  - {fileID: 969377967}
   input: {fileID: 1718554347}
-  moveSpeed: 1
 --- !u!114 &1718554347
 MonoBehaviour:
   m_ObjectHideFlags: 0

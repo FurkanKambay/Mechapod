@@ -6,11 +6,8 @@ namespace Shovel
     {
         public static MinionManager Instance { get; private set; }
 
-        [Header("References - Scene")]
+        [Header("References")]
         [SerializeField] private PlayerInput input;
-
-        [Header("Config - Minions")]
-        [SerializeField] private float moveSpeed;
 
         private void Awake()
         {
@@ -19,7 +16,7 @@ namespace Shovel
 
         private void FixedUpdate()
         {
-            MoveAll(input.AimPosition, moveSpeed);
+            MoveAll(input.AimPosition);
         }
     }
 }
