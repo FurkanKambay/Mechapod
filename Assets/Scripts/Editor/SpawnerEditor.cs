@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace Shovel.Editor
 {
-    [CustomEditor(typeof(MinionManager))]
-    public class MinionManagerEditor : UnityEditor.Editor
+    [CustomEditor(typeof(SpawnerManager), editorForChildClasses: true)]
+    public class SpawnerEditor : UnityEditor.Editor
     {
         private void OnSceneGUI()
         {
             Handles.color = Color.orangeRed;
 
-            var minionMouse = target as MinionManager;
+            var minionMouse = target as SpawnerManager;
 
             if (!minionMouse)
                 return;
@@ -47,13 +47,13 @@ namespace Shovel.Editor
         {
             base.OnInspectorGUI();
 
-            var minionMouse = target as MinionManager;
+            var spawner = target as SpawnerManager;
 
-            if (!minionMouse)
+            if (!spawner)
                 return;
 
-            if (GUILayout.Button("Spawn 1 Minion"))
-                minionMouse.AddMinions(1);
+            if (GUILayout.Button("Spawn 1"))
+                spawner.Spawn(1);
         }
     }
 }

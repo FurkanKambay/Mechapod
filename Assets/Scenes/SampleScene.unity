@@ -242,13 +242,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72289ce945b615041abe65a13ea752ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5588034906588662549, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
-  golem: {fileID: 1635832950}
-  enemies:
+  entities:
   - {fileID: 7568818204439522877}
-  moveSpeed: 0.5
+  entityPrefab: {fileID: 5588034906588662549, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
   spawnPoints:
-  - {x: 2, y: -1, z: 0}
+  - {x: 3.34375, y: -0.9375, z: 0}
+  - {x: 5.0625, y: 0.125, z: 0}
+  - {x: 1.3125, y: -1.96875, z: 0}
+  golem: {fileID: 1635832950}
+  moveSpeed: 0.8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +677,16 @@ CompositeCollider2D:
         Y: -33748492
       - X: 3444676
         Y: -42692772
+  - m_Collider: {fileID: 454113337}
+    m_ColliderPaths:
+    - - X: 15357444
+        Y: 40988492
+      - X: 10885322
+        Y: 49932772
+      - X: -78557440
+        Y: 5211506
+      - X: -74085320
+        Y: -3732771
   - m_Collider: {fileID: 1664894876}
     m_ColliderPaths:
     - - X: 33121722
@@ -695,16 +707,6 @@ CompositeCollider2D:
         Y: 38820628
       - X: 97159592
         Y: -14844908
-  - m_Collider: {fileID: 454113337}
-    m_ColliderPaths:
-    - - X: 15357444
-        Y: 40988492
-      - X: 10885322
-        Y: 49932772
-      - X: -78557440
-        Y: 5211506
-      - X: -74085320
-        Y: -3732771
   m_CompositePaths:
     m_Paths:
     - - {x: 2.8649328, y: -4.6864786}
@@ -1271,17 +1273,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5d5bae4cb0db64893b76f88a6400c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 1718554347}
-  minions:
+  entities:
   - {fileID: 935846484}
   - {fileID: 969377967}
-  minionPrefab: {fileID: 7568818204668901788, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
-  moveSpeed: 1
+  - {fileID: 0}
+  entityPrefab: {fileID: 7568818204668901788, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
   spawnPoints:
   - {x: -1.875, y: 0.8125, z: 0}
   - {x: -0.5625, y: 1.5, z: 0}
   - {x: 0.09375, y: 2.4375, z: 0}
   - {x: -3.25, y: 0.75, z: 0}
+  input: {fileID: 1718554347}
+  moveSpeed: 1
 --- !u!114 &1718554347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,11 +1488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7943635849554552735, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 3.34375
       objectReference: {fileID: 0}
     - target: {fileID: 7943635849554552735, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.9375
       objectReference: {fileID: 0}
     - target: {fileID: 7943635849554552735, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
       propertyPath: m_LocalPosition.z
