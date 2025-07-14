@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{d4d01517-60b9-4689-9420-8c8bebf09d7e}">
 		<property name="name">
-			<value>Golem Leg Stomp</value>
+			<value>Golem Attack Leg Stomp</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{520e7e86-6368-43b0-99c9-361c93792449}</destination>
+			<destination>{6ff4d0e6-3e96-4837-b3fd-ab5aee0423ba}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{08a6cade-0b27-4033-acc9-3961b479a549}</destination>

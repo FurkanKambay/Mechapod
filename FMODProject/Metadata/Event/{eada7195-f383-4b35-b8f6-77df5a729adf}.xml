@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{eada7195-f383-4b35-b8f6-77df5a729adf}">
 		<property name="name">
-			<value>Golem Laser</value>
+			<value>Golem Attack Laser</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{520e7e86-6368-43b0-99c9-361c93792449}</destination>
+			<destination>{6ff4d0e6-3e96-4837-b3fd-ab5aee0423ba}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{fbadeeac-3dab-4f60-b123-bc5d5f576496}</destination>
