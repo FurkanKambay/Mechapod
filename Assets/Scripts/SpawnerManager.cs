@@ -23,7 +23,7 @@ namespace Shovel
                 if (!entity)
                     continue;
 
-                Vector2 direction = (targetPoint - entity.position).normalized;
+                Vector2 direction = Vector2.ClampMagnitude(targetPoint - entity.position, 1f);
                 entity.linearVelocity = direction * moveSpeed;
             }
         }
