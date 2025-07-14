@@ -1,7 +1,7 @@
 :root {
 }
 
-.container {
+#DayContainer {
     position: absolute;
     bottom: 64px;
     left: 64px;
@@ -10,5 +10,30 @@
     color: rgb(255, 255, 255);
 }
 
-.day-number {
+#GolemHPBar {
+    position: absolute;
+    top: 64px;
+    left: 64px;
+    width: 280px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+#GolemHPBar > .unity-progress-bar__container {
+}
+
+#GolemHPBar .unity-progress-bar__background {
+    background-color: rgb(255, 255, 255);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+#GolemHPBar .unity-progress-bar__progress {
+    flex-grow: 1;
+    margin: 0;
+    background-color: rgb(255, 0, 57);
 }

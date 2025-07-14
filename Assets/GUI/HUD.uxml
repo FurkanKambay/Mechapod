@@ -1,10 +1,16 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/GUI/HUD.uss?fileID=7433441132597879392&amp;guid=c49bf2821421fb64aaeec0fdab8fbdab&amp;type=3" />
-    <ui:VisualElement data-source-type="Shovel.GameManager, Shovel" class="container">
+    <Style src="project://database/Assets/GUI/HUD.uss?fileID=7433441132597879392&amp;guid=c49bf2821421fb64aaeec0fdab8fbdab&amp;type=3#HUD" />
+    <ui:ProgressBar name="GolemHPBar" value="50" class="asd">
+        <Bindings>
+            <ui:DataBinding property="highValue" data-source-path="golemHealth.maxHealth" binding-mode="ToTarget" />
+            <ui:DataBinding property="value" data-source-path="golemHealth.health" binding-mode="ToTarget" />
+        </Bindings>
+    </ui:ProgressBar>
+    <ui:VisualElement name="DayContainer" class="container">
         <ui:Label text="Day" class="day-label" />
         <ui:Label name="DayLabel" text="1" class="day-number">
             <Bindings>
-                <ui:DataBinding property="text" data-source-path="DayNumber" binding-mode="ToTarget" />
+                <ui:DataBinding property="text" data-source-path="dayNumber" binding-mode="ToTarget" />
             </Bindings>
         </ui:Label>
     </ui:VisualElement>

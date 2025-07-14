@@ -1,5 +1,4 @@
 using System;
-using Unity.Properties;
 using UnityEngine;
 
 namespace Shovel
@@ -12,16 +11,14 @@ namespace Shovel
 
         [Header("References")]
         [SerializeField] private MinionManager minionManager;
+        [SerializeField] private Health golemHealth;
 
         [Header("State")]
         [SerializeField, Min(1)] private int dayNumber = 1;
         [SerializeField] private bool isNight;
 
-        [CreateProperty]
-        public int DayNumber => dayNumber;
-
-        [CreateProperty]
-        public bool IsNight => isNight;
+        public int  DayNumber => dayNumber;
+        public bool IsNight   => isNight;
 
         private void Awake()
         {

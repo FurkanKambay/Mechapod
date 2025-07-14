@@ -16,7 +16,12 @@ namespace Shovel.UI
         {
             document.enabled = true;
             root             = document.rootVisualElement;
-            root.visible     = false;
+
+            root.visible = true;
+
+#if UNITY_EDITOR
+            // root.visible = false;
+#endif
 
             continueButton         =  root.Q<Button>("ContinueButton");
             continueButton.clicked += ContinueButton_Clicked;
