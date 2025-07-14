@@ -19,17 +19,7 @@ namespace Shovel
 
         private void FixedUpdate()
         {
-            Vector2 targetPoint = input.AimPosition;
-            float   deltaTime   = Time.deltaTime;
-
-            foreach (Rigidbody2D minion in entities)
-            {
-                if (!minion)
-                    continue;
-
-                Vector2 newPosition = Vector2.MoveTowards(minion.position, targetPoint, moveSpeed * deltaTime);
-                minion.MovePosition(newPosition);
-            }
+            MoveAll(input.AimPosition, moveSpeed);
         }
     }
 }

@@ -22,17 +22,7 @@ namespace Shovel
 
         private void FixedUpdate()
         {
-            Vector2 targetPoint = golemTransform.position;
-            float   deltaTime   = Time.deltaTime;
-
-            foreach (Rigidbody2D enemy in entities)
-            {
-                if (!enemy)
-                    continue;
-
-                Vector2 newPosition = Vector2.MoveTowards(enemy.position, targetPoint, moveSpeed * deltaTime);
-                enemy.MovePosition(newPosition);
-            }
+            MoveAll(golemTransform.position, moveSpeed);
         }
     }
 }

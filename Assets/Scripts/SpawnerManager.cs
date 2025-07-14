@@ -16,6 +16,18 @@ namespace Shovel
 
         public Vector3[] SpawnPoints => spawnPoints;
 
+        protected void MoveAll(Vector2 targetPoint, float moveSpeed)
+        {
+            foreach (Rigidbody2D entity in entities)
+            {
+                if (!entity)
+                    continue;
+
+                Vector2 direction = (targetPoint - entity.position).normalized;
+                entity.linearVelocity = direction * moveSpeed;
+            }
+        }
+
         public void Spawn(int count)
         {
             string entityName = entityPrefab.name;
