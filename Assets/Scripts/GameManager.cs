@@ -29,6 +29,8 @@ namespace Shovel
 
             dayNumber = 1;
             isNight   = false;
+
+            UpdateTimeScale();
         }
 
         [ContextMenu("Next Phase (Day/Night)")]
@@ -39,9 +41,11 @@ namespace Shovel
 
             isNight = !isNight;
 
-            Time.timeScale = isNight ? 1f : 0f;
-
+            UpdateTimeScale();
             OnPhaseChange?.Invoke();
         }
+
+        private void UpdateTimeScale() =>
+            Time.timeScale = isNight ? 1f : 0f;
     }
 }
