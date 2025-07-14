@@ -62,5 +62,16 @@ namespace Shovel
                 entity.transform.position = spawnPoints[i];
             }
         }
+
+        public void Clear()
+        {
+            foreach (Rigidbody2D enemy in entities)
+            {
+                if (enemy)
+                    Destroy(enemy.gameObject);
+            }
+
+            entities.Clear();
+        }
     }
 }

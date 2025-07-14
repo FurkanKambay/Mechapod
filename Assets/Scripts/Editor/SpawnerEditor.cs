@@ -52,8 +52,20 @@ namespace Shovel.Editor
             if (!spawner)
                 return;
 
-            if (GUILayout.Button("Spawn 1"))
+            GUILayout.Space(16);
+
+            GUILayout.BeginHorizontal();
+
+            if (GUILayout.Button("Spawn 1", EditorStyles.miniButtonLeft))
                 spawner.Spawn(1);
+
+            var redText = new GUIStyle(EditorStyles.miniButtonRight);
+            redText.normal.textColor = Color.darkOrange;
+
+            if (GUILayout.Button("Clear All", redText))
+                spawner.Clear();
+
+            GUILayout.EndHorizontal();
         }
     }
 }
