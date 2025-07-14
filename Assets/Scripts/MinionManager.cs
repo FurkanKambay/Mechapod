@@ -20,7 +20,7 @@ namespace Shovel
 
         public Vector3[] SpawnPoints => spawnPoints;
 
-        private void Update()
+        private void FixedUpdate()
         {
             Vector2 targetPoint = input.AimPosition;
             float   deltaTime   = Time.deltaTime;

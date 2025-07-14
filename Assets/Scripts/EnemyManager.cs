@@ -26,7 +26,7 @@ namespace Shovel
             golemTransform = golem.transform;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             Vector2 targetPoint = golemTransform.position;
             float   deltaTime   = Time.deltaTime;
