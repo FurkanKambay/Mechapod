@@ -1,6 +1,7 @@
+using Shovel.Audio;
 using UnityEngine;
 
-namespace Shovel
+namespace Shovel.Entity
 {
     public class SuicideBomber : MonoBehaviour
     {
@@ -14,7 +15,9 @@ namespace Shovel
             var golemHealth = other.collider.GetComponent<Health>();
             golemHealth.health -= damageAmount;
 
-            // TODO: particles, sound
+            AudioPlayer.Instance.crabEnemyExplode.PlayOneShot();
+
+            // TODO: particles
             Destroy(gameObject);
         }
     }
