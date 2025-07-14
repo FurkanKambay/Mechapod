@@ -18,10 +18,10 @@ namespace Shovel
         [SerializeField] private bool isNight;
 
         [CreateProperty]
-        public int  DayNumber => dayNumber;
+        public int DayNumber => dayNumber;
 
         [CreateProperty]
-        public bool IsNight   => isNight;
+        public bool IsNight => isNight;
 
         private void Awake()
         {
