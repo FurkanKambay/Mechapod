@@ -110,7 +110,95 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_0
+      name: Crab_walk_NW_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db44ad203f9bc342b041b1cee44fad5
+      internalID: -1167486661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_walk_NW_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a53112c338867428a2df6d9bc3fa7f
+      internalID: 686941472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_walk_NW_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d44e5e7f17f30d43befb2b61d779c9e
+      internalID: -114342709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_walk_NW_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72273fc60b9f90e4989180999e28c97a
+      internalID: -647490969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_walk_NW_4
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6b64f7e212394e4384e9dc0bd8fa3af
-      internalID: 481805513
+      spriteID: 8e8694f874bb10a47b38e5c6962471e2
+      internalID: -1740050547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_1
+      name: Crab_walk_NW_5
       rect:
         serializedVersion: 2
         x: 32
@@ -147,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c81aea28b1363be49a515f41973a00d6
-      internalID: -1317833293
+      spriteID: 1e9509e2b8c2fcd48824c6e481013611
+      internalID: -1352723850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_2
+      name: Crab_walk_NW_6
       rect:
         serializedVersion: 2
         x: 64
@@ -169,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8649c0b97d85b7a4db41abae3987f4f5
-      internalID: -557605179
+      spriteID: f840417a8b413d040ad74be846aa16c0
+      internalID: 910614647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_3
+      name: Crab_walk_NW_7
       rect:
         serializedVersion: 2
         x: 96
@@ -191,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d1c733531dfdef4fabccc20cd820d29
-      internalID: -431493604
+      spriteID: c2b55fff8e75499469edb114034d63d7
+      internalID: -1956586214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_4
+      name: Crab_walk_NW_8
       rect:
         serializedVersion: 2
         x: 0
@@ -213,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f77f73fa4b067214aa002b426f2e5a86
-      internalID: 381865355
+      spriteID: 1e5740b9c947dc94ea0d3e73425fbf30
+      internalID: -1309367597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_5
+      name: Crab_walk_NW_9
       rect:
         serializedVersion: 2
         x: 32
@@ -235,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32eebec55a4b3b84482a6d3d1f6c430e
-      internalID: 766315287
+      spriteID: b58b4721b52ef744dadf065a9b93f55f
+      internalID: 1126304828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_6
+      name: Crab_walk_NW_10
       rect:
         serializedVersion: 2
         x: 64
@@ -257,96 +345,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed3e775ed42112b469ff746ff04f1a68
-      internalID: 1089198666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 548502cb7392f3a468fcf976685e8b9c
-      internalID: -1410200226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b8b30409bd8d6b44b9b2211e6a39e88
-      internalID: 716108237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e70bd5e23c1ba94439edc1df7eb209af
-      internalID: -1030922195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bomb_Minion_walk_dir3_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b643273b2aeca3843b250db239e22ada
-      internalID: 767556737
+      spriteID: 5f6db88545dc5cb4aa7c13296a38044e
+      internalID: -1753519127
       vertices: []
       indices: 
       edges: []
@@ -367,17 +367,17 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Bomb_Minion_walk_dir3_0: 481805513
-      Bomb_Minion_walk_dir3_1: -1317833293
-      Bomb_Minion_walk_dir3_10: 767556737
-      Bomb_Minion_walk_dir3_2: -557605179
-      Bomb_Minion_walk_dir3_3: -431493604
-      Bomb_Minion_walk_dir3_4: 381865355
-      Bomb_Minion_walk_dir3_5: 766315287
-      Bomb_Minion_walk_dir3_6: 1089198666
-      Bomb_Minion_walk_dir3_7: -1410200226
-      Bomb_Minion_walk_dir3_8: 716108237
-      Bomb_Minion_walk_dir3_9: -1030922195
+      Crab_walk_NW_0: -1167486661
+      Crab_walk_NW_1: 686941472
+      Crab_walk_NW_10: -1753519127
+      Crab_walk_NW_2: -114342709
+      Crab_walk_NW_3: -647490969
+      Crab_walk_NW_4: -1740050547
+      Crab_walk_NW_5: -1352723850
+      Crab_walk_NW_6: 910614647
+      Crab_walk_NW_7: -1956586214
+      Crab_walk_NW_8: -1309367597
+      Crab_walk_NW_9: 1126304828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
