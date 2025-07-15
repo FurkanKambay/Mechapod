@@ -280,13 +280,6 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "today.comes.saintsfield": {
-      "version": "4.22.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
     "com.unity.modules.animation": {
       "version": "1.0.0",
       "depth": 0,

@@ -3,9 +3,7 @@
     "rootNamespace": "Shovel",
     "references": [
         "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:0c752da273b17c547ae705acf0f2adf2",
-        "GUID:3ae0f0d40cb1ecc438fa8b5be1e00178",
-        "GUID:9b261077c7a2ac34886513ec1345f8e0"
+        "GUID:0c752da273b17c547ae705acf0f2adf2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
