@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityPrefab: {fileID: 2763527626866196284, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
-  moveSpeed: 0
+  moveSpeed: 0.8
   randomAttackOffsetMax: 2.8
   spawnPoints:
   - {x: 2.71875, y: -1.65625, z: 0}
