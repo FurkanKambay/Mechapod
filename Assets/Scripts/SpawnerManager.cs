@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Shovel.Entity;
+using UnityEditor;
 using UnityEngine;
 
 namespace Shovel
@@ -6,27 +8,30 @@ namespace Shovel
     public abstract class SpawnerManager : MonoBehaviour
     {
         [Header("Base - References")]
-        [SerializeField] protected Rigidbody2D entityPrefab;
+        [SerializeField] protected Attacker entityPrefab;
 
         [Header("Base - Config")]
         [SerializeField] protected float moveSpeed;
+        [SerializeField] private   float     randomAttackOffsetMax;
         [SerializeField] protected Vector3[] spawnPoints;
 
         [Header("Base - State")]
         [SerializeField] protected string dummy;
-        [SerializeField] protected List<Rigidbody2D> entities;
+        [SerializeField] protected List<Attacker> entities;
 
         public Vector3[] SpawnPoints => spawnPoints;
 
         protected void MoveAll(Vector2 targetPoint)
         {
-            foreach (Rigidbody2D entity in entities)
+            foreach (Attacker entity in entities)
             {
                 if (!entity)
                     continue;
 
-                Vector2 direction = Vector2.ClampMagnitude(targetPoint - entity.position, 1f);
-                entity.linearVelocity = direction * moveSpeed;
+                Vector2 entityPosition = entity.transform.position;
+                Vector2 direction      = Vector2.ClampMagnitude(targetPoint - entityPosition, 1f);
+
+                entity.Body.linearVelocity = direction * moveSpeed;
             }
         }
 
@@ -44,9 +49,19 @@ namespace Shovel
                     return;
                 }
 
-                var entity = Instantiate(entityPrefab, spawnPoints[spawnedIndex], Quaternion.identity, transform);
-                entity.name = $"{entityName} {spawnedIndex + 1}";
-                entities.Add(entity);
+                Attacker attacker = Instantiate(
+                    entityPrefab,
+                    spawnPoints[spawnedIndex],
+                    Quaternion.identity,
+                    transform
+                );
+
+                attacker.name = $"{entityName} {spawnedIndex + 1}";
+
+                // TODO: try manually setting the offset from Spawner
+                attacker.attackOffset = Random.value * randomAttackOffsetMax;
+
+                entities.Add(attacker);
             }
         }
 
@@ -54,7 +69,7 @@ namespace Shovel
         {
             for (var i = 0; i < entities.Count; i++)
             {
-                Rigidbody2D entity = entities[i];
+                Attacker entity = entities[i];
 
                 if (!entity)
                     continue;
@@ -65,13 +80,25 @@ namespace Shovel
 
         public void Clear()
         {
-            foreach (Rigidbody2D enemy in entities)
+            foreach (Attacker entity in entities)
             {
-                if (enemy)
-                    Destroy(enemy.gameObject);
+                if (entity)
+                    Destroy(entity.gameObject);
             }
 
             entities.Clear();
+        }
+
+        private void OnDrawGizmos()
+        {
+            foreach (Attacker entity in entities)
+            {
+                if (!entity)
+                    return;
+
+                Handles.color = Color.green;
+                Handles.DrawWireDisc(entity.transform.position, Vector3.forward, entity.AttackRadius);
+            }
         }
     }
 }

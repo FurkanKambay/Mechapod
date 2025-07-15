@@ -1,4 +1,5 @@
 using System;
+using Shovel.Entity;
 using UnityEngine;
 
 namespace Shovel

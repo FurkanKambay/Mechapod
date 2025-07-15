@@ -12,6 +12,11 @@ namespace Shovel
         private void Awake()
         {
             Instance = this;
+
+            Clear();
+
+            // HACK: replace with Player State > Minion Amount
+            Spawn(2);
         }
 
         private void FixedUpdate()

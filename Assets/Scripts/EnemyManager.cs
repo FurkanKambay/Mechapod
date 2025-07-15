@@ -1,3 +1,4 @@
+using Shovel.Entity;
 using UnityEngine;
 
 namespace Shovel
@@ -15,6 +16,11 @@ namespace Shovel
         {
             Instance       = this;
             golemTransform = golem.transform;
+
+            Clear();
+
+            // HACK: replace with NightMapSO > Enemy Amount
+            Spawn(3);
         }
 
         private void FixedUpdate()

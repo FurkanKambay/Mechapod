@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 5588034906588662549}
   animator: {fileID: 3252990492841289797}
+  velocity: {x: 0, y: 0}
 --- !u!1 &1012295406480850404
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +137,8 @@ GameObject:
   - component: {fileID: 7943635849554552735}
   - component: {fileID: 2344903665657179997}
   - component: {fileID: 5588034906588662549}
+  - component: {fileID: 3669419530087891910}
+  - component: {fileID: 2763527626866196284}
   - component: {fileID: 6586819786106667210}
   m_Layer: 7
   m_Name: Enemy
@@ -223,6 +226,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3669419530087891910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012295406480850404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0e1d644912546478969721a105c1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  health: 20
+--- !u!114 &2763527626866196284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012295406480850404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63eb5379aab0e8e46a41cd19f175cadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 5588034906588662549}
+  attackLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 10
+  attackRadius: 0.6
+  attackRate: 2
+  attackOffset: 0
+  attackTimer: 0
 --- !u!114 &6586819786106667210
 MonoBehaviour:
   m_ObjectHideFlags: 0

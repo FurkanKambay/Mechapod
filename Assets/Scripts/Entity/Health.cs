@@ -1,11 +1,14 @@
 using UnityEngine;
 
-namespace Shovel
+namespace Shovel.Entity
 {
     public class Health : MonoBehaviour
     {
-        public int maxHealth;
+        [SerializeField] private int maxHealth;
+
         public int health;
+
+        public int MaxHealth => maxHealth;
 
         private void Awake()
         {
