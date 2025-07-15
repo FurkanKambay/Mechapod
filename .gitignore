@@ -56,6 +56,7 @@
 /FMODProject/.cache/
 /FMODProject/.user/
 /FMODProject/.unsaved/
+/FMODProject/Metadata/ProfilerSession/
 
 # Optionally ignore bank files
 # *.bank
