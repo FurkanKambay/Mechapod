@@ -1,5 +1,6 @@
 using System;
-using Shovel.Entity;
+using Shovel.Night;
+using Shovel.Player;
 using UnityEngine;
 
 namespace Shovel
@@ -11,12 +12,17 @@ namespace Shovel
         public event Action OnPhaseChange;
 
         [Header("References")]
-        [SerializeField] private MinionManager minionManager;
-        [SerializeField] private Health golemHealth;
+        [SerializeField] private NightMapSO nightMapSO;
 
-        [Header("State")]
+        [Header("State - Game")]
         [SerializeField, Min(1)] private int dayNumber = 1;
         [SerializeField] private bool isNight;
+
+        [Header("State - Player & Enemy")]
+        [SerializeField] private PlayerState playerState;
+
+        public static PlayerState PlayerState => Instance.playerState;
+        public static NightInfo   Tonight     => Instance.nightMapSO.Nights[Instance.dayNumber];
 
         public int  DayNumber => dayNumber;
         public bool IsNight   => isNight;

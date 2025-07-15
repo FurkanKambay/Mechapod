@@ -9,14 +9,12 @@ namespace Shovel
         [Header("References")]
         [SerializeField] private PlayerInput input;
 
+        protected override int EntityAmount => GameManager.PlayerState.minionAmount;
+
         private void Awake()
         {
             Instance = this;
-
-            Clear();
-
-            // HACK: replace with Player State > Minion Amount
-            Spawn(2);
+            RespawnAll();
         }
 
         private void FixedUpdate()

@@ -21,6 +21,8 @@ namespace Shovel
 
         public Vector3[] SpawnPoints => spawnPoints;
 
+        protected abstract int EntityAmount { get; }
+
         protected void MoveAll(Vector2 targetPoint)
         {
             foreach (Attacker entity in entities)
@@ -63,6 +65,12 @@ namespace Shovel
 
                 entities.Add(attacker);
             }
+        }
+
+        public void RespawnAll()
+        {
+            Clear();
+            Spawn(EntityAmount);
         }
 
         public void ResetPositions()

@@ -10,6 +10,10 @@ namespace Shovel
         [Header("References")]
         [SerializeField] private Health golem;
 
+        // TODO: use the correct WAVE
+        protected override int EntityAmount =>
+            GameManager.Tonight.Waves[0].EnemyAmount;
+
         private Transform golemTransform;
 
         private void Awake()
@@ -17,10 +21,7 @@ namespace Shovel
             Instance       = this;
             golemTransform = golem.transform;
 
-            Clear();
-
-            // HACK: replace with NightMapSO > Enemy Amount
-            Spawn(3);
+            RespawnAll();
         }
 
         private void FixedUpdate()
