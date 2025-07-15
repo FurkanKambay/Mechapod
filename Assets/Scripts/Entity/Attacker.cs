@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using Shovel.Audio;
 using UnityEngine;
 
@@ -6,6 +6,9 @@ namespace Shovel.Entity
 {
     public class Attacker : MonoBehaviour
     {
+        public event Action OnAttackPerformed;
+        public event Action<bool> OnAttackProcced;
+
         [Header("References")]
         [SerializeField] private Rigidbody2D body;
 
@@ -37,24 +40,25 @@ namespace Shovel.Entity
                 return;
 
             attackTimer = 0;
-            Attack();
+            PerformAttack();
         }
 
-        public void Attack()
+        private void PerformAttack()
+        {
+            OnAttackPerformed?.Invoke();
+        }
+
+        internal bool ProcAttack()
         {
             Collider2D target = Physics2D.OverlapCircle(transform.position, attackRadius, attackLayers);
+            OnAttackProcced?.Invoke((bool)target);
 
             if (!target)
-            {
-                // AudioPlayer.Instance.crabAttack.PlayOneShot();
-                // AudioPlayer.Instance.crabAttackMiss.PlayOneShot();
-                return;
-            }
-
-            AudioPlayer.Instance.crabAttack.PlayOneShot();
+                return false;
 
             var targetHealth = target.GetComponent<Health>();
             targetHealth.health -= damage;
+            return true;
         }
     }
 }

@@ -258,5 +258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 7568818204668901788}
+  attacker: {fileID: 6560894379872987833}
   animator: {fileID: 2290911971803707301}
   velocity: {x: 0, y: 0}

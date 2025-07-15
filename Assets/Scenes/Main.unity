@@ -938,6 +938,14 @@ MonoBehaviour:
         Data3: -242190958
         Data4: 1681190808
       Path: event:/SFX Crab/Crab Attack
+  crabAttackMiss:
+    reference:
+      Guid:
+        Data1: 1815227932
+        Data2: 1295449383
+        Data3: -242190958
+        Data4: 1681190808
+      Path: event:/SFX Crab/Crab Attack
   crabEnemyExplode:
     reference:
       Guid:

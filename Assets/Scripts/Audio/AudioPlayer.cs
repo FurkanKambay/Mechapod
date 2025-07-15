@@ -14,6 +14,7 @@ namespace Shovel.Audio
         public FMODEvent golemGetHurt;
 
         public FMODEvent crabAttack;
+        public FMODEvent crabAttackMiss;
         public FMODEvent crabEnemyExplode;
         public FMODEvent crabGetHurt;
         public FMODEvent crabWalking;
@@ -34,6 +35,7 @@ namespace Shovel.Audio
             golemDie.Init();
             golemGetHurt.Init();
             crabAttack.Init();
+            crabAttackMiss.Init();
             crabEnemyExplode.Init();
             crabGetHurt.Init();
             crabWalking.Init();
