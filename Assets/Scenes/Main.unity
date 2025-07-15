@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 483954850}
   - component: {fileID: 483954851}
   m_Layer: 0
-  m_Name: Enemy Manager
+  m_Name: "\U0001F47E Enemy Manager"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 737097496}
   - component: {fileID: 737097497}
   m_Layer: 0
-  m_Name: '> Audio Player'
+  m_Name: "\U0001F3A7 Audio Player"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1113,7 +1113,7 @@ GameObject:
   - component: {fileID: 917948523}
   - component: {fileID: 917948522}
   m_Layer: 0
-  m_Name: $ Game Manager
+  m_Name: "\U0001F579\uFE0FGame Manager"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1627,7 +1627,7 @@ GameObject:
   - component: {fileID: 1718554346}
   - component: {fileID: 1718554347}
   m_Layer: 0
-  m_Name: Minion Manager
+  m_Name: "\U0001F980 Minion Manager"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,8 +1921,8 @@ SceneRoots:
   - {fileID: 1806742418}
   - {fileID: 917948523}
   - {fileID: 737097495}
-  - {fileID: 648502560}
   - {fileID: 1635832949}
   - {fileID: 1718554345}
-  - {fileID: 1413287750}
   - {fileID: 483954850}
+  - {fileID: 648502560}
+  - {fileID: 1413287750}
