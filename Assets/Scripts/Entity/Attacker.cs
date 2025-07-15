@@ -44,15 +44,14 @@ namespace Shovel.Entity
         {
             Collider2D target = Physics2D.OverlapCircle(transform.position, attackRadius, attackLayers);
 
-            AudioPlayer.Instance.crabAttack.PlayOneShot();
-
             if (!target)
             {
+                // AudioPlayer.Instance.crabAttack.PlayOneShot();
                 // AudioPlayer.Instance.crabAttackMiss.PlayOneShot();
                 return;
             }
 
-            // AudioPlayer.Instance.crabAttack.PlayOneShot();
+            AudioPlayer.Instance.crabAttack.PlayOneShot();
 
             var targetHealth = target.GetComponent<Health>();
             targetHealth.health -= damage;
