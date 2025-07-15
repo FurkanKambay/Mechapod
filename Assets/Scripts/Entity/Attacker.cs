@@ -57,7 +57,7 @@ namespace Shovel.Entity
                 return false;
 
             var targetHealth = target.GetComponent<Health>();
-            targetHealth.health -= damage;
+            targetHealth.TakeDamage(damage);
             return true;
         }
     }
