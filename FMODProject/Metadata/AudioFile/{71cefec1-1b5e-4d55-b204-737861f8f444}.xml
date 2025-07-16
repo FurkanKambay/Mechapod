@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{9309c5b9-112a-48bc-8973-01544902acfe}">
+	<object class="AudioFile" id="{71cefec1-1b5e-4d55-b204-737861f8f444}">
 		<property name="assetPath">
-			<value>Robot Stomp 1.wav</value>
+			<value>Crab Attack Miss 2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>96</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.7636734693877552</value>
+			<value>0.50364583333333335</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a7cafe2e-d423-4a2c-9faf-24d0c3fc9714}</destination>

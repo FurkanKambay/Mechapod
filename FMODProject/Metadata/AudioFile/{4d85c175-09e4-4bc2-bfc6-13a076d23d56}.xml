@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{4d85c175-09e4-4bc2-bfc6-13a076d23d56}">
+		<property name="assetPath">
+			<value>Robot Stomp 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0926530612244898</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7cafe2e-d423-4a2c-9faf-24d0c3fc9714}</destination>
+		</relationship>
+	</object>
+</objects>
