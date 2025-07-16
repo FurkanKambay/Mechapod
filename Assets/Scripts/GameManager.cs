@@ -50,6 +50,18 @@ namespace Shovel
             UpdateTimeScale();
         }
 
+        private void OnEnable()
+        {
+            minionManager.OnAllKilled += Minions_AllDead;
+            enemyManager.OnAllKilled  += Enemies_AllDead;
+        }
+
+        private void OnDisable()
+        {
+            minionManager.OnAllKilled -= Minions_AllDead;
+            enemyManager.OnAllKilled  -= Enemies_AllDead;
+        }
+
         [ContextMenu("Next Phase (Day/Night)")]
         public void NextPhase()
         {
@@ -62,7 +74,8 @@ namespace Shovel
                     dayNumber = 1;
             }
 
-            isNight = !isNight;
+            isNight   = !isNight;
+            waveIndex = 0;
 
             if (isNight)
                 PopulateTonight();
@@ -82,6 +95,29 @@ namespace Shovel
             EnemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
 
             // TODO: respawn Scrap Piles
+        }
+
+        private void Minions_AllDead()
+        {
+            // player can rely on golem abilities
+        }
+
+        private void Enemies_AllDead()
+        {
+            NextWave();
+        }
+
+        public void NextWave()
+        {
+            waveIndex++;
+
+            if (waveIndex >= Tonight.Waves.Length)
+            {
+                NextPhase();
+                return;
+            }
+
+            EnemyManager.Spawn(Tonight.GetEnemyAmount(waveIndex));
         }
 
         private void UpdateTimeScale() =>

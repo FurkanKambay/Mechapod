@@ -10,11 +10,9 @@ namespace Shovel
         protected override float MoveSpeed             => GameManager.Config.PlayerMoveSpeed;
         protected override float RandomAttackOffsetMax => GameManager.Config.PlayerRandomAttackOffsetMax;
 
-        private static int EntityAmount => GameManager.PlayerState.minionAmount;
-
         private void Awake()
         {
-            RespawnAll(EntityAmount);
+            RespawnAll(GameManager.PlayerState.minionAmount);
         }
 
         private void FixedUpdate()

@@ -14,6 +14,8 @@ namespace Shovel.Entity
 
         public int CurrentHealth => health;
 
+        public bool IsDead => health <= 0;
+
         private void Awake()
         {
             health = maxHealth;

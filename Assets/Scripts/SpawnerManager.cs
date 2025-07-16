@@ -1,11 +1,15 @@
+using System;
 using System.Collections.Generic;
 using Shovel.Entity;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Shovel
 {
     public abstract class SpawnerManager : MonoBehaviour
     {
+        public event Action OnAllKilled;
+
         [Header("Base - References")]
         [SerializeField] protected Attacker entityPrefab;
 
@@ -65,6 +69,7 @@ namespace Shovel
                     transform
                 );
 
+                attacker.RegisterSpawner(this);
                 attacker.name = $"{entityName} {spawnedIndex + 1}";
 
                 // TODO: try manually setting the offset from Spawner
@@ -72,6 +77,14 @@ namespace Shovel
 
                 entities.Add(attacker);
             }
+        }
+
+        public void Despawn(Attacker entity)
+        {
+            entities.Remove(entity);
+
+            if (entities.Count == 0)
+                OnAllKilled?.Invoke();
         }
 
         public void RespawnAll(int amount)

@@ -11,20 +11,18 @@ namespace Shovel
         protected override float MoveSpeed             => GameManager.Config.EnemyMoveSpeed;
         protected override float RandomAttackOffsetMax => GameManager.Config.EnemyRandomAttackOffsetMax;
 
-        // TODO: use the correct WAVE
-        private static int EntityAmount => GameManager.Tonight.Waves[0].EnemyAmount;
-
         private Transform golemTransform;
 
         private void Awake()
         {
             golemTransform = golem.transform;
-            RespawnAll(EntityAmount);
+            RespawnAll(GameManager.Tonight.Waves[0].EnemyAmount);
         }
 
         private void FixedUpdate()
         {
-            MoveAll(golemTransform.position);
+            if (golemTransform)
+                MoveAll(golemTransform.position);
         }
     }
 }

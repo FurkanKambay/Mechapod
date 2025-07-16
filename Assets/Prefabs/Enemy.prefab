@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63eb5379aab0e8e46a41cd19f175cadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 3669419530087891910}
   body: {fileID: 5588034906588662549}
   attackCollider: {fileID: 3852382719168083938}
   detectionTrigger: {fileID: 5188903052605674246}

@@ -9,9 +9,10 @@ namespace Shovel.Entity
         public event Action<bool> OnAttackProcced;
 
         [Header("References")]
+        [SerializeField] private Health health;
         [SerializeField] private Rigidbody2D body;
-        [SerializeField] private Collider2D attackCollider;
-        [SerializeField] private Collider2D detectionTrigger;
+        [SerializeField] private Collider2D  attackCollider;
+        [SerializeField] private Collider2D  detectionTrigger;
 
         [Header("Config - Attack")]
         [SerializeField] private ContactFilter2D attackFilter;
@@ -23,7 +24,8 @@ namespace Shovel.Entity
         [Header("Config - Detection")]
         [SerializeField] private float detectionRange;
 
-        public Rigidbody2D Body => body;
+        public Health      Health => health;
+        public Rigidbody2D Body   => body;
 
         [Header("State")]
         [SerializeField] private Vector2 velocity;
@@ -37,6 +39,8 @@ namespace Shovel.Entity
         [SerializeField] public bool isRecovering;
 
         public Direction AimDirection => aimDirection;
+
+        private SpawnerManager sourceSpawner;
 
         private Transform    attackBox;
         private Collider2D[] attackResults = new Collider2D[5];
@@ -63,6 +67,9 @@ namespace Shovel.Entity
 
         private void Update()
         {
+            if (health.IsDead)
+                return;
+
             UpdateAimDirection();
 
             attackTimer += Time.deltaTime;
@@ -75,6 +82,15 @@ namespace Shovel.Entity
             if (shouldAttack)
                 PerformAttack();
         }
+
+        private void OnDestroy()
+        {
+            if (sourceSpawner)
+                sourceSpawner.Despawn(this);
+        }
+
+        internal void RegisterSpawner(SpawnerManager spawner) =>
+            sourceSpawner = spawner;
 
         private void UpdateAimDirection()
         {

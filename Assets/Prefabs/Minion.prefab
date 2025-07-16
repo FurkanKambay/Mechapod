@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63eb5379aab0e8e46a41cd19f175cadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 4233088172766391820}
   body: {fileID: 7568818204668901788}
   attackCollider: {fileID: 8977899086246956591}
   detectionTrigger: {fileID: 3986889995221811680}
