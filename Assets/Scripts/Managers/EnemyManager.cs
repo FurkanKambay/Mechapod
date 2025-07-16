@@ -1,7 +1,7 @@
 using Crabgame.Entity;
 using UnityEngine;
 
-namespace Crabgame
+namespace Crabgame.Managers
 {
     public class EnemyManager : SpawnerManager
     {

@@ -4,7 +4,7 @@ using Crabgame.Entity;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Crabgame
+namespace Crabgame.Managers
 {
     public abstract class SpawnerManager : MonoBehaviour
     {

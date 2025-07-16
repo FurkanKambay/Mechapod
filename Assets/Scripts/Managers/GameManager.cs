@@ -4,7 +4,7 @@ using Crabgame.Night;
 using Crabgame.Player;
 using UnityEngine;
 
-namespace Crabgame
+namespace Crabgame.Managers
 {
     public class GameManager : MonoBehaviour
     {

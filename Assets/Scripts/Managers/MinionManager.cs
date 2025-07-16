@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Crabgame
+namespace Crabgame.Managers
 {
     public class MinionManager : SpawnerManager
     {
