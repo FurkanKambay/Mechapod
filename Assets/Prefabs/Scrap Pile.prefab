@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7517817632714026030}
   - component: {fileID: 4374989235521438984}
   - component: {fileID: 8629492463494541772}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Scrap Pile
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
