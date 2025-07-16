@@ -5,6 +5,11 @@ namespace Shovel
     [CreateAssetMenu]
     public sealed class GameConfigSO : ScriptableObject
     {
+        [Header("Game")]
+
+        [Tooltip("How long to wait after a successful night")]
+        [SerializeField] private float nightWaitTime = 1f;
+
         [Header("Move Speed")]
         [SerializeField] private float playerMoveSpeed;
         [SerializeField] private float enemyMoveSpeed;
@@ -25,6 +30,8 @@ namespace Shovel
         [Header("Attack Offset (Random Max)")]
         [SerializeField] private float playerRandomAttackOffsetMax;
         [SerializeField] private float enemyRandomAttackOffsetMax;
+
+        public float NightWaitTime => nightWaitTime;
 
         public float PlayerMoveSpeed => playerMoveSpeed;
         public float EnemyMoveSpeed  => enemyMoveSpeed;

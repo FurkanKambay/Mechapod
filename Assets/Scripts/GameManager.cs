@@ -113,7 +113,8 @@ namespace Shovel
 
             if (waveIndex >= Tonight.Waves.Length)
             {
-                NextPhase();
+                Invoke(nameof(NextPhase), time: gameConfigSO.NightWaitTime);
+                // NextPhase();
                 return;
             }
 
