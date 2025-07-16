@@ -1,4 +1,3 @@
-using System;
 using Shovel.Audio;
 using Shovel.Entity;
 using UnityEngine;
@@ -19,9 +18,6 @@ namespace Shovel.Visual
 
         [Header("State")]
         [SerializeField] private AnimatorOverrideController animController;
-
-        [SerializeField] private Vector2   velocity;
-        [SerializeField] private Direction lastDirection;
 
         private static readonly int AnimAttack = Animator.StringToHash("attack");
         private static readonly int AnimDie    = Animator.StringToHash("die");
@@ -48,18 +44,7 @@ namespace Shovel.Visual
 
         private void Update()
         {
-            velocity = body.linearVelocity;
-
-            Direction direction = (Math.Sign(velocity.x), Math.Sign(velocity.y)) switch
-            {
-                (-1, 1)  => Direction.NorthWest,
-                (1, 1)   => Direction.NorthEast,
-                (1, -1)  => Direction.SouthEast,
-                (-1, -1) => Direction.SouthWest,
-                _        => Direction.SouthEast
-            };
-
-            int clipIndex = (int)direction - 1;
+            int clipIndex = (int)attacker.AimDirection - 1;
             animController[walkClips[0]]  = walkClips[clipIndex];
             animController[deathClips[0]] = deathClips[clipIndex];
 
@@ -68,9 +53,11 @@ namespace Shovel.Visual
 
             if (!preventTurn)
             {
-                lastDirection                  = direction;
+                // swap to other animation before attack proc (same position)
+                attacker.lockedDirection       = attacker.AimDirection;
                 animController[attackClips[0]] = attackClips[clipIndex];
             }
+            // else: original animation keeps playing normally
         }
 
         private void Attack_Performed() =>
@@ -84,7 +71,7 @@ namespace Shovel.Visual
                 AudioPlayer.Instance.crabAttackMiss.PlayOneShot();
         }
 
-        private void Anim_AttackProc() => attacker.ProcAttack(lastDirection);
+        private void Anim_AttackProc() => attacker.ProcAttack();
         private void Anim_AttackDone() => attacker.isRecovering = false;
     }
 }
