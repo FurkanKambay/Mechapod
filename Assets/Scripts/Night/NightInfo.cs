@@ -6,6 +6,7 @@ namespace Shovel.Night
     [Serializable]
     public class NightInfo
     {
+        [SerializeField] internal int scrapPileAmount;
         [SerializeField] internal EnemyWave[] waves;
 
         public EnemyWave[] Waves => waves;

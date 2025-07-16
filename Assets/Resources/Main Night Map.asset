@@ -14,35 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nightCount: 10
   nights:
-  - waves:
+  - scrapPileAmount: 1
+    waves:
     - enemyAmount: 1
-  - waves:
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 2
-  - waves:
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 3
-  - waves:
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 2
     - enemyAmount: 2
-  - waves:
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 3
     - enemyAmount: 3
-  - waves:
-    - enemyAmount: 4
-    - enemyAmount: 4
-    - enemyAmount: 3
-  - waves:
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 4
     - enemyAmount: 4
     - enemyAmount: 3
-  - waves:
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 4
     - enemyAmount: 4
     - enemyAmount: 3
-  - waves:
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 4
     - enemyAmount: 4
     - enemyAmount: 3
-  - waves:
+  - scrapPileAmount: 2
+    waves:
+    - enemyAmount: 4
+    - enemyAmount: 4
+    - enemyAmount: 3
+  - scrapPileAmount: 2
+    waves:
     - enemyAmount: 4
     - enemyAmount: 4
     - enemyAmount: 3
