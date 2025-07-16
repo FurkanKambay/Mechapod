@@ -11,7 +11,20 @@ namespace Shovel.Night
 
         [SerializeField] private NightInfo[] nights;
 
+        public int NightCount => nightCount;
+
         public NightInfo[] Nights => nights;
+
+        public NightInfo GetNight(int dayIndex)
+        {
+            if (nights.Length == 0)
+                return null;
+
+            if (dayIndex < 0 || dayIndex >= nights.Length)
+                return nights[^1];
+
+            return nights[dayIndex];
+        }
 
         private void OnValidate()
         {

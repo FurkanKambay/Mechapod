@@ -10,7 +10,7 @@ namespace Shovel.Night
 
         public EnemyWave[] Waves => waves;
 
-        public int EnemyAmount(int waveIndex)
+        public int GetEnemyAmount(int waveIndex)
         {
             if (waveIndex < 0 || waveIndex >= waves.Length)
                 return 0;

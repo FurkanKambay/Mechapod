@@ -34,7 +34,7 @@ namespace Shovel
         public static MinionManager MinionManager => Instance.minionManager;
         public static EnemyManager  EnemyManager  => Instance.enemyManager;
         public static PlayerState   PlayerState   => Instance.playerState;
-        public static NightInfo     Tonight       => Instance.nightMapSO.Nights[Instance.dayNumber - 1];
+        public static NightInfo     Tonight       => Instance.nightMapSO.GetNight(Instance.dayNumber - 1);
 
         public int  DayNumber => dayNumber;
         public bool IsNight   => isNight;
@@ -54,7 +54,13 @@ namespace Shovel
         public void NextPhase()
         {
             if (isNight)
+            {
                 dayNumber++;
+
+                // loop back to day 1
+                if (dayNumber > nightMapSO.NightCount)
+                    dayNumber = 1;
+            }
 
             isNight = !isNight;
 
@@ -73,7 +79,7 @@ namespace Shovel
         private void PopulateTonight()
         {
             MinionManager.RespawnAll(PlayerState.minionAmount);
-            EnemyManager.RespawnAll(Tonight.EnemyAmount(waveIndex));
+            EnemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
 
             // TODO: respawn Scrap Piles
         }
