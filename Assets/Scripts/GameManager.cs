@@ -24,7 +24,7 @@ namespace Shovel
 
         public static GameConfigSO Config  => Instance.gameConfigSO;
         public static PlayerState  PlayerState => Instance.playerState;
-        public static NightInfo    Tonight     => Instance.nightMapSO.Nights[Instance.dayNumber];
+        public static NightInfo    Tonight     => Instance.nightMapSO.Nights[Instance.dayNumber - 1];
 
         public int  DayNumber => dayNumber;
         public bool IsNight   => isNight;

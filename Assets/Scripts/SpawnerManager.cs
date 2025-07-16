@@ -51,7 +51,7 @@ namespace Shovel
 
             for (int i = 0; i < count; i++)
             {
-                int spawnedIndex = entities.Count + i;
+                int spawnedIndex = entities.Count;
 
                 if (spawnedIndex >= spawnPoints.Length)
                 {
