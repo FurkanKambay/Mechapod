@@ -323,8 +323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityPrefab: {fileID: 2763527626866196284, guid: 2b03b875ff839c64dbfb1a35d09c6680, type: 3}
-  moveSpeed: 0.8
-  randomAttackOffsetMax: 2.8
   spawnPoints:
   - {x: 2.71875, y: -1.65625, z: 0}
   - {x: 4.1875, y: -0.71875, z: 0}
@@ -1141,6 +1139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea4d50a35d5a0048a0cc091d85deaa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConfigSO: {fileID: 11400000, guid: d1bf2defb69589643b15152564624594, type: 2}
   nightMapSO: {fileID: 11400000, guid: 6058c0213a0fcbc4fb00f30c34979e53, type: 2}
   dayNumber: 1
   isNight: 0
@@ -1697,8 +1696,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityPrefab: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
-  moveSpeed: 1
-  randomAttackOffsetMax: 3.5
   spawnPoints:
   - {x: -2.6875, y: 0.3125, z: 0}
   - {x: -1.5, y: 0.90625, z: 0}

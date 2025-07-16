@@ -12,6 +12,7 @@ namespace Shovel
         public event Action OnPhaseChange;
 
         [Header("References")]
+        [SerializeField] private GameConfigSO gameConfigSO;
         [SerializeField] private NightMapSO nightMapSO;
 
         [Header("State - Game")]
@@ -21,8 +22,9 @@ namespace Shovel
         [Header("State - Player & Enemy")]
         [SerializeField] private PlayerState playerState;
 
-        public static PlayerState PlayerState => Instance.playerState;
-        public static NightInfo   Tonight     => Instance.nightMapSO.Nights[Instance.dayNumber];
+        public static GameConfigSO Config  => Instance.gameConfigSO;
+        public static PlayerState  PlayerState => Instance.playerState;
+        public static NightInfo    Tonight     => Instance.nightMapSO.Nights[Instance.dayNumber];
 
         public int  DayNumber => dayNumber;
         public bool IsNight   => isNight;

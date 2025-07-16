@@ -14,6 +14,9 @@ namespace Shovel
         protected override int EntityAmount =>
             GameManager.Tonight.Waves[0].EnemyAmount;
 
+        protected override float MoveSpeed             => GameManager.Config.EnemyMoveSpeed;
+        protected override float RandomAttackOffsetMax => GameManager.Config.EnemyRandomAttackOffsetMax;
+
         private Transform golemTransform;
 
         private void Awake()

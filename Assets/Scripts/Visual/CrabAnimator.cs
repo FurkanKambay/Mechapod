@@ -2,6 +2,7 @@ using System;
 using Shovel.Audio;
 using Shovel.Entity;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Shovel.Visual
 {
@@ -12,12 +13,30 @@ namespace Shovel.Visual
         [SerializeField] private Attacker attacker;
         [SerializeField] private Animator animator;
 
+        [SerializeField] private AnimationClip[] walkClips;
+        [SerializeField] private AnimationClip[] attackClips;
+        [SerializeField] private AnimationClip[] deathClips;
+
         [Header("State")]
-        [SerializeField] private Vector2 velocity;
+        [SerializeField] private AnimatorOverrideController animController;
+
+        [SerializeField] private Vector2   velocity;
+        [SerializeField] private Direction lastDirection;
+
+        [SerializeField] private bool isPerformingAttack;
+        [SerializeField] private bool isRecovering;
 
         private static readonly int AnimDirection = Animator.StringToHash("direction");
         private static readonly int AnimAttack    = Animator.StringToHash("attack");
         private static readonly int AnimDie       = Animator.StringToHash("die");
+
+        private void Awake()
+        {
+            animController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+            Assert.IsNotNull(animController);
+
+            animator.runtimeAnimatorController = animController;
+        }
 
         private void OnEnable()
         {
@@ -35,31 +54,47 @@ namespace Shovel.Visual
         {
             velocity = body.linearVelocity;
 
-            int signX = Math.Sign(velocity.x);
-            int signY = Math.Sign(velocity.y);
-
-            int direction = (signX, signY) switch
+            Direction direction = (Math.Sign(velocity.x), Math.Sign(velocity.y)) switch
             {
-                (-1, 1)  => 1, // NW
-                (1, 1)   => 2, // NE
-                (1, -1)  => 3, // SE
-                (-1, -1) => 4, // SW
-                _        => 3  // default: SE
+                (-1, 1)  => Direction.NorthWest,
+                (1, 1)   => Direction.NorthEast,
+                (1, -1)  => Direction.SouthEast,
+                (-1, -1) => Direction.SouthWest,
+                _        => Direction.SouthEast
             };
 
-            animator.SetInteger(AnimDirection, direction);
+            int clipIndex = (int)direction - 1;
+            animController[walkClips[0]]  = walkClips[clipIndex];
+            animController[deathClips[0]] = deathClips[clipIndex];
+
+            bool isTurningAllowed = !isPerformingAttack || GameManager.Config.TurnWhileAttacking;
+
+            if (!isRecovering && isTurningAllowed)
+            {
+                lastDirection                  = direction;
+                animController[attackClips[0]] = attackClips[clipIndex];
+            }
+
+            animator.SetInteger(AnimDirection, (int)lastDirection);
         }
 
         private void Attack_Performed()
         {
+            isPerformingAttack = true;
             animator.SetTrigger(AnimAttack);
         }
 
-        private void AttackHitFrame() =>
-            attacker.ProcAttack();
+        private void Anim_AttackProc() =>
+            attacker.ProcAttack(lastDirection);
 
-        private static void Attack_Procced(bool hitTarget)
+        private void Anim_AttackDone() =>
+            isRecovering = false;
+
+        private void Attack_Procced(bool hitTarget)
         {
+            isPerformingAttack = false;
+            isRecovering       = true;
+
             if (hitTarget)
                 AudioPlayer.Instance.crabAttack.PlayOneShot();
             else

@@ -11,8 +11,6 @@ namespace Shovel
         [SerializeField] protected Attacker entityPrefab;
 
         [Header("Base - Config")]
-        [SerializeField] protected float moveSpeed;
-        [SerializeField] private   float     randomAttackOffsetMax;
         [SerializeField] protected Vector3[] spawnPoints;
 
         [Header("Base - State")]
@@ -21,7 +19,9 @@ namespace Shovel
 
         public Vector3[] SpawnPoints => spawnPoints;
 
-        protected abstract int EntityAmount { get; }
+        protected abstract int   EntityAmount          { get; }
+        protected abstract float MoveSpeed             { get; }
+        protected abstract float RandomAttackOffsetMax { get; }
 
         protected void MoveAll(Vector2 targetPoint)
         {
@@ -33,7 +33,7 @@ namespace Shovel
                 Vector2 entityPosition = entity.transform.position;
                 Vector2 direction      = Vector2.ClampMagnitude(targetPoint - entityPosition, 1f);
 
-                entity.Body.linearVelocity = direction * moveSpeed;
+                entity.Body.linearVelocity = direction * MoveSpeed;
             }
         }
 
@@ -61,7 +61,7 @@ namespace Shovel
                 attacker.name = $"{entityName} {spawnedIndex + 1}";
 
                 // TODO: try manually setting the offset from Spawner
-                attacker.attackOffset = Random.value * randomAttackOffsetMax;
+                attacker.attackOffset = Random.value * RandomAttackOffsetMax;
 
                 entities.Add(attacker);
             }
@@ -97,16 +97,18 @@ namespace Shovel
             entities.Clear();
         }
 
-        private void OnDrawGizmos()
-        {
-            foreach (Attacker entity in entities)
-            {
-                if (!entity)
-                    return;
-
-                Handles.color = Color.green;
-                Handles.DrawWireDisc(entity.transform.position, Vector3.forward, entity.AttackRadius);
-            }
-        }
+        // private void OnDrawGizmos()
+        // {
+        //     foreach (Attacker entity in entities)
+        //     {
+        //         if (!entity)
+        //             return;
+        //
+        //         Vector3 origin = entity.transform.position;
+        //
+        //         Handles.color = Color.green;
+        //         Handles.DrawWireDisc(origin, Vector3.forward, entity.AttackRadius);
+        //     }
+        // }
     }
 }

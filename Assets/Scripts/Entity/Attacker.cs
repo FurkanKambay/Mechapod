@@ -1,35 +1,42 @@
 using System;
-using Shovel.Audio;
+using UnityEditor;
 using UnityEngine;
 
 namespace Shovel.Entity
 {
     public class Attacker : MonoBehaviour
     {
-        public event Action OnAttackPerformed;
+        public event Action       OnAttackPerformed;
         public event Action<bool> OnAttackProcced;
 
         [Header("References")]
         [SerializeField] private Rigidbody2D body;
+        [SerializeField] private Collider2D attackCollider;
 
         [Header("Config")]
-        [SerializeField] private LayerMask attackLayers;
+        [SerializeField] private ContactFilter2D attackFilter;
+
         [SerializeField] private int   damage;
-        [SerializeField] private float attackRadius;
+        [SerializeField] private float attackRange;
         [SerializeField] private float attackRate;
 
-        public float attackOffset;
-
-        public Rigidbody2D Body => body;
-
-        public float AttackRadius => attackRadius;
+        public Rigidbody2D Body        => body;
+        public float       AttackRange => attackRange;
 
         [Header("State")]
+        public float attackOffset;
         [SerializeField] private float attackTimer;
+
+        private Transform attackBox;
 
         private void Start()
         {
             attackTimer = -attackOffset;
+            attackBox   = attackCollider.transform;
+
+            Vector3 attackScale = attackBox.localScale;
+            attackScale.x        = attackRange;
+            attackBox.localScale = attackScale;
         }
 
         private void Update()
@@ -48,17 +55,33 @@ namespace Shovel.Entity
             OnAttackPerformed?.Invoke();
         }
 
-        internal bool ProcAttack()
+        internal bool ProcAttack(Direction direction)
         {
-            Collider2D target = Physics2D.OverlapCircle(transform.position, attackRadius, attackLayers);
-            OnAttackProcced?.Invoke((bool)target);
+            var results = new Collider2D[5];
 
-            if (!target)
+            attackBox.eulerAngles = Vector3.forward * direction.AttackAngle();
+            int hitCount = attackCollider.Overlap(attackFilter, results);
+
+            OnAttackProcced?.Invoke(hitCount != 0);
+
+            if (hitCount == 0)
                 return false;
 
-            var targetHealth = target.GetComponent<Health>();
-            targetHealth.TakeDamage(damage);
+            for (var i = 0; i < hitCount; i++)
+            {
+                var target = results[i].GetComponent<Health>();
+                target.TakeDamage(damage);
+            }
+
             return true;
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Vector3 origin = transform.position;
+
+            Handles.color = Color.green;
+            // Handles.DrawWireDisc(origin, Vector3.forward, AttackRange);
         }
     }
 }
