@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Shovel.Entity;
-using UnityEditor;
 using UnityEngine;
 
 namespace Shovel
@@ -29,6 +28,15 @@ namespace Shovel
             {
                 if (!entity)
                     continue;
+
+                bool preventMove = (entity.isPerformingAttack && !GameManager.Config.MoveWhileAttacking)
+                                   || (entity.isRecovering && !GameManager.Config.MoveWhileRecovering);
+
+                if (preventMove)
+                {
+                    entity.Body.linearVelocity = Vector2.zero;
+                    continue;
+                }
 
                 Vector2 entityPosition = entity.transform.position;
                 Vector2 direction      = Vector2.ClampMagnitude(targetPoint - entityPosition, 1f);

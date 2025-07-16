@@ -10,8 +10,17 @@ namespace Shovel
         [SerializeField] private float enemyMoveSpeed;
 
         [Header("Attack")]
-        [Tooltip("Can we turn in another direction before the attack proc's?")]
+        [Tooltip("Can crabs move while attacking?")]
+        [SerializeField] private bool moveWhileAttacking;
+
+        [Tooltip("Can crabs move while recovering after an attack?")]
+        [SerializeField] private bool moveWhileRecovering;
+
+        [Tooltip("Can crabs turn while attacking?")]
         [SerializeField] private bool turnWhileAttacking;
+
+        [Tooltip("Can crabs turn while recovering after an attack?")]
+        [SerializeField] private bool turnWhileRecovering;
 
         [Header("Attack Offset (Random Max)")]
         [SerializeField] private float playerRandomAttackOffsetMax;
@@ -20,7 +29,10 @@ namespace Shovel
         public float PlayerMoveSpeed => playerMoveSpeed;
         public float EnemyMoveSpeed  => enemyMoveSpeed;
 
-        public bool TurnWhileAttacking => turnWhileAttacking;
+        public bool MoveWhileAttacking  => moveWhileAttacking;
+        public bool MoveWhileRecovering => moveWhileRecovering;
+        public bool TurnWhileAttacking  => turnWhileAttacking;
+        public bool TurnWhileRecovering => turnWhileRecovering;
 
         public float PlayerRandomAttackOffsetMax => playerRandomAttackOffsetMax;
         public float EnemyRandomAttackOffsetMax  => enemyRandomAttackOffsetMax;

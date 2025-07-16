@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMoveSpeed: 1.2
   enemyMoveSpeed: 0.8
+  moveWhileAttacking: 1
+  turnWhileAttacking: 0
   playerRandomAttackOffsetMax: 3.5
   enemyRandomAttackOffsetMax: 2.8

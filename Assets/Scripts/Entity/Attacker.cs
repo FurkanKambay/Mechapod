@@ -1,5 +1,4 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 
 namespace Shovel.Entity
@@ -27,6 +26,9 @@ namespace Shovel.Entity
         public float attackOffset;
         [SerializeField] private float attackTimer;
 
+        public bool isPerformingAttack;
+        public bool isRecovering;
+
         private Transform attackBox;
 
         private void Start()
@@ -52,6 +54,7 @@ namespace Shovel.Entity
 
         private void PerformAttack()
         {
+            isPerformingAttack = true;
             OnAttackPerformed?.Invoke();
         }
 
@@ -62,6 +65,8 @@ namespace Shovel.Entity
             attackBox.eulerAngles = Vector3.forward * direction.AttackAngle();
             int hitCount = attackCollider.Overlap(attackFilter, results);
 
+            isPerformingAttack = false;
+            isRecovering       = true;
             OnAttackProcced?.Invoke(hitCount != 0);
 
             if (hitCount == 0)
@@ -74,14 +79,6 @@ namespace Shovel.Entity
             }
 
             return true;
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Vector3 origin = transform.position;
-
-            Handles.color = Color.green;
-            // Handles.DrawWireDisc(origin, Vector3.forward, AttackRange);
         }
     }
 }

@@ -23,12 +23,8 @@ namespace Shovel.Visual
         [SerializeField] private Vector2   velocity;
         [SerializeField] private Direction lastDirection;
 
-        [SerializeField] private bool isPerformingAttack;
-        [SerializeField] private bool isRecovering;
-
-        private static readonly int AnimDirection = Animator.StringToHash("direction");
-        private static readonly int AnimAttack    = Animator.StringToHash("attack");
-        private static readonly int AnimDie       = Animator.StringToHash("die");
+        private static readonly int AnimAttack = Animator.StringToHash("attack");
+        private static readonly int AnimDie    = Animator.StringToHash("die");
 
         private void Awake()
         {
@@ -67,38 +63,28 @@ namespace Shovel.Visual
             animController[walkClips[0]]  = walkClips[clipIndex];
             animController[deathClips[0]] = deathClips[clipIndex];
 
-            bool isTurningAllowed = !isPerformingAttack || GameManager.Config.TurnWhileAttacking;
+            bool preventTurn = (attacker.isPerformingAttack && !GameManager.Config.TurnWhileAttacking)
+                               || (attacker.isRecovering && !GameManager.Config.TurnWhileRecovering);
 
-            if (!isRecovering && isTurningAllowed)
+            if (!preventTurn)
             {
                 lastDirection                  = direction;
                 animController[attackClips[0]] = attackClips[clipIndex];
             }
-
-            animator.SetInteger(AnimDirection, (int)lastDirection);
         }
 
-        private void Attack_Performed()
-        {
-            isPerformingAttack = true;
+        private void Attack_Performed() =>
             animator.SetTrigger(AnimAttack);
-        }
 
-        private void Anim_AttackProc() =>
-            attacker.ProcAttack(lastDirection);
-
-        private void Anim_AttackDone() =>
-            isRecovering = false;
-
-        private void Attack_Procced(bool hitTarget)
+        private static void Attack_Procced(bool hitTarget)
         {
-            isPerformingAttack = false;
-            isRecovering       = true;
-
             if (hitTarget)
                 AudioPlayer.Instance.crabAttack.PlayOneShot();
             else
                 AudioPlayer.Instance.crabAttackMiss.PlayOneShot();
         }
+
+        private void Anim_AttackProc() => attacker.ProcAttack(lastDirection);
+        private void Anim_AttackDone() => attacker.isRecovering = false;
     }
 }
