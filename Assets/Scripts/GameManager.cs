@@ -2,7 +2,6 @@ using System;
 using Shovel.Entity;
 using Shovel.Night;
 using Shovel.Player;
-using Unity.Properties;
 using UnityEngine;
 
 namespace Shovel
@@ -17,20 +16,25 @@ namespace Shovel
         [SerializeField] private GameConfigSO gameConfigSO;
         [SerializeField] private NightMapSO nightMapSO;
 
-        [Header("References - Scene")] // used in HUD.uxml
+        // used in HUD.uxml
+        [Header("References - Scene")]
         [SerializeField] private MinionManager minionManager;
-        [SerializeField] private Health golemHealth;
+        [SerializeField] private EnemyManager enemyManager;
+        [SerializeField] private Health       golemHealth;
 
         [Header("State - Game")]
-        [SerializeField, Min(1)] private int dayNumber = 1;
         [SerializeField] private bool isNight;
+        [SerializeField, Min(1)] private int dayNumber = 1;
+        [SerializeField, Min(0)] private int waveIndex;
 
         [Header("State - Player & Enemy")]
         [SerializeField] private PlayerState playerState;
 
-        public static GameConfigSO Config  => Instance.gameConfigSO;
-        public static PlayerState  PlayerState => Instance.playerState;
-        public static NightInfo    Tonight     => Instance.nightMapSO.Nights[Instance.dayNumber - 1];
+        public static GameConfigSO  Config        => Instance.gameConfigSO;
+        public static MinionManager MinionManager => Instance.minionManager;
+        public static EnemyManager  EnemyManager  => Instance.enemyManager;
+        public static PlayerState   PlayerState   => Instance.playerState;
+        public static NightInfo     Tonight       => Instance.nightMapSO.Nights[Instance.dayNumber - 1];
 
         public int  DayNumber => dayNumber;
         public bool IsNight   => isNight;
@@ -39,8 +43,9 @@ namespace Shovel
         {
             Instance = this;
 
-            dayNumber = 1;
             isNight   = false;
+            dayNumber = 1;
+            waveIndex = 0;
 
             UpdateTimeScale();
         }
@@ -53,8 +58,24 @@ namespace Shovel
 
             isNight = !isNight;
 
+            if (isNight)
+                PopulateTonight();
+            else
+            {
+                minionManager.Clear();
+                enemyManager.Clear();
+            }
+
             UpdateTimeScale();
             OnPhaseChange?.Invoke();
+        }
+
+        private void PopulateTonight()
+        {
+            MinionManager.RespawnAll(PlayerState.minionAmount);
+            EnemyManager.RespawnAll(Tonight.EnemyAmount(waveIndex));
+
+            // TODO: respawn Scrap Piles
         }
 
         private void UpdateTimeScale() =>

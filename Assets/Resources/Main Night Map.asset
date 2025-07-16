@@ -17,20 +17,32 @@ MonoBehaviour:
   - waves:
     - enemyAmount: 1
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 2
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 3
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 2
+    - enemyAmount: 2
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 3
+    - enemyAmount: 3
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 4
+    - enemyAmount: 4
+    - enemyAmount: 3
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 4
+    - enemyAmount: 4
+    - enemyAmount: 3
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 4
+    - enemyAmount: 4
+    - enemyAmount: 3
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 4
+    - enemyAmount: 4
+    - enemyAmount: 3
   - waves:
-    - enemyAmount: 1
+    - enemyAmount: 4
+    - enemyAmount: 4
+    - enemyAmount: 3

@@ -4,19 +4,17 @@ namespace Shovel
 {
     public class MinionManager : SpawnerManager
     {
-        public static MinionManager Instance { get; private set; }
-
         [Header("References")]
         [SerializeField] private PlayerInput input;
 
-        protected override int   EntityAmount          => GameManager.PlayerState.minionAmount;
         protected override float MoveSpeed             => GameManager.Config.PlayerMoveSpeed;
         protected override float RandomAttackOffsetMax => GameManager.Config.PlayerRandomAttackOffsetMax;
 
+        private static int EntityAmount => GameManager.PlayerState.minionAmount;
+
         private void Awake()
         {
-            Instance = this;
-            RespawnAll();
+            RespawnAll(EntityAmount);
         }
 
         private void FixedUpdate()
