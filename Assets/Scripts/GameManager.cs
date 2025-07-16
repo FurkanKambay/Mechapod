@@ -1,6 +1,8 @@
 using System;
+using Shovel.Entity;
 using Shovel.Night;
 using Shovel.Player;
+using Unity.Properties;
 using UnityEngine;
 
 namespace Shovel
@@ -11,9 +13,13 @@ namespace Shovel
 
         public event Action OnPhaseChange;
 
-        [Header("References")]
+        [Header("References - Assets")]
         [SerializeField] private GameConfigSO gameConfigSO;
         [SerializeField] private NightMapSO nightMapSO;
+
+        [Header("References - Scene")] // used in HUD.uxml
+        [SerializeField] private MinionManager minionManager;
+        [SerializeField] private Health golemHealth;
 
         [Header("State - Game")]
         [SerializeField, Min(1)] private int dayNumber = 1;

@@ -1141,6 +1141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConfigSO: {fileID: 11400000, guid: d1bf2defb69589643b15152564624594, type: 2}
   nightMapSO: {fileID: 11400000, guid: 6058c0213a0fcbc4fb00f30c34979e53, type: 2}
+  minionManager: {fileID: 1718554346}
+  golemHealth: {fileID: 1635832950}
   dayNumber: 1
   isNight: 0
   playerState:
