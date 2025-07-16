@@ -1,11 +1,12 @@
 {
-    "name": "Shovel",
-    "rootNamespace": "Shovel",
+    "name": "Crabgame.Editor",
+    "rootNamespace": "Crabgame",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:0c752da273b17c547ae705acf0f2adf2"
+        "GUID:331cdc793f2b03b40bbe62cf5095cff5"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

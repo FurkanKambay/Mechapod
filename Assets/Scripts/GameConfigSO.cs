@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Shovel
+namespace Crabgame
 {
     [CreateAssetMenu]
     public sealed class GameConfigSO : ScriptableObject

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Shovel.Player
+namespace Crabgame.Player
 {
     [Serializable]
     public class PlayerState

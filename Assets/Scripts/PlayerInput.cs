@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Shovel
+namespace Crabgame
 {
     public class PlayerInput : MonoBehaviour
     {

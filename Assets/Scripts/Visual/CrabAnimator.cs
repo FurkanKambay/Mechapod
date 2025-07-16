@@ -1,9 +1,9 @@
-using Shovel.Audio;
-using Shovel.Entity;
+using Crabgame.Audio;
+using Crabgame.Entity;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Shovel.Visual
+namespace Crabgame.Visual
 {
     public class CrabAnimator : MonoBehaviour
     {

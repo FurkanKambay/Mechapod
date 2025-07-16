@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Shovel.UI
+namespace Crabgame.UI
 {
     public class HUDPresenter : MonoBehaviour
     {

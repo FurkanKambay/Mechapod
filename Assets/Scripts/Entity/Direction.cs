@@ -1,4 +1,4 @@
-namespace Shovel.Entity
+namespace Crabgame.Entity
 {
     public enum Direction
     {

@@ -3,7 +3,7 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace Shovel.Editor
+namespace Crabgame.Editor
 {
     [InitializeOnLoad]
     internal class InitialScene

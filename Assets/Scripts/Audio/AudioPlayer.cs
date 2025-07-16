@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using FMODUnity;
 
-namespace Shovel.Audio
+namespace Crabgame.Audio
 {
     public class AudioPlayer : MonoBehaviour
     {

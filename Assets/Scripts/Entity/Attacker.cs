@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Shovel.Entity
+namespace Crabgame.Entity
 {
     public class Attacker : MonoBehaviour
     {

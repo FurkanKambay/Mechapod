@@ -3,7 +3,7 @@ using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 
-namespace Shovel.Audio
+namespace Crabgame.Audio
 {
     [Serializable]
     public struct FMODEvent
@@ -24,7 +24,9 @@ namespace Shovel.Audio
         {
             if (!Description.isValid())
             {
+#if UNITY_EDITOR
                 Debug.LogWarning($"Invalid FMOD event description: {reference.Path}", AudioPlayer.Instance);
+#endif
                 return;
             }
 

@@ -1,7 +1,7 @@
-using Shovel.Entity;
+using Crabgame.Entity;
 using UnityEngine;
 
-namespace Shovel
+namespace Crabgame
 {
     public class EnemyManager : SpawnerManager
     {

@@ -1,7 +1,7 @@
-using Shovel.Audio;
+using Crabgame.Audio;
 using UnityEngine;
 
-namespace Shovel.Entity
+namespace Crabgame.Entity
 {
     public class SuicideBomber : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Shovel
+namespace Crabgame
 {
     public class MinionManager : SpawnerManager
     {

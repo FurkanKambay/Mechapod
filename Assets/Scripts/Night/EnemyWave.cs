@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Shovel.Night
+namespace Crabgame.Night
 {
     [Serializable]
     public class EnemyWave

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Shovel.Entity;
+using Crabgame.Entity;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Shovel
+namespace Crabgame
 {
     public abstract class SpawnerManager : MonoBehaviour
     {

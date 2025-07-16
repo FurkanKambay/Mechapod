@@ -1,10 +1,10 @@
 using System;
-using Shovel.Entity;
-using Shovel.Night;
-using Shovel.Player;
+using Crabgame.Entity;
+using Crabgame.Night;
+using Crabgame.Player;
 using UnityEngine;
 
-namespace Shovel
+namespace Crabgame
 {
     public class GameManager : MonoBehaviour
     {

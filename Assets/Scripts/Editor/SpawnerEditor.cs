@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Shovel.Editor
+namespace Crabgame.Editor
 {
     [CustomEditor(typeof(SpawnerManager), editorForChildClasses: true)]
     public class SpawnerEditor : UnityEditor.Editor
