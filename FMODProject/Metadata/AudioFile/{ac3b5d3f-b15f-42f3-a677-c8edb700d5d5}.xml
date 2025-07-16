@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{356ef115-6e45-4acd-83a6-cc9373c262cd}">
+	<object class="AudioFile" id="{ac3b5d3f-b15f-42f3-a677-c8edb700d5d5}">
 		<property name="assetPath">
-			<value>Crab Attack 4.mp3</value>
+			<value>Crab Attack 2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.432</value>
+			<value>0.40799999999999997</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a7cafe2e-d423-4a2c-9faf-24d0c3fc9714}</destination>
