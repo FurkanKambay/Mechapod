@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ecd8cc04ba48648e3e473f6028aab2, type: 3}
   m_Name: Game Config
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 0.8
-  enemyMoveSpeed: 0
+  playerMoveSpeed: 1.2
+  enemyMoveSpeed: 0.8
   playerRandomAttackOffsetMax: 3.5
   enemyRandomAttackOffsetMax: 2.8
