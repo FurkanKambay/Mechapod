@@ -18,7 +18,6 @@ namespace Shovel
 
         public Vector3[] SpawnPoints => spawnPoints;
 
-        protected abstract int   EntityAmount          { get; }
         protected abstract float MoveSpeed             { get; }
         protected abstract float RandomAttackOffsetMax { get; }
 
@@ -75,10 +74,10 @@ namespace Shovel
             }
         }
 
-        public void RespawnAll()
+        public void RespawnAll(int amount)
         {
             Clear();
-            Spawn(EntityAmount);
+            Spawn(amount);
         }
 
         public void ResetPositions()

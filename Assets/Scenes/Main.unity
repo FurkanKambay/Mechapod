@@ -327,6 +327,8 @@ MonoBehaviour:
   - {x: 2.71875, y: -1.65625, z: 0}
   - {x: 4.1875, y: -0.71875, z: 0}
   - {x: 0.75, y: -2.4375, z: 0}
+  - {x: 1.6875, y: -1.875, z: 0}
+  - {x: 3.4375, y: -1, z: 0}
   dummy: 
   entities:
   - {fileID: 7853032347184145527}
@@ -1142,9 +1144,11 @@ MonoBehaviour:
   gameConfigSO: {fileID: 11400000, guid: d1bf2defb69589643b15152564624594, type: 2}
   nightMapSO: {fileID: 11400000, guid: 6058c0213a0fcbc4fb00f30c34979e53, type: 2}
   minionManager: {fileID: 1718554346}
+  enemyManager: {fileID: 483954851}
   golemHealth: {fileID: 1635832950}
-  dayNumber: 1
   isNight: 0
+  dayNumber: 1
+  waveIndex: 0
   playerState:
     minionAmount: 1
 --- !u!4 &917948523
