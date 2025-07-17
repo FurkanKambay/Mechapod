@@ -41,6 +41,8 @@ namespace Crabgame.Entity
 
         public Direction AimDirection => aimDirection ?? moveDirection;
 
+        public bool TurningBlocked { get; private set; }
+
         private SpawnerManager sourceSpawner;
 
         private Direction? aimDirection;
@@ -92,8 +94,6 @@ namespace Crabgame.Entity
 
         internal void RegisterSpawner(SpawnerManager spawner) =>
             sourceSpawner = spawner;
-
-        public bool TurningBlocked { get; private set; }
 
         private void UpdateAimDirection()
         {

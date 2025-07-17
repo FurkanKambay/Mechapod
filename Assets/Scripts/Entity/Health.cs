@@ -5,6 +5,7 @@ namespace Crabgame.Entity
 {
     public class Health : MonoBehaviour
     {
+        public event Action OnHurt;
         public event Action OnDeath;
 
         [Header("Config")]
@@ -27,6 +28,8 @@ namespace Crabgame.Entity
         public void TakeDamage(int amount)
         {
             health -= amount;
+
+            OnHurt?.Invoke();
 
             if (health <= 0)
                 Die();

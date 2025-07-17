@@ -295,7 +295,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 11c9f4a89d75abe43bb31040806482f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -364,6 +364,7 @@ MonoBehaviour:
   body: {fileID: 7568818204668901788}
   attacker: {fileID: 6560894379872987833}
   animator: {fileID: 2290911971803707301}
+  spriteRenderer: {fileID: 29885203603944697}
   walkClips:
   - {fileID: 7400000, guid: 79b713eaa9ccd3642ad9312e1d11264a, type: 2}
   - {fileID: 7400000, guid: f827a0bf256d4524bb94c5a3c56e9d2d, type: 2}
@@ -379,6 +380,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 1d64130e1edaa7a4ebb4d2ca9a70430e, type: 2}
   - {fileID: 7400000, guid: 250d33cad28b0104b84ec84fb0c2f909, type: 2}
   - {fileID: 7400000, guid: 9b96e4de443b53d4a9da11a861d7d27d, type: 2}
+  hurtDuration: 0.25
   deathDestroyDelay: 3
   animController: {fileID: 0}
 --- !u!1 &4562206981307196872
