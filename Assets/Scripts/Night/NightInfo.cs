@@ -6,6 +6,7 @@ namespace Crabgame.Night
     [Serializable]
     public class NightInfo
     {
+        [Min(0)]
         [SerializeField] internal int scrapPileAmount;
         [SerializeField] internal EnemyWave[] waves;
 
