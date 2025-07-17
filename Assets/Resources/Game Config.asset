@@ -19,5 +19,5 @@ MonoBehaviour:
   moveWhileRecovering: 0
   turnWhileAttacking: 0
   turnWhileRecovering: 0
-  playerRandomAttackOffsetMax: 3.5
-  enemyRandomAttackOffsetMax: 2.8
+  playerRandomAttackOffsetMax: 0
+  enemyRandomAttackOffsetMax: 0
