@@ -41,11 +41,11 @@
 }
 
 #Upgrades {
-    flex-grow: 0.5;
-    align-items: center;
-    justify-content: center;
     align-self: center;
     width: 50%;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 0.5;
 }
 
 .upgrade-button {
@@ -57,15 +57,14 @@
     border-bottom-width: 2px;
     border-left-width: 2px;
     border-color: transparent;
-    height: 8%;
-    flex-grow: 0.1;
     width: 30%;
-    margin-right: 55%;
-    margin-bottom: 5%;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+    -unity-text-align: lower-center;
+    margin-top: 64px;
+    height: 10%;
 }
 
 .upgrade-button:disabled {
@@ -75,7 +74,7 @@
 .upgrade-button:enabled:hover {
     border-color: limegreen;
     background-color: rgb(42, 60, 63);
-    height: 16%;
+    height: 20%;
     transition-property: height;
     transition-duration: 0.2s;
     transition-timing-function: ease-out-elastic;
@@ -88,4 +87,24 @@
     transition-property: width;
     transition-duration: 0.8s;
     transition-timing-function: ease-out-elastic;
+}
+
+.upgrade-button > .hidden-content {
+    visibility: hidden;
+}
+
+.upgrade-button:hover > .hidden-content {
+    visibility: visible;
+}
+
+.upgrade-cost-label {
+    position: absolute;
+    color: rgb(255, 213, 105);
+    align-self: center;
+    -unity-text-align: middle-right;
+    background-image: url("project://database/Assets/Art/Objects/Scrap_pile_battlefield.png?fileID=2800000&guid=30bd1f64e6a53ee409441fc4e6229aee&type=3#Scrap_pile_battlefield");
+    width: 78px;
+    -unity-background-scale-mode: scale-to-fit;
+    background-position-y: bottom 6px;
+    background-position-x: left 0;
 }
