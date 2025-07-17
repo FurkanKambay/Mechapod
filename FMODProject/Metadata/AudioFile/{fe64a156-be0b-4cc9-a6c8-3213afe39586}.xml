@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{fe64a156-be0b-4cc9-a6c8-3213afe39586}">
 		<property name="assetPath">
-			<value>Crab Attack 3.wav</value>
+			<value>Attack/Crab Attack 3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

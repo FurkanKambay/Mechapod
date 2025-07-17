@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{b2cdc89d-7f30-428d-95fa-96581f7c02a0}">
 		<property name="assetPath">
-			<value>Robot Stomp 2 (mechanical movement).wav</value>
+			<value>Golem/Robot Stomp 2 (mechanical movement).wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

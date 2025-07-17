@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EncodableAsset" id="{cb748bfc-a42b-40a1-8c10-f939d5a463d4}">
+		<property name="assetPath">
+			<value>Golem/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7cafe2e-d423-4a2c-9faf-24d0c3fc9714}</destination>
+		</relationship>
+	</object>
+</objects>
