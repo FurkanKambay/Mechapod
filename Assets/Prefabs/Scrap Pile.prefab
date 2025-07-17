@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f72c53848e49f896253a4b9a8239d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 3
   maxHealth: 10
   health: 10
   scrapsGranted: 10

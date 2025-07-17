@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{ffc2f71e-ac3e-4dfa-874c-efe49813b7b1}">
+		<property name="name">
+			<value>Entity Type</value>
+		</property>
+		<relationship name="folder">
+			<destination>{5ce339f9-10de-46b0-a108-a40c45e39d7a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{8f2cc45a-9931-41df-9f38-2fcaf7efa466}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{8f2cc45a-9931-41df-9f38-2fcaf7efa466}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Player Golem</value>
+			<value>Player Minion</value>
+			<value>Enemy Minion</value>
+			<value>Scrap Pile</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -9,16 +9,17 @@ namespace Crabgame.Entity
         public event Action OnDeath;
 
         [Header("Config")]
+        [SerializeField] private EntityType entityType;
         [SerializeField] private int maxHealth;
 
         [Header("Debug")]
         [SerializeField] private int health;
 
-        public int MaxHealth => maxHealth;
+        public EntityType EntityType => entityType;
 
-        public int CurrentHealth => health;
-
-        public bool IsDead => health <= 0;
+        public int  MaxHealth     => maxHealth;
+        public int  CurrentHealth => health;
+        public bool IsDead        => health <= 0;
 
         private void Awake()
         {
@@ -29,9 +30,9 @@ namespace Crabgame.Entity
         {
             health -= amount;
 
-            OnHurt?.Invoke();
-
-            if (health <= 0)
+            if (health > 0)
+                OnHurt?.Invoke();
+            else
                 Die();
         }
 

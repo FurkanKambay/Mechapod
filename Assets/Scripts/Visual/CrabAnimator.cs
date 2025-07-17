@@ -71,6 +71,8 @@ namespace Crabgame.Visual
 
         private void Health_Hurt()
         {
+            AudioPlayer.Instance.PlayEntityGetHurt(attacker.Health.EntityType);
+
             propertyBlock.SetInt(ShaderHurt, 1);
             spriteRenderer.SetPropertyBlock(propertyBlock);
 

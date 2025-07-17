@@ -1,6 +1,9 @@
 using System.Collections;
-using UnityEngine;
+using Crabgame.Entity;
+using Crabgame.Managers;
+using FMOD.Studio;
 using FMODUnity;
+using UnityEngine;
 
 namespace Crabgame.Audio
 {
@@ -8,41 +11,75 @@ namespace Crabgame.Audio
     {
         [SerializeField] private StudioEventEmitter musicEmitter;
 
+        [Header("Entity")]
+        public FMODEvent entityGetHurt;
+        public FMODEvent entityDeath;
+
+        [Header("Golem Skills")]
         public FMODEvent golemLaser;
         public FMODEvent golemLegStomp;
-        public FMODEvent golemDie;
-        public FMODEvent golemGetHurt;
 
+        [Header("Crabs")]
         public FMODEvent crabAttack;
         public FMODEvent crabAttackMiss;
         public FMODEvent crabEnemyExplode;
-        public FMODEvent crabGetHurt;
         public FMODEvent crabWalking;
 
+        [Header("UI")]
         public FMODEvent uiGameOver;
         public FMODEvent uiGolemNewLimb;
         public FMODEvent uiNightSuccess;
 
+        // Parameters
+        private PARAMETER_DESCRIPTION paramEntityType;
+
         // private EventInstance eventInstance;
+
+        private void OnEnable()  => GameManager.Instance.OnPhaseChange += Game_PhaseChanged;
+        private void OnDisable() => GameManager.Instance.OnPhaseChange -= Game_PhaseChanged;
 
         private IEnumerator Start()
         {
             while (!RuntimeManager.HaveAllBanksLoaded)
                 yield return null;
 
+            entityGetHurt.Init();
+            entityDeath.Init();
+
             golemLaser.Init();
             golemLegStomp.Init();
-            golemDie.Init();
-            golemGetHurt.Init();
+
             crabAttack.Init();
             crabAttackMiss.Init();
             crabEnemyExplode.Init();
-            crabGetHurt.Init();
             crabWalking.Init();
+
             uiGameOver.Init();
             uiGolemNewLimb.Init();
             uiNightSuccess.Init();
+
+            // - FMOD Parameters
+            entityGetHurt.Description.getParameterDescriptionByName("Entity Type", out paramEntityType);
         }
+
+        public void PlayEntityGetHurt(EntityType entityType)
+        {
+            entityGetHurt.Description.createInstance(out EventInstance instance);
+            instance.setParameterByID(paramEntityType.id, entityType.GetHashCode());
+            instance.start();
+            instance.release();
+        }
+
+        public void PlayEntityDeath(EntityType entityType)
+        {
+            entityDeath.Description.createInstance(out EventInstance instance);
+            instance.setParameterByID(paramEntityType.id, entityType.GetHashCode());
+            instance.start();
+            instance.release();
+        }
+
+        private void SetMusicPhase(bool isNight) => musicEmitter.SetParameter("Game Phase", isNight.GetHashCode());
+        private void Game_PhaseChanged()         => SetMusicPhase(GameManager.Instance.IsNight);
 
 #region Singleton
         public static AudioPlayer Instance { get; private set; }

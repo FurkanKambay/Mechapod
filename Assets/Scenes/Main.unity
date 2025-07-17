@@ -915,6 +915,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicEmitter: {fileID: 737097497}
+  entityGetHurt:
+    reference:
+      Guid:
+        Data1: -375116398
+        Data2: 1329143869
+        Data3: 1873159582
+        Data4: 1149736763
+      Path: event:/SFX Entity Get Hurt
+  entityDeath:
+    reference:
+      Guid:
+        Data1: 742314539
+        Data2: 1164212002
+        Data3: 111832215
+        Data4: 519722362
+      Path: event:/SFX Entity Death
   golemLaser:
     reference:
       Guid:
@@ -931,22 +947,6 @@ MonoBehaviour:
         Data3: -1953750892
         Data4: 2124280043
       Path: event:/SFX Golem/Golem Attack Leg Stomp
-  golemDie:
-    reference:
-      Guid:
-        Data1: -920902685
-        Data2: 1324497537
-        Data3: 1942436993
-        Data4: -988970891
-      Path: event:/SFX Golem/Golem Die
-  golemGetHurt:
-    reference:
-      Guid:
-        Data1: 1243700215
-        Data2: 1085948924
-        Data3: 123316875
-        Data4: 531065676
-      Path: event:/SFX Golem/Golem Get Hurt
   crabAttack:
     reference:
       Guid:
@@ -971,14 +971,6 @@ MonoBehaviour:
         Data3: 194572707
         Data4: -2046921673
       Path: event:/SFX Crab/Crab Enemy Explode
-  crabGetHurt:
-    reference:
-      Guid:
-        Data1: -375116398
-        Data2: 1329143869
-        Data3: 1873159582
-        Data4: 1149736763
-      Path: event:/SFX Crab/Crab Get Hurt
   crabWalking:
     reference:
       Guid:
@@ -1168,8 +1160,8 @@ MonoBehaviour:
   dayNumber: 1
   waveIndex: 0
   playerState:
-    minionAmount: 1
     scrapAmount: 0
+    minionAmount: 1
 --- !u!4 &917948523
 Transform:
   m_ObjectHideFlags: 0

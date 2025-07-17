@@ -36,6 +36,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4233088172766391820, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: entityType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5559261324161850763, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: deathDestroyDelay
       value: 2
