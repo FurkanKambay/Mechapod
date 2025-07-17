@@ -1,5 +1,12 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/GUI/Garage.uss?fileID=7433441132597879392&amp;guid=6d024c1ae65a4f942a2e39bdb0dbdc14&amp;type=3" />
+    <Style src="project://database/Assets/GUI/Garage.uss?fileID=7433441132597879392&amp;guid=6d024c1ae65a4f942a2e39bdb0dbdc14&amp;type=3#Garage" />
     <ui:VisualElement name="BG" class="background" />
-    <ui:Button text="Continue" name="ContinueButton" class="continue-button" />
+    <ui:Button text="Continue" name="ContinueButton" class="continue-button button" />
+    <ui:VisualElement name="Upgrades" data-source-type="Crabgame.Managers.GameManager, Crabgame">
+        <ui:Button text="Arm Upgrade" name="ArmUpgradeButton" class="upgrade-button button">
+            <Bindings>
+                <ui:DataBinding property="enabledSelf" data-source-path="playerState.CanBuyArm" binding-mode="ToTarget" />
+            </Bindings>
+        </ui:Button>
+    </ui:VisualElement>
 </ui:UXML>

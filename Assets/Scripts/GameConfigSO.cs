@@ -6,7 +6,6 @@ namespace Crabgame
     public sealed class GameConfigSO : ScriptableObject
     {
         [Header("Game")]
-
         [Tooltip("How long to wait after a successful night")]
         [SerializeField] private float nightWaitTime = 1f;
 
@@ -31,6 +30,10 @@ namespace Crabgame
         [SerializeField] private float playerRandomAttackOffsetMax;
         [SerializeField] private float enemyRandomAttackOffsetMax;
 
+        [Header("Economy")]
+        [SerializeField] private int upgradeArmCost;
+        [SerializeField] private int upgradeLegCost;
+
         public float NightWaitTime => nightWaitTime;
 
         public float PlayerMoveSpeed => playerMoveSpeed;
@@ -43,5 +46,8 @@ namespace Crabgame
 
         public float PlayerRandomAttackOffsetMax => playerRandomAttackOffsetMax;
         public float EnemyRandomAttackOffsetMax  => enemyRandomAttackOffsetMax;
+
+        public int UpgradeArmCost => upgradeArmCost;
+        public int UpgradeLegCost => upgradeLegCost;
     }
 }

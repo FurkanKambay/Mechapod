@@ -39,3 +39,53 @@
 .continue-button:active {
     background-color: rgb(17, 91, 23);
 }
+
+#Upgrades {
+    flex-grow: 0.5;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+}
+
+.upgrade-button {
+    font-size: 200%;
+    background-color: rgba(42, 60, 63, 0.72);
+    color: rgb(94, 192, 115);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-color: transparent;
+    height: 8%;
+    flex-grow: 0.1;
+    width: 30%;
+    margin-right: 55%;
+    margin-bottom: 5%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.upgrade-button:disabled {
+    color: white;
+}
+
+.upgrade-button:enabled:hover {
+    border-color: limegreen;
+    background-color: rgb(42, 60, 63);
+    height: 16%;
+    transition-property: height;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out-elastic;
+}
+
+.upgrade-button:enabled:active {
+    background-color: limegreen;
+    color: white;
+    width: 40%;
+    transition-property: width;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out-elastic;
+}
