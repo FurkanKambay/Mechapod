@@ -11,9 +11,9 @@ namespace Crabgame.Entity
 
         [Header("References")]
         [SerializeField] private Health health;
-        [SerializeField] private Rigidbody2D body;
-        [SerializeField] private Collider2D  attackCollider;
-        [SerializeField] private Collider2D  detectionTrigger;
+        [SerializeField] private Rigidbody2D  body;
+        [SerializeField] private Collider2D   attackCollider;
+        [SerializeField] private Collider2D[] detectionTriggers;
 
         [Header("Config - Attack")]
         [SerializeField] private ContactFilter2D attackFilter;
@@ -30,8 +30,8 @@ namespace Crabgame.Entity
 
         [Header("State")]
         [SerializeField] private Vector2 velocity;
-        [SerializeField] private Direction aimDirection;
-        [SerializeField] public  Direction lockedDirection;
+        [SerializeField] private Direction moveDirection;
+        [SerializeField] private Direction lockedDirection;
 
         [SerializeField] public  float attackOffset;
         [SerializeField] private float attackTimer;
@@ -39,31 +39,25 @@ namespace Crabgame.Entity
         [SerializeField] public bool isPerformingAttack;
         [SerializeField] public bool isRecovering;
 
-        public Direction AimDirection => aimDirection;
+        public Direction AimDirection => aimDirection ?? moveDirection;
 
         private SpawnerManager sourceSpawner;
 
-        private Transform    attackBox;
-        private Collider2D[] attackResults = new Collider2D[5];
+        private Direction? aimDirection;
 
-        private Transform    detectionBox;
+        private Collider2D[] attackResults    = new Collider2D[5];
         private Collider2D[] detectionResults = new Collider2D[1];
+
+        private Transform   attackBox;
+        private Transform[] detectionBoxes;
 
         private bool shouldAttack;
 
-        private void Start()
+        private void Awake()
         {
-            attackTimer  = -attackOffset;
-            attackBox    = attackCollider.transform;
-            detectionBox = detectionTrigger.transform;
-
-            Vector3 attackScale = attackBox.localScale;
-            attackScale.x        = attackRange;
-            attackBox.localScale = attackScale;
-
-            Vector3 detectionScale = detectionBox.localScale;
-            detectionScale.x        = detectionRange;
-            detectionBox.localScale = detectionScale;
+            InitTriggers();
+            attackTimer     = -attackOffset;
+            lockedDirection = Direction.SouthEast;
         }
 
         private void Update()
@@ -78,7 +72,7 @@ namespace Crabgame.Entity
             if (attackTimer < attackRate)
                 return;
 
-            CheckShouldAttack();
+            shouldAttack = ShouldAttack();
 
             if (shouldAttack)
                 PerformAttack();
@@ -93,32 +87,65 @@ namespace Crabgame.Entity
         internal void RegisterSpawner(SpawnerManager spawner) =>
             sourceSpawner = spawner;
 
+        public bool TurningBlocked { get; private set; }
+
         private void UpdateAimDirection()
         {
             velocity = body.linearVelocity;
 
-            aimDirection = (Math.Sign(velocity.x), Math.Sign(velocity.y)) switch
+            moveDirection = (Math.Sign(velocity.x), Math.Sign(velocity.y)) switch
             {
-                (-1, 1)                  => Direction.NorthWest,
-                (1, 1)                   => Direction.NorthEast,
-                (1, -1)                  => Direction.SouthEast,
-                (-1, -1)                 => Direction.SouthWest,
-                _ when aimDirection == 0 => Direction.SouthWest,
-                _                        => aimDirection
+                (-1, 1)                   => Direction.NorthWest,
+                (1, 1)                    => Direction.NorthEast,
+                (1, -1)                   => Direction.SouthEast,
+                (-1, -1)                  => Direction.SouthWest,
+                _ when moveDirection == 0 => Direction.SouthWest,
+                _                         => moveDirection
             };
+
+            TurningBlocked = (isPerformingAttack && !GameManager.Config.TurnWhileAttacking)
+                               || (isRecovering && !GameManager.Config.TurnWhileRecovering);
+
+            if (!TurningBlocked)
+                lockedDirection = AimDirection;
         }
 
-        private void CheckShouldAttack()
+        private bool ShouldAttack()
         {
             if (shouldAttack)
-                return;
+                return true;
 
             detectionResults = new Collider2D[1];
+            int hitCount = UpdateDetections(lockedDirection);
 
-            detectionBox.eulerAngles = Vector3.forward * lockedDirection.AttackAngle();
-            int hitCount = detectionTrigger.Overlap(attackFilter, detectionResults);
+            if (hitCount > 0)
+                return true;
 
-            shouldAttack = hitCount > 0;
+            var angles = new[] { Direction.NorthWest, Direction.NorthEast, Direction.SouthEast, Direction.SouthWest };
+
+            foreach (Direction direction in angles)
+            {
+                if (direction == lockedDirection)
+                    continue;
+
+                hitCount = UpdateDetections(direction);
+
+                if (hitCount == 0)
+                    continue;
+
+                aimDirection = direction;
+                return true;
+            }
+
+            aimDirection = null;
+            return false;
+        }
+
+        private int UpdateDetections(Direction direction)
+        {
+            int index = (int)direction - 1;
+            detectionBoxes[index].eulerAngles = Vector3.forward * direction.AttackAngle();
+            return detectionTriggers[index].Overlap(attackFilter, detectionResults);
         }
 
         private void PerformAttack()
@@ -151,6 +178,32 @@ namespace Crabgame.Entity
             }
 
             return true;
+        }
+
+        private void InitTriggers()
+        {
+            attackBox    = attackCollider.transform;
+
+            Array.Resize(ref detectionBoxes, detectionTriggers.Length);
+
+            for (var i = 0; i < detectionTriggers.Length; i++)
+                detectionBoxes[i] = detectionTriggers[i].transform;
+        }
+
+        private void OnValidate()
+        {
+            InitTriggers();
+
+            Vector3 attackScale = attackBox.localScale;
+            attackScale.x        = attackRange;
+            attackBox.localScale = attackScale;
+
+            foreach (Transform box in detectionBoxes)
+            {
+                Vector3 detectionScale = box.localScale;
+                detectionScale.x = detectionRange;
+                box.localScale   = detectionScale;
+            }
         }
     }
 }

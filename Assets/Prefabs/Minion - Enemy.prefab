@@ -36,13 +36,13 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5743470047632556758, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: attackRate
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
-      propertyPath: attackRange
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: attackFilter.layerMask.m_Bits

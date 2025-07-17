@@ -1,6 +1,5 @@
 using Crabgame.Audio;
 using Crabgame.Entity;
-using Crabgame.Managers;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -49,16 +48,10 @@ namespace Crabgame.Visual
             animController[walkClips[0]]  = walkClips[clipIndex];
             animController[deathClips[0]] = deathClips[clipIndex];
 
-            bool preventTurn = (attacker.isPerformingAttack && !GameManager.Config.TurnWhileAttacking)
-                               || (attacker.isRecovering && !GameManager.Config.TurnWhileRecovering);
-
-            if (!preventTurn)
-            {
-                // swap to other animation before attack proc (same position)
-                attacker.lockedDirection       = attacker.AimDirection;
+            // can't turn: original animation keeps playing normally
+            // else: swap to other animation (same playback position)
+            if (!attacker.TurningBlocked)
                 animController[attackClips[0]] = attackClips[clipIndex];
-            }
-            // else: original animation keeps playing normally
         }
 
         private void Attack_Performed() =>
