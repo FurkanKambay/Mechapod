@@ -12,8 +12,8 @@
 .continue-button {
     font-size: 32px;
     position: absolute;
-    right: 64px;
-    bottom: 64px;
+    right: 5%;
+    bottom: 5%;
     -unity-background-image-tint-color: rgba(0, 0, 0, 0.11);
     background-color: rgb(30, 161, 41);
     border-top-width: 0;
@@ -42,15 +42,10 @@
 }
 
 #Upgrades {
-    align-self: center;
-    width: 50%;
-    align-items: center;
-    justify-content: flex-start;
-    flex-grow: 0.5;
+    flex-grow: 1;
 }
 
 .upgrade-button {
-    font-size: 200%;
     background-color: rgba(42, 60, 63, 0.72);
     color: rgb(94, 192, 115);
     border-top-width: 2px;
@@ -58,14 +53,20 @@
     border-bottom-width: 2px;
     border-left-width: 2px;
     border-color: transparent;
-    width: 30%;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
-    -unity-text-align: lower-center;
-    margin-top: 64px;
-    height: 10%;
+    position: absolute;
+    top: 5%;
+    font-size: 200%;
+    align-self: center;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    min-width: 20%;
+    min-height: 8%;
 }
 
 .upgrade-button:disabled {

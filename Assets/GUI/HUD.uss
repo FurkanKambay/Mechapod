@@ -3,8 +3,8 @@
 
 #DayContainer {
     position: absolute;
-    bottom: 64px;
-    left: 64px;
+    bottom: 5%;
+    left: 5%;
     font-size: 40px;
     flex-direction: row;
     color: rgb(255, 255, 255);
@@ -12,8 +12,8 @@
 
 #ScrapContainer {
     position: absolute;
-    top: 96px;
-    left: 64px;
+    top: 8%;
+    left: 4.5%;
     font-size: 40px;
     flex-direction: row;
     color: rgb(255, 255, 255);
@@ -26,8 +26,8 @@
 
 #GolemHPBar {
     position: absolute;
-    top: 64px;
-    left: 64px;
+    top: 5%;
+    left: 5%;
     width: 280px;
     margin-top: 0;
     margin-right: 0;
