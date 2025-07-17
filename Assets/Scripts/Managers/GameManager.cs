@@ -20,6 +20,7 @@ namespace Crabgame.Managers
         [Header("References - Scene")]
         [SerializeField] private MinionManager minionManager;
         [SerializeField] private EnemyManager enemyManager;
+        [SerializeField] private ScrapManager scrapManager;
         [SerializeField] private Health       golemHealth;
 
         [Header("State - Game")]
@@ -30,11 +31,14 @@ namespace Crabgame.Managers
         [Header("State - Player & Enemy")]
         [SerializeField] private PlayerState playerState;
 
-        public static GameConfigSO  Config        => Instance.gameConfigSO;
+        public static GameConfigSO Config => Instance.gameConfigSO;
+
         public static MinionManager MinionManager => Instance.minionManager;
         public static EnemyManager  EnemyManager  => Instance.enemyManager;
-        public static PlayerState   PlayerState   => Instance.playerState;
-        public static NightInfo     Tonight       => Instance.nightMapSO.GetNight(Instance.dayNumber - 1);
+        public static ScrapManager  ScrapManager  => Instance.scrapManager;
+
+        public static PlayerState PlayerState => Instance.playerState;
+        public static NightInfo   Tonight     => Instance.nightMapSO.GetNight(Instance.dayNumber - 1);
 
         public int  DayNumber => dayNumber;
         public bool IsNight   => isNight;
@@ -91,10 +95,9 @@ namespace Crabgame.Managers
 
         private void PopulateTonight()
         {
-            MinionManager.RespawnAll(PlayerState.minionAmount);
-            EnemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
-
-            // TODO: respawn Scrap Piles
+            minionManager.RespawnAll(PlayerState.minionAmount);
+            enemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
+            scrapManager.RespawnAll(Tonight.scrapPileAmount);
         }
 
         private void Minions_AllDead()
