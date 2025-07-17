@@ -14,10 +14,10 @@ namespace Crabgame.Entity
         {
             return direction switch
             {
-                Direction.NorthWest => 143.13f,
+                Direction.NorthWest => 153.435f,
                 Direction.NorthEast => 26.565f,
                 Direction.SouthEast => -26.565f,
-                Direction.SouthWest => -143.13f,
+                Direction.SouthWest => -153.435f,
                 _                   => 0
             };
         }
