@@ -21,3 +21,5 @@ MonoBehaviour:
   turnWhileRecovering: 0
   playerRandomAttackOffsetMax: 0
   enemyRandomAttackOffsetMax: 0
+  upgradeArmCost: 25
+  upgradeLegCost: 100
