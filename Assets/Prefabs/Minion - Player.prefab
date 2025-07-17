@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4233088172766391820}
   - component: {fileID: 6560894379872987833}
   m_Layer: 6
-  m_Name: Minion
+  m_Name: Minion - Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   aimDirection: 0
   lockedDirection: 0
   attackOffset: 0
-  attackTimer: 1
+  attackTimer: 0
   isPerformingAttack: 0
   isRecovering: 0
 --- !u!1 &4293988980405485635
@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 4293988980405485635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.125, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
