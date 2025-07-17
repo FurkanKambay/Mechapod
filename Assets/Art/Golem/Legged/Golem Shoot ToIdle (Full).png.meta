@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Golem_shoot_to_idle_FB_0
+      name: Golem Shoot ToIdle (Full)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f111122a00d93a4e89b64546fc20a5b
-      internalID: 1797791743
+      spriteID: ce5193fcee6451343b36bd29a6b666ec
+      internalID: -897961617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_to_idle_FB_1
+      name: Golem Shoot ToIdle (Full)_1
       rect:
         serializedVersion: 2
         x: 96
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d41860aa6aad01449377067fe502fde
-      internalID: -1109693269
+      spriteID: 4cce26d016e8d48449d50be8e711740d
+      internalID: 1874644543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_to_idle_FB_2
+      name: Golem Shoot ToIdle (Full)_2
       rect:
         serializedVersion: 2
         x: 192
@@ -169,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5138c01d23fb5e647a41edc77b8a2d97
-      internalID: -1701135273
+      spriteID: 8adcf1a0a93865945bbc22a68b72e56d
+      internalID: -1192828181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_to_idle_FB_3
+      name: Golem Shoot ToIdle (Full)_3
       rect:
         serializedVersion: 2
         x: 0
@@ -191,14 +191,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ae3066a487ac7a45bbf8b46912f610e
-      internalID: 1691089437
+      spriteID: e287b3513497863489997dba83ef23ab
+      internalID: 169854669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_to_idle_FB_4
+      name: Golem Shoot ToIdle (Full)_4
       rect:
         serializedVersion: 2
         x: 96
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81a30988bf6947e489d2555b9733b488
-      internalID: -1023501814
+      spriteID: 3e2a5aa6e68deec45b4fe4e584521436
+      internalID: -312288856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_to_idle_FB_5
+      name: Golem Shoot ToIdle (Full)_5
       rect:
         serializedVersion: 2
         x: 192
@@ -235,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22101e6f076d95a449261518aea62fc7
-      internalID: 1971680052
+      spriteID: 4216ee51df4f0d14980e255d35f2a28c
+      internalID: 1909170495
       vertices: []
       indices: 
       edges: []
@@ -251,18 +251,20 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: ab11fe488ad49394abaa1d1d883fa6ef, type: 3}
+      name: _NormalMap
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.20833329856395722},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Golem_shoot_to_idle_FB_0: 1797791743
-      Golem_shoot_to_idle_FB_1: -1109693269
-      Golem_shoot_to_idle_FB_2: -1701135273
-      Golem_shoot_to_idle_FB_3: 1691089437
-      Golem_shoot_to_idle_FB_4: -1023501814
-      Golem_shoot_to_idle_FB_5: 1971680052
+      Golem Shoot ToIdle (Full)_0: -897961617
+      Golem Shoot ToIdle (Full)_1: 1874644543
+      Golem Shoot ToIdle (Full)_2: -1192828181
+      Golem Shoot ToIdle (Full)_3: 169854669
+      Golem Shoot ToIdle (Full)_4: -312288856
+      Golem Shoot ToIdle (Full)_5: 1909170495
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

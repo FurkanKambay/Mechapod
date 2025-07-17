@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a2c9785050f9584c936ad7b09416057
+guid: 8a729a85283462449959ac6ba2c277d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_0
+      name: Golem Shoot (Full)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b128d74dc5a23f4d9d7f9141927ae81
-      internalID: -991389767
+      spriteID: 9876d7b44b5c53b40b429630236f1e69
+      internalID: -574174357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_1
+      name: Golem Shoot (Full)_1
       rect:
         serializedVersion: 2
         x: 96
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b09f742e856b104490d032d4c33d92e
-      internalID: 246519765
+      spriteID: 9318b8be85b236841b7a245d0c5f1f0b
+      internalID: -784473912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_2
+      name: Golem Shoot (Full)_2
       rect:
         serializedVersion: 2
         x: 192
@@ -169,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdea678f38af7fa4ebd900f59ab2c9ce
-      internalID: 428013584
+      spriteID: 0baf69afdaf1c72479cd2c9e9833a62b
+      internalID: 2026974559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_3
+      name: Golem Shoot (Full)_3
       rect:
         serializedVersion: 2
         x: 0
@@ -191,14 +191,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa7672b66f42ca84c8d73c1037b85d62
-      internalID: -811985829
+      spriteID: 807de22ce5ed68443b61785cd7103821
+      internalID: -1214219436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_4
+      name: Golem Shoot (Full)_4
       rect:
         serializedVersion: 2
         x: 96
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea7b8e15ea60d774ea69ec4b426c40a0
-      internalID: 1123909146
+      spriteID: 37a92cbdd05e4be4684266f96425d3ac
+      internalID: -1133045438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_5
+      name: Golem Shoot (Full)_5
       rect:
         serializedVersion: 2
         x: 192
@@ -235,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb9aa30df1102e64ca1d92de6542f29d
-      internalID: -378091514
+      spriteID: 24b4d982eddaa714bbd31d4196e25a4e
+      internalID: -1971498454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_6
+      name: Golem Shoot (Full)_6
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2569680a2e4268149a19a504a3387e51
-      internalID: -1840527049
+      spriteID: 62b66a8d5c9f2b54c96fec96fc5733e5
+      internalID: 833443544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Golem_shoot_NOLEGS_7
+      name: Golem Shoot (Full)_7
       rect:
         serializedVersion: 2
         x: 96
@@ -279,8 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34c45abb1cdf2a945ad500e0a2e673df
-      internalID: 686285669
+      spriteID: 5881b22b5a2ee8941987666c6f3c02d7
+      internalID: -1590332617
       vertices: []
       indices: 
       edges: []
@@ -295,20 +295,22 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 9da81a0f273e61247a936607df188d5e, type: 3}
+      name: _NormalMap
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.20833329856395722},"autoSlicingMethod":1,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.20833329856395722},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Golem_shoot_NOLEGS_0: -991389767
-      Golem_shoot_NOLEGS_1: 246519765
-      Golem_shoot_NOLEGS_2: 428013584
-      Golem_shoot_NOLEGS_3: -811985829
-      Golem_shoot_NOLEGS_4: 1123909146
-      Golem_shoot_NOLEGS_5: -378091514
-      Golem_shoot_NOLEGS_6: -1840527049
-      Golem_shoot_NOLEGS_7: 686285669
+      Golem Shoot (Full)_0: -574174357
+      Golem Shoot (Full)_1: -784473912
+      Golem Shoot (Full)_2: 2026974559
+      Golem Shoot (Full)_3: -1214219436
+      Golem Shoot (Full)_4: -1133045438
+      Golem Shoot (Full)_5: -1971498454
+      Golem Shoot (Full)_6: 833443544
+      Golem Shoot (Full)_7: -1590332617
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
