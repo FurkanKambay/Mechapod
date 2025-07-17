@@ -11,12 +11,15 @@ namespace Crabgame.UI
         [SerializeField] private UIDocument document;
 
         private VisualElement root;
-        private Button        continueButton;
+
+        private Button continueButton;
+        private Button armUpgradeButton;
 
         private void Awake()
         {
             document.enabled = true;
             root             = document.rootVisualElement;
+            root.dataSource  = GameManager.Instance;
 
             root.visible = true;
 
@@ -24,8 +27,11 @@ namespace Crabgame.UI
             // root.visible = false;
 #endif
 
-            continueButton         =  root.Q<Button>("ContinueButton");
-            continueButton.clicked += ContinueButton_Clicked;
+            continueButton   = root.Q<Button>("ContinueButton");
+            armUpgradeButton = root.Q<Button>("ArmUpgradeButton");
+
+            continueButton.clicked   += ContinueButton_Clicked;
+            armUpgradeButton.clicked += ArmUpgradeButton_Clicked;
         }
 
         private void OnEnable()  => GameManager.Instance.OnPhaseChange += GameManager_PhaseChange;
@@ -42,7 +48,10 @@ namespace Crabgame.UI
         private void GameManager_PhaseChange() =>
             root.visible = !GameManager.Instance.IsNight;
 
-        private void ContinueButton_Clicked() =>
+        private static void ContinueButton_Clicked() =>
             GameManager.Instance.NextPhase();
+
+        private static void ArmUpgradeButton_Clicked() =>
+            GameManager.PlayerState.BuyArm();
     }
 }

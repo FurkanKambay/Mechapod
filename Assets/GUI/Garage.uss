@@ -93,7 +93,7 @@
     visibility: hidden;
 }
 
-.upgrade-button:hover > .hidden-content {
+.upgrade-button:enabled:hover > .hidden-content {
     visibility: visible;
 }
 
