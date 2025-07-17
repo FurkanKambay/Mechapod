@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Butler Push",
+            "command": "butler push --if-changed Builds/Web furkankambay/crab:web; butler push --if-changed Builds/Win furkankambay/crab:win",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": "none"
+        },
+        {
+            "label": "Butler Push (dry-run)",
+            "command": "butler push --dry-run --if-changed Builds/Web furkankambay/crab:web; butler push --dry-run --if-changed Builds/Win furkankambay/crab:win",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": "none"
+        }
+    ]
+}
