@@ -10,6 +10,20 @@
     color: rgb(255, 255, 255);
 }
 
+#ScrapContainer {
+    position: absolute;
+    top: 96px;
+    left: 64px;
+    font-size: 40px;
+    flex-direction: row;
+    color: rgb(255, 255, 255);
+}
+
+.label {
+    margin-left: 0;
+    padding-left: 0;
+}
+
 #GolemHPBar {
     position: absolute;
     top: 64px;
@@ -36,4 +50,11 @@
     flex-grow: 1;
     margin: 0;
     background-color: rgb(255, 0, 57);
+}
+
+.scrap-icon {
+    flex-grow: 1;
+    background-image: url("project://database/Assets/Art/Objects/Scrap_pile_battlefield.png?fileID=2800000&guid=30bd1f64e6a53ee409441fc4e6229aee&type=3#Scrap_pile_battlefield");
+    width: 96px;
+    height: 96px;
 }

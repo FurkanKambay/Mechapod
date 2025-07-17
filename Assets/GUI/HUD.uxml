@@ -1,13 +1,21 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/GUI/HUD.uss?fileID=7433441132597879392&amp;guid=c49bf2821421fb64aaeec0fdab8fbdab&amp;type=3#HUD" />
-    <ui:ProgressBar name="GolemHPBar" value="50" data-source-type="Crabgame.GameManager, Crabgame.Managers">
+    <ui:ProgressBar name="GolemHPBar" value="50" data-source-type="Crabgame.Managers.GameManager, Crabgame">
         <Bindings>
             <ui:DataBinding property="highValue" data-source-path="golemHealth.maxHealth" binding-mode="ToTarget" />
             <ui:DataBinding property="value" data-source-path="golemHealth.health" binding-mode="ToTarget" />
         </Bindings>
     </ui:ProgressBar>
-    <ui:VisualElement name="DayContainer" data-source-type="Crabgame.GameManager, Crabgame.Managers" class="container">
-        <ui:Label text="Day" class="day-label" />
+    <ui:VisualElement name="ScrapContainer" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="container">
+        <ui:VisualElement class="scrap-icon" />
+        <ui:Label name="ScrapLabel" text="1" class="day-number" style="-unity-text-align: lower-left;">
+            <Bindings>
+                <ui:DataBinding property="text" data-source-path="playerState.scrapAmount" binding-mode="ToTarget" />
+            </Bindings>
+        </ui:Label>
+    </ui:VisualElement>
+    <ui:VisualElement name="DayContainer" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="container">
+        <ui:Label text="Day" class="day-label label" />
         <ui:Label name="DayLabel" text="1" class="day-number">
             <Bindings>
                 <ui:DataBinding property="text" data-source-path="dayNumber" binding-mode="ToTarget" />
