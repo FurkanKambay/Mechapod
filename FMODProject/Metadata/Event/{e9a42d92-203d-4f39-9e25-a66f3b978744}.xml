@@ -5,7 +5,7 @@
 			<value>SFX Entity Get Hurt</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{520e7e86-6368-43b0-99c9-361c93792449}</destination>
@@ -62,6 +62,9 @@
 	<object class="EventAutomatableProperties" id="{067a10da-d51f-4c25-8523-23e5fd817639}" />
 	<object class="MarkerTrack" id="{6f255e26-f90f-41d0-833f-0abcf2698670}" />
 	<object class="GroupTrack" id="{e8dfa6fe-16d3-4548-9c1b-512380c4efe8}">
+		<relationship name="modules">
+			<destination>{af71a541-7797-41c8-bcb2-50803e63c783}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{931400d1-2242-45ce-8b7f-5c12fcc8d12f}</destination>
 		</relationship>
@@ -77,11 +80,19 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{1888efc3-680c-4dcf-b04c-8a51e13cb1ca}">
+		<relationship name="modules">
+			<destination>{f6627612-87e3-439b-b432-601ead474897}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{e2e5d310-19c0-4ef0-8356-7c2d34bd1c26}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{9f38c473-79ee-4677-8432-5e46f35d2201}" />
+	<object class="Timeline" id="{9f38c473-79ee-4677-8432-5e46f35d2201}">
+		<relationship name="modules">
+			<destination>{af71a541-7797-41c8-bcb2-50803e63c783}</destination>
+			<destination>{f6627612-87e3-439b-b432-601ead474897}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{2023cf32-7ddd-461f-b479-b055c15da6b8}">
 		<relationship name="effectChain">
 			<destination>{e0af7fa9-5079-4566-9833-485fe7503bd6}</destination>
@@ -99,6 +110,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{bfc42824-d0a2-403c-94b9-5237a48cc4c3}" />
+	<object class="SingleSound" id="{af71a541-7797-41c8-bcb2-50803e63c783}">
+		<property name="length">
+			<value>2.2448072562358279</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{93fccb65-7a4f-48bd-b90d-13dca44db61e}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{931400d1-2242-45ce-8b7f-5c12fcc8d12f}">
 		<property name="name">
 			<value>Player Golem</value>
@@ -148,6 +167,14 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{2023cf32-7ddd-461f-b479-b055c15da6b8}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{f6627612-87e3-439b-b432-601ead474897}">
+		<property name="length">
+			<value>1.1521088435374149</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{d4d3eec4-cbf4-4845-a2dd-fd9d8c8d0377}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e2e5d310-19c0-4ef0-8356-7c2d34bd1c26}">

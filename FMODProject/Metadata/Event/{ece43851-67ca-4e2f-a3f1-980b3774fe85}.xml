@@ -5,7 +5,7 @@
 			<value>Crab Enemy Explode</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2511aeae-2440-444c-b1eb-51bb954bae5d}</destination>
@@ -38,6 +38,9 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{f8c34882-703c-42c7-9c57-500342781a85}">
+		<relationship name="modules">
+			<destination>{351881b4-c107-4f6f-8acd-bbc509d21fd9}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{2b645a54-1376-4b9b-a9e5-1c112e23f060}</destination>
 		</relationship>
@@ -56,9 +59,9 @@
 	<object class="EventAutomatableProperties" id="{0db9ae50-8586-4970-a141-221a08f86be7}" />
 	<object class="MarkerTrack" id="{b03b5f1b-7a50-431c-976e-f655281d5d2b}" />
 	<object class="Timeline" id="{5857a357-31b8-4f0d-b67a-e72de914eefd}">
-		<property name="isProxyEnabled">
-			<value>false</value>
-		</property>
+		<relationship name="modules">
+			<destination>{351881b4-c107-4f6f-8acd-bbc509d21fd9}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{2b645a54-1376-4b9b-a9e5-1c112e23f060}">
 		<relationship name="effectChain">
@@ -69,6 +72,14 @@
 		</relationship>
 		<relationship name="mixer">
 			<destination>{f34dd4d1-0e4c-45c5-9d0c-74520fe837df}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{351881b4-c107-4f6f-8acd-bbc509d21fd9}">
+		<property name="length">
+			<value>3.9886848072562358</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{5f57ffc8-d66b-4122-b07e-083f754f9720}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{1d4c5f53-3d9a-4271-b1a0-a610f5d35409}">
