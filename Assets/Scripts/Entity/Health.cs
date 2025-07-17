@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace Crabgame.Entity
 {
     public class Health : MonoBehaviour
     {
+        public event Action OnDeath;
+
         [Header("Config")]
         [SerializeField] private int maxHealth;
 
@@ -29,12 +32,12 @@ namespace Crabgame.Entity
                 Die();
         }
 
-        public void Die()
+        public virtual void Die()
         {
             health = 0;
 
-            // TODO: particles
-            Destroy(gameObject);
+            enabled = false;
+            OnDeath?.Invoke();
         }
     }
 }

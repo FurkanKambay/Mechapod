@@ -16,6 +16,9 @@ namespace Crabgame.Visual
         [SerializeField] private AnimationClip[] attackClips;
         [SerializeField] private AnimationClip[] deathClips;
 
+        [Header("Config")]
+        [SerializeField] private float deathDestroyDelay = 2f;
+
         [Header("State")]
         [SerializeField] private AnimatorOverrideController animController;
 
@@ -34,6 +37,7 @@ namespace Crabgame.Visual
         {
             attacker.OnAttackPerformed += Attack_Performed;
             attacker.OnAttackProcced   += Attack_Procced;
+            attacker.Health.OnDeath    += Health_Death;
         }
 
         private void OnDisable()
@@ -52,6 +56,12 @@ namespace Crabgame.Visual
             // else: swap to other animation (same playback position)
             if (!attacker.TurningBlocked)
                 animController[attackClips[0]] = attackClips[clipIndex];
+        }
+
+        private void Health_Death()
+        {
+            animator.SetTrigger(AnimDie);
+            Destroy(attacker.gameObject, deathDestroyDelay);
         }
 
         private void Attack_Performed() =>

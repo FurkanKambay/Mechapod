@@ -60,10 +60,16 @@ namespace Crabgame.Entity
             lockedDirection = Direction.SouthEast;
         }
 
+        private void OnEnable()  => health.OnDeath += Health_Death;
+        private void OnDisable() => health.OnDeath -= Health_Death;
+
         private void Update()
         {
             if (health.IsDead)
+            {
+                enabled = false;
                 return;
+            }
 
             UpdateAimDirection();
 
@@ -78,7 +84,7 @@ namespace Crabgame.Entity
                 PerformAttack();
         }
 
-        private void OnDestroy()
+        private void Health_Death()
         {
             if (sourceSpawner)
                 sourceSpawner.Despawn(this);
@@ -104,7 +110,7 @@ namespace Crabgame.Entity
             };
 
             TurningBlocked = (isPerformingAttack && !GameManager.Config.TurnWhileAttacking)
-                               || (isRecovering && !GameManager.Config.TurnWhileRecovering);
+                             || (isRecovering && !GameManager.Config.TurnWhileRecovering);
 
             if (!TurningBlocked)
                 lockedDirection = AimDirection;
@@ -182,7 +188,7 @@ namespace Crabgame.Entity
 
         private void InitTriggers()
         {
-            attackBox    = attackCollider.transform;
+            attackBox = attackCollider.transform;
 
             Array.Resize(ref detectionBoxes, detectionTriggers.Length);
 

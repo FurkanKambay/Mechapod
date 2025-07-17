@@ -94,7 +94,7 @@ GameObject:
   m_Layer: 6
   m_Name: Minion - Player
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -379,6 +379,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 1d64130e1edaa7a4ebb4d2ca9a70430e, type: 2}
   - {fileID: 7400000, guid: 250d33cad28b0104b84ec84fb0c2f909, type: 2}
   - {fileID: 7400000, guid: 9b96e4de443b53d4a9da11a861d7d27d, type: 2}
+  deathDestroyDelay: 3
   animController: {fileID: 0}
 --- !u!1 &4562206981307196872
 GameObject:

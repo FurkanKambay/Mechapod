@@ -13,6 +13,9 @@ namespace Crabgame.Entity
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            if (!health || health.IsDead)
+                return;
+
             if (!other.collider.CompareTag("Player"))
                 return;
 

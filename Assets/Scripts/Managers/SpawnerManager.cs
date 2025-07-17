@@ -81,6 +81,7 @@ namespace Crabgame.Managers
 
         public void Despawn(Attacker entity)
         {
+            entity.Body.simulated = false;
             entities.Remove(entity);
 
             if (entities.Count == 0)
