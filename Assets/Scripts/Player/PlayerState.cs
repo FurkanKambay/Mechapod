@@ -59,8 +59,8 @@ namespace Crabgame.Player
 
         public void GiftArm()
         {
-            GolemHasLeg =  true;
-            OnBoughtLeg?.Invoke();
+            GolemHasArm =  true;
+            OnBoughtArm?.Invoke();
         }
 
         public void BuyLeg()
