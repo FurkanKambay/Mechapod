@@ -7,6 +7,7 @@ namespace Crabgame.Entity
     {
         [Header("References")]
         [SerializeField] private Health health;
+        [SerializeField] private GameObject explosionAnim;
 
         [Header("Config")]
         [SerializeField] private int damageAmount;
@@ -22,7 +23,9 @@ namespace Crabgame.Entity
             var golem = other.collider.GetComponent<Health>();
             golem.TakeDamage(damageAmount);
 
+            explosionAnim.SetActive(true);
             AudioPlayer.Instance.crabEnemyExplode.PlayOneShot();
+
             health.Die();
         }
     }
