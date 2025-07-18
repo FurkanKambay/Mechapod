@@ -22,7 +22,7 @@ namespace Crabgame.Managers
         [SerializeField] private MinionManager minionManager;
         [SerializeField] private EnemyManager enemyManager;
         [SerializeField] private ScrapManager scrapManager;
-        [SerializeField] private Golem       golem;
+        [SerializeField] private Golem        golem;
 
         [Header("State - Game")]
         [SerializeField] private bool isNight;
@@ -59,7 +59,7 @@ namespace Crabgame.Managers
         {
             minionManager.OnAllKilled += Minions_AllDead;
             enemyManager.OnAllKilled  += Enemies_AllDead;
-            golem.Health.OnDeath       += Golem_Died;
+            golem.Health.OnDeath      += Golem_Died;
         }
 
         private void OnDisable()
@@ -74,17 +74,26 @@ namespace Crabgame.Managers
         {
             Keyboard keyboard = Keyboard.current;
 
-            if (keyboard.equalsKey.wasPressedThisFrame || keyboard.numpadPlusKey.wasPressedThisFrame)
+            if (keyboard.rightBracketKey.wasPressedThisFrame || keyboard.numpadPlusKey.wasPressedThisFrame)
                 NextPhase();
+            else if (keyboard.leftBracketKey.wasPressedThisFrame || keyboard.numpadMinusKey.wasPressedThisFrame)
+                NextWave();
 
+            // KILL ALL CRABS
             if (keyboard.jKey.wasPressedThisFrame)
                 minionManager.Clear();
-
-            if (keyboard.kKey.wasPressedThisFrame)
+            else if (keyboard.kKey.wasPressedThisFrame)
                 enemyManager.Clear();
 
-            if (keyboard.bKey.wasPressedThisFrame)
+            if (keyboard.nKey.wasPressedThisFrame)
+                enemyManager.Spawn(1);
+            else if (keyboard.mKey.wasPressedThisFrame)
+                minionManager.Spawn(1);
+            else if (keyboard.bKey.wasPressedThisFrame)
                 enemyManager.SpawnMiniBoss();
+
+            if (keyboard.aKey.wasPressedThisFrame)
+                playerState.GiftArm();
         }
 #endif
 

@@ -53,9 +53,14 @@ namespace Crabgame.Player
             if (!CanBuyArm)
                 return;
 
-            GolemHasArm =  true;
             scrapAmount -= GameManager.Config.UpgradeArmCost;
-            OnBoughtArm?.Invoke();
+            GiftArm();
+        }
+
+        public void GiftArm()
+        {
+            GolemHasLeg =  true;
+            OnBoughtLeg?.Invoke();
         }
 
         public void BuyLeg()
