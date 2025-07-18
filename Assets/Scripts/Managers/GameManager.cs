@@ -44,6 +44,8 @@ namespace Crabgame.Managers
         public int  DayNumber => dayNumber;
         public bool IsNight   => isNight;
 
+        private bool godModeEnabled;
+
         private void Awake()
         {
             Instance = this;
@@ -69,9 +71,11 @@ namespace Crabgame.Managers
             golem.Health.OnDeath      -= Golem_Died;
         }
 
-#if UNITY_EDITOR
         private void Update()
         {
+            if (!godModeEnabled)
+                return;
+
             Keyboard keyboard = Keyboard.current;
 
             if (keyboard.rightBracketKey.wasPressedThisFrame || keyboard.numpadPlusKey.wasPressedThisFrame)
@@ -95,11 +99,13 @@ namespace Crabgame.Managers
             if (keyboard.aKey.wasPressedThisFrame)
                 playerState.GiftArm();
         }
-#endif
 
         [ContextMenu("Next Phase (Day/Night)")]
         public void NextPhase()
         {
+            if (Keyboard.current?.fKey.isPressed == true)
+                godModeEnabled = true;
+
             if (isNight)
             {
                 dayNumber++;
