@@ -122,7 +122,7 @@ namespace Crabgame.Visual
             }
 
             yield return new WaitForSeconds(explodePadding);
-            gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
 
             // reset explosions for revival
             foreach (GameObject explode in explosions)
