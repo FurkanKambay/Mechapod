@@ -13,6 +13,7 @@ namespace Crabgame.Visual
         [SerializeField] private Attacker       attacker;
         [SerializeField] private Animator       animator;
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Animator       hitStarAnimator;
 
         [SerializeField] private AnimationClip[] walkClips;
         [SerializeField] private AnimationClip[] attackClips;
@@ -31,6 +32,7 @@ namespace Crabgame.Visual
 
         private static readonly int AnimAttack = Animator.StringToHash("attack");
         private static readonly int AnimDie    = Animator.StringToHash("die");
+        private static readonly int AnimHit   = Animator.StringToHash("hit");
 
         private void Awake()
         {
@@ -73,6 +75,8 @@ namespace Crabgame.Visual
         {
             propertyBlock.SetInt(ShaderHurt, 1);
             spriteRenderer.SetPropertyBlock(propertyBlock);
+
+            hitStarAnimator.SetTrigger(AnimHit);
 
             StartCoroutine(RevertShader(hurtDuration));
         }
