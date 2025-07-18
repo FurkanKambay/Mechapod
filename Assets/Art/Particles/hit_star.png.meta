@@ -113,8 +113,8 @@ TextureImporter:
       name: hit_star_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -135,8 +135,8 @@ TextureImporter:
       name: hit_star_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -157,8 +157,8 @@ TextureImporter:
       name: hit_star_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 96
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -180,7 +180,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -202,7 +202,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -224,7 +224,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -246,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -257,52 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ab42cf3f0e22e64c9e8a004453df0c9
+      spriteID: 0e6681a26a6b7d844915db7db2cf1fd0
       internalID: 264423202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hit_star_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 247f5f3ae80517f41abd36587407c321
-      internalID: 527696614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hit_star_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8b39dccf6788a34badb68f20b0a6983
-      internalID: -955362479
       vertices: []
       indices: 
       edges: []
@@ -321,7 +277,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":true,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       hit_star_0: 1137561562
       hit_star_1: 1820467486
@@ -330,8 +286,6 @@ TextureImporter:
       hit_star_4: 8604108
       hit_star_5: 1133454104
       hit_star_6: 264423202
-      hit_star_7: 527696614
-      hit_star_8: -955362479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
