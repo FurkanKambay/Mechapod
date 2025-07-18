@@ -1,0 +1,805 @@
+fileFormatVersion: 2
+guid: 435500b82b13ae84393ed075304ce623
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -880308349506735336
+    second: Crab_Boss_punch_normals_NW_0
+  - first:
+      213: 2039935216762627147
+    second: Crab_Boss_punch_normals_NW_1
+  - first:
+      213: 5561740325526254372
+    second: Crab_Boss_punch_normals_NW_2
+  - first:
+      213: -2372495142736753019
+    second: Crab_Boss_punch_normals_NW_3
+  - first:
+      213: -4767788352496563664
+    second: Crab_Boss_punch_normals_NW_4
+  - first:
+      213: -1681241421331998241
+    second: Crab_Boss_punch_normals_NW_5
+  - first:
+      213: -1568011147008030431
+    second: Crab_Boss_punch_normals_NW_6
+  - first:
+      213: -6922300203780937807
+    second: Crab_Boss_punch_normals_NW_7
+  - first:
+      213: -1056088898252053181
+    second: Crab_Boss_punch_normals_NW_8
+  - first:
+      213: 1499312576184921162
+    second: Crab_Boss_punch_normals_NW_9
+  - first:
+      213: -2957363462464949280
+    second: Crab_Boss_punch_normals_NW_10
+  - first:
+      213: -1060177762744786243
+    second: Crab_Boss_punch_normals_NW_11
+  - first:
+      213: 7889349755799122246
+    second: Crab_Boss_punch_normals_NW_12
+  - first:
+      213: 6289049123057540017
+    second: Crab_Boss_punch_normals_NW_13
+  - first:
+      213: 8138989992371290144
+    second: Crab_Boss_punch_normals_NW_14
+  - first:
+      213: 3295564649379774934
+    second: Crab_Boss_punch_normals_NW_15
+  - first:
+      213: -2760003590153205207
+    second: Crab_Boss_punch_normals_NW_16
+  - first:
+      213: 1551677403036880772
+    second: Crab_Boss_punch_normals_NW_17
+  - first:
+      213: -1754824577825687098
+    second: Crab_Boss_punch_normals_NW_18
+  - first:
+      213: 7270932640246163230
+    second: Crab_Boss_punch_normals_NW_19
+  - first:
+      213: 818874661400758464
+    second: Crab_Boss_punch_normals_NW_20
+  - first:
+      213: -8401660706252270448
+    second: Crab_Boss_punch_normals_NW_21
+  - first:
+      213: 7920115931543599377
+    second: Crab_Boss_punch_normals_NW_22
+  - first:
+      213: -6370814568983235954
+    second: Crab_Boss_punch_normals_NW_23
+  - first:
+      213: 7932484340542930124
+    second: Crab_Boss_punch_normals_NW_24
+  - first:
+      213: -7518555149362514989
+    second: Crab_Boss_punch_normals_NW_25
+  - first:
+      213: 7996526619721609867
+    second: Crab_Boss_punch_normals_NW_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 442
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81337de583488c3f0800000000000000
+      internalID: -880308349506735336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 441
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4422f7854e4f4c10800000000000000
+      internalID: 2039935216762627147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 448
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42335f3db554f2d40800000000000000
+      internalID: 5561740325526254372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 465
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e06d9dc34331fd0800000000000000
+      internalID: -2372495142736753019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_4
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 456
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a823511c965ddb0800000000000000
+      internalID: -4767788352496563664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_5
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 445
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd955dbb5d70ba8e0800000000000000
+      internalID: -1681241421331998241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_6
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 445
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129cbb26b2e4d3ae0800000000000000
+      internalID: -1568011147008030431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_7
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 457
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b7e50df3ac0fef90800000000000000
+      internalID: -6922300203780937807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_8
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 448
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345e3701eb40851f0800000000000000
+      internalID: -1056088898252053181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 437
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c27c628d0aec410800000000000000
+      internalID: 1499312576184921162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 436
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3be04899555f6d0800000000000000
+      internalID: -2957363462464949280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_11
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 444
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db224dc11fd7941f0800000000000000
+      internalID: -1060177762744786243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_12
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 437
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641b837adc99c7d60800000000000000
+      internalID: 7889349755799122246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_13
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 442
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb93da4bd0374750800000000000000
+      internalID: 6289049123057540017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_14
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 437
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02000cd964083f070800000000000000
+      internalID: 8138989992371290144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_15
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 442
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1cd9486923cbd20800000000000000
+      internalID: 3295564649379774934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_16
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 437
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a8d1e9b5f72b9d0800000000000000
+      internalID: -2760003590153205207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_17
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 355
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f830e706aa88510800000000000000
+      internalID: 1551677403036880772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_18
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 346
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9339b085c95a7e0800000000000000
+      internalID: -1754824577825687098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_19
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 341
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e176aa796ba87e460800000000000000
+      internalID: 7270932640246163230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_20
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 341
+        width: 72
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c84c5c7a2a3d5b00800000000000000
+      internalID: 818874661400758464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_21
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 341
+        width: 71
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 094d9700a1e476b80800000000000000
+      internalID: -8401660706252270448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_22
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 341
+        width: 69
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11971972a77e9ed60800000000000000
+      internalID: 7920115931543599377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_23
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 341
+        width: 67
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e82fedd47e15697a0800000000000000
+      internalID: -6370814568983235954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_24
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 245
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cccf868ca78d51e60800000000000000
+      internalID: 7932484340542930124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_25
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 250
+        width: 65
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3301a3de9b8a790800000000000000
+      internalID: -7518555149362514989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_punch_normals_NW_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 245
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b82367dd79e59fe60800000000000000
+      internalID: 7996526619721609867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

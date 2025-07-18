@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 000000003724ca7169b0824137d68b244d544bee
+  m_ApplyToSortingLayers: 000000003724ca7169b0824137d68b244d544beeabeed6ee
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1173,6 +1173,8 @@ MonoBehaviour:
   playerState:
     scrapAmount: 0
     minionAmount: 1
+    <GolemHasArm>k__BackingField: 0
+    <GolemHasLeg>k__BackingField: 0
 --- !u!4 &917948523
 Transform:
   m_ObjectHideFlags: 0

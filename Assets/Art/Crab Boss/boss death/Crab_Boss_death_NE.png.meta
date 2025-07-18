@@ -1,0 +1,855 @@
+fileFormatVersion: 2
+guid: eddabc4b1418f0f46a31443e3a2eafc8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 81760574596756513
+    second: Crab_Boss_death_NE_0
+  - first:
+      213: 6374971506245785546
+    second: Crab_Boss_death_NE_1
+  - first:
+      213: 8658150514813009156
+    second: Crab_Boss_death_NE_2
+  - first:
+      213: -2048213576505908305
+    second: Crab_Boss_death_NE_3
+  - first:
+      213: -2225448830597059462
+    second: Crab_Boss_death_NE_4
+  - first:
+      213: 5084745690324616747
+    second: Crab_Boss_death_NE_5
+  - first:
+      213: 1893010156166104833
+    second: Crab_Boss_death_NE_6
+  - first:
+      213: -5578560508540206974
+    second: Crab_Boss_death_NE_7
+  - first:
+      213: 7433822586103915763
+    second: Crab_Boss_death_NE_8
+  - first:
+      213: 773105602948584703
+    second: Crab_Boss_death_NE_9
+  - first:
+      213: 9220866617127299777
+    second: Crab_Boss_death_NE_10
+  - first:
+      213: 8941208534172036758
+    second: Crab_Boss_death_NE_11
+  - first:
+      213: 3499500239666023432
+    second: Crab_Boss_death_NE_12
+  - first:
+      213: 7737042691185851474
+    second: Crab_Boss_death_NE_13
+  - first:
+      213: 1955264317835071867
+    second: Crab_Boss_death_NE_14
+  - first:
+      213: 487361136901857203
+    second: Crab_Boss_death_NE_15
+  - first:
+      213: 6749926117171975243
+    second: Crab_Boss_death_NE_16
+  - first:
+      213: 4086152737398536973
+    second: Crab_Boss_death_NE_17
+  - first:
+      213: 936213660262721065
+    second: Crab_Boss_death_NE_18
+  - first:
+      213: 8773649721495546363
+    second: Crab_Boss_death_NE_19
+  - first:
+      213: -2972552390011295554
+    second: Crab_Boss_death_NE_20
+  - first:
+      213: 708093924280650991
+    second: Crab_Boss_death_NE_21
+  - first:
+      213: 5762132694479523431
+    second: Crab_Boss_death_NE_22
+  - first:
+      213: 2974256516151687198
+    second: Crab_Boss_death_NE_23
+  - first:
+      213: 3576568467633705095
+    second: Crab_Boss_death_NE_24
+  - first:
+      213: -1306734635616357261
+    second: Crab_Boss_death_NE_25
+  - first:
+      213: 2676404881550983350
+    second: Crab_Boss_death_NE_26
+  - first:
+      213: 4608647648572425008
+    second: Crab_Boss_death_NE_27
+  - first:
+      213: -5819238337943852851
+    second: Crab_Boss_death_NE_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 436
+        width: 66
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124b8753fc8722100800000000000000
+      internalID: 81760574596756513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 437
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac754031fc2787850800000000000000
+      internalID: 6374971506245785546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 440
+        width: 62
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d7b47350ee72870800000000000000
+      internalID: 8658150514813009156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 446
+        width: 59
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa3ab34aa984393e0800000000000000
+      internalID: -2048213576505908305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_4
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 449
+        width: 62
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c247a541e9d11e0800000000000000
+      internalID: -2225448830597059462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 352
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b264ff4e345a09640800000000000000
+      internalID: 5084745690324616747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_6
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 360
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107cc7a15b2554a10800000000000000
+      internalID: 1893010156166104833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_7
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 358
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280407226c8f492b0800000000000000
+      internalID: -5578560508540206974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 347
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4eff7814e3a2760800000000000000
+      internalID: 7433822586103915763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_9
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 343
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff45d95237f9aba00800000000000000
+      internalID: 773105602948584703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_10
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 390
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca6123855917ff70800000000000000
+      internalID: 9220866617127299777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_11
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 393
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ee30e0acd851c70800000000000000
+      internalID: 8941208534172036758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_12
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 363
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c00b44de8b09030800000000000000
+      internalID: 3499500239666023432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_13
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 339
+        width: 45
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c3a24c55f7f5b60800000000000000
+      internalID: 7737042691185851474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_14
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 382
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b715e82a98e722b10800000000000000
+      internalID: 1955264317835071867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_15
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 360
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf9d523f5473c600800000000000000
+      internalID: 487361136901857203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_16
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 358
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44da2a7a0e8cad50800000000000000
+      internalID: 6749926117171975243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_17
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 367
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b31aae34ee4b830800000000000000
+      internalID: 4086152737398536973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_18
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 241
+        width: 71
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926e3dd1d591efc00800000000000000
+      internalID: 936213660262721065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_19
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 281
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf96279dfe342c970800000000000000
+      internalID: 8773649721495546363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_20
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 241
+        width: 76
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb8632db95f5fb6d0800000000000000
+      internalID: -2972552390011295554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_21
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 241
+        width: 80
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec4c582ca7a3d900800000000000000
+      internalID: 708093924280650991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_22
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 241
+        width: 81
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ecd13182537ff40800000000000000
+      internalID: 5762132694479523431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_23
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 240
+        width: 67
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18bc1c0b8ea64920800000000000000
+      internalID: 2974256516151687198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_24
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 253
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7809b24621682a130800000000000000
+      internalID: 3576568467633705095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_25
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 143
+        width: 68
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3743364b5cb8ddde0800000000000000
+      internalID: -1306734635616357261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 154
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0c7ff3f00842520800000000000000
+      internalID: 2676404881550983350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_27
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 143
+        width: 68
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03349146e9435ff30800000000000000
+      internalID: 4608647648572425008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crab_Boss_death_NE_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 153
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8a5833099ed3fa0800000000000000
+      internalID: -5819238337943852851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -53,5 +53,8 @@ TagManager:
   - name: Player Minions
     uniqueID: 613144119
     locked: 0
+  - name: Beam
+    uniqueID: 4007063211
+    locked: 0
   m_RenderingLayers:
   - Default

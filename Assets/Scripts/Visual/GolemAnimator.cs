@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Crabgame.Audio;
 using Crabgame.Managers;
@@ -12,14 +13,23 @@ namespace Crabgame.Visual
         [SerializeField] private Golem golem;
         [SerializeField] private Animator       animator;
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private GameObject     beamSource;
-        [SerializeField] private GameObject[]   explosions;
+
+        [Header("References - Beam")]
+        [SerializeField] private SpriteRenderer beamSource;
+        [SerializeField] private SpriteRenderer beamSprite;
+
+        [Header("References - Death")]
+        [SerializeField] private GameObject[] explosions;
 
         [Header("Config")]
         [SerializeField, Min(0)] private float hurtDuration = 0.5f;
         [SerializeField, Min(0)] private float explodePadding = 0.2f;
 
         private MaterialPropertyBlock propertyBlock;
+
+        private bool  isBeaming;
+        private float targetBeamAngle;
+        private float beamAngle;
 
         private static readonly int ShaderHurt = Shader.PropertyToID("_Hurt");
 
@@ -32,6 +42,8 @@ namespace Crabgame.Visual
 
         private void OnEnable()
         {
+            beamSprite.transform.localScale = new Vector3(GameManager.Config.BeamLength, 1, 1);
+
             golem.OnGolemArm += Golem_ArmSkillUsed;
 
             golem.Health.OnHurt  += Health_Hurt;
@@ -48,6 +60,29 @@ namespace Crabgame.Visual
             golem.Health.OnDeath += Health_Death;
 
             GameManager.PlayerState.OnBoughtArm -= Golem_ArmAttached;
+        }
+
+        private void Update()
+        {
+            if (!isBeaming)
+                return;
+
+            Vector2 beamOrigin = beamSprite.transform.position;
+            Vector2 direction  = golem.AimPoint - beamOrigin;
+
+            targetBeamAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            targetBeamAngle = Mathf.Clamp(targetBeamAngle, golem.BeamMinAngle, golem.BeamMaxAngle);
+
+            float maxDelta = golem.BeamFollowSpeed * Time.deltaTime;
+            beamAngle = Mathf.MoveTowardsAngle(beamAngle, targetBeamAngle, maxDelta);
+
+            // DAMAGE
+            float radians          = Mathf.Deg2Rad * beamAngle;
+            var   realAimDirection = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+            golem.DamageTargets(realAimDirection);
+            //
+
+            beamSprite.transform.rotation = Quaternion.Euler(0, 0, beamAngle);
         }
 #endregion
 
@@ -109,13 +144,20 @@ namespace Crabgame.Visual
 
         private IEnumerator StartBeam()
         {
-            beamSource.SetActive(true);
+            beamSource.gameObject.SetActive(true);
             yield return new WaitForSeconds(GameManager.Config.BeamDelay);
 
-            // TODO: render the beam
-            yield return new WaitForSeconds(GameManager.Config.BeamDuration);
+            isBeaming          = true;
+            beamSprite.enabled = true;
 
-            beamSource.SetActive(false);
+            // send out damage direction in Update
+
+            yield return new WaitForSeconds(GameManager.Config.BeamDuration);
+            // ReSharper disable once Unity.InefficientPropertyAccess
+            beamSprite.enabled = false;
+            isBeaming          = false;
+
+            beamSource.gameObject.SetActive(false);
             animator.SetBool(AnimArmBlast, false);
         }
     }
