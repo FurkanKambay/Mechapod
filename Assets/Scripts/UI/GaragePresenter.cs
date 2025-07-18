@@ -14,6 +14,7 @@ namespace Crabgame.UI
 
         private Button continueButton;
         private Button armUpgradeButton;
+        private Button buyMinionsButton;
 
         private void Awake()
         {
@@ -29,9 +30,11 @@ namespace Crabgame.UI
 
             continueButton   = root.Q<Button>("ContinueButton");
             armUpgradeButton = root.Q<Button>("ArmUpgradeButton");
+            buyMinionsButton = root.Q<Button>("MinionUpgradeButton");
 
             continueButton.clicked   += ContinueButton_Clicked;
             armUpgradeButton.clicked += ArmUpgradeButton_Clicked;
+            buyMinionsButton.clicked += BuyMinionsButton_Clicked;
         }
 
         private void OnEnable()  => GameManager.Instance.OnPhaseChange += GameManager_PhaseChange;
@@ -53,5 +56,8 @@ namespace Crabgame.UI
 
         private static void ArmUpgradeButton_Clicked() =>
             GameManager.PlayerState.BuyArm();
+
+        private static void BuyMinionsButton_Clicked() =>
+            GameManager.PlayerState.BuyMinions();
     }
 }

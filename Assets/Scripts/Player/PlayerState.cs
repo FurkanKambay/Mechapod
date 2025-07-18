@@ -41,7 +41,7 @@ namespace Crabgame.Player
             if (!CanBuyMinions)
                 return;
 
-            minionAmount += MinionUpgrades[minionUpgradeIndex].totalAmount;
+            minionAmount = MinionUpgrades[minionUpgradeIndex].totalAmount;
             scrapAmount  -= NextMinionUpgradeCost;
 
             minionUpgradeIndex++;
