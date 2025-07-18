@@ -8,6 +8,9 @@ namespace Crabgame.Player
     [Serializable]
     public class PlayerState
     {
+        public event Action OnBoughtArm;
+        public event Action OnBoughtLeg;
+
         public int scrapAmount;
 
         [Min(1)] public int minionAmount;
@@ -25,6 +28,7 @@ namespace Crabgame.Player
 
             GolemHasArm =  true;
             scrapAmount -= GameManager.Config.UpgradeArmCost;
+            OnBoughtArm?.Invoke();
         }
 
         public void BuyLeg()
@@ -34,6 +38,7 @@ namespace Crabgame.Player
 
             GolemHasLeg =  true;
             scrapAmount -= GameManager.Config.UpgradeLegCost;
+            OnBoughtLeg?.Invoke();
         }
     }
 }
