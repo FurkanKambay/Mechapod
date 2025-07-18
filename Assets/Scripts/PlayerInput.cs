@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Crabgame.Managers;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Crabgame
@@ -7,9 +8,12 @@ namespace Crabgame
     {
         [Header("Input")]
         [SerializeField] private InputActionReference point;
+        [SerializeField] private InputActionReference golemArm;
 
         public Vector2 AimPointScreen { get; private set; }
         public Vector2 AimPosition    { get; private set; }
+
+        public bool WantsToUseArm { get; private set; }
 
         private Camera mainCamera;
 
@@ -23,8 +27,12 @@ namespace Crabgame
 
         private void Update()
         {
+            if (!GameManager.Instance.IsNight)
+                return;
+
             AimPointScreen = point.action.ReadValue<Vector2>();
             AimPosition    = mainCamera.ScreenToWorldPoint(AimPointScreen);
+            WantsToUseArm  = golemArm.action.triggered;
         }
     }
 }

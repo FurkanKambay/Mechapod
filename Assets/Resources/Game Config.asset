@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nightWaitTime: 2
   gameRestartTime: 4
+  beamDuration: 2
+  beamDelay: 0.5
   playerMoveSpeed: 1.2
   enemyMoveSpeed: 0.8
   moveWhileAttacking: 1

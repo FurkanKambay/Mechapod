@@ -1166,7 +1166,7 @@ MonoBehaviour:
   minionManager: {fileID: 1718554346}
   enemyManager: {fileID: 483954851}
   scrapManager: {fileID: 1300099108}
-  golemHealth: {fileID: 1635832950}
+  golem: {fileID: 1635832954}
   isNight: 0
   dayNumber: 1
   waveIndex: 0
@@ -1619,6 +1619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem
       objectReference: {fileID: 0}
+    - target: {fileID: 4606473215047726360, guid: 13f6dc2e6c399134fb64c6ea7113513a, type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: 1718554347}
     - target: {fileID: 7853032348944446423, guid: 13f6dc2e6c399134fb64c6ea7113513a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.75
@@ -1657,6 +1661,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb0e1d644912546478969721a105c1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1635832954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4606473215047726360, guid: 13f6dc2e6c399134fb64c6ea7113513a, type: 3}
+  m_PrefabInstance: {fileID: 1635832949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1448920461423e98cec7a84ee08da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1644090744
@@ -1784,6 +1799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: -5630151704836100654, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  golemArm: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!1 &1806742417
 GameObject:
   m_ObjectHideFlags: 0

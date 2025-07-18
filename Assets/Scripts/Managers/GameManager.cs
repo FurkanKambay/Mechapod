@@ -22,7 +22,7 @@ namespace Crabgame.Managers
         [SerializeField] private MinionManager minionManager;
         [SerializeField] private EnemyManager enemyManager;
         [SerializeField] private ScrapManager scrapManager;
-        [SerializeField] private Health       golemHealth;
+        [SerializeField] private Golem       golem;
 
         [Header("State - Game")]
         [SerializeField] private bool isNight;
@@ -59,14 +59,14 @@ namespace Crabgame.Managers
         {
             minionManager.OnAllKilled += Minions_AllDead;
             enemyManager.OnAllKilled  += Enemies_AllDead;
-            golemHealth.OnDeath       += Golem_Died;
+            golem.Health.OnDeath       += Golem_Died;
         }
 
         private void OnDisable()
         {
             minionManager.OnAllKilled -= Minions_AllDead;
             enemyManager.OnAllKilled  -= Enemies_AllDead;
-            golemHealth.OnDeath       -= Golem_Died;
+            golem.Health.OnDeath      -= Golem_Died;
         }
 
 #if UNITY_EDITOR
@@ -104,7 +104,10 @@ namespace Crabgame.Managers
             waveIndex = 0;
 
             if (isNight)
+            {
+                golem.ResetAbilities();
                 PopulateTonight();
+            }
             else
             {
                 minionManager.Clear();
@@ -133,7 +136,7 @@ namespace Crabgame.Managers
 
         private void Enemies_AllDead()
         {
-            if (golemHealth && !golemHealth.IsDead)
+            if (golem && golem.Health && !golem.Health.IsDead)
                 NextWave();
         }
 
@@ -150,14 +153,14 @@ namespace Crabgame.Managers
 
             PlayerState.Reset();
 
-            golemHealth.gameObject.SetActive(true);
-            golemHealth.Revive();
+            golem.Health.gameObject.SetActive(true);
+            golem.Health.Revive();
 
             UpdateTimeScale();
             OnPhaseChange?.Invoke();
         }
 
-        public void NextWave()
+        private void NextWave()
         {
             waveIndex++;
 

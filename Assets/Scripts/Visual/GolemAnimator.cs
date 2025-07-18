@@ -1,7 +1,7 @@
 using System.Collections;
 using Crabgame.Audio;
-using Crabgame.Entity;
 using Crabgame.Managers;
+using Crabgame.Player;
 using UnityEngine;
 
 namespace Crabgame.Visual
@@ -9,9 +9,10 @@ namespace Crabgame.Visual
     public class GolemAnimator : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private Health health;
+        [SerializeField] private Golem golem;
         [SerializeField] private Animator       animator;
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private GameObject     beamSource;
         [SerializeField] private GameObject[]   explosions;
 
         [Header("Config")]
@@ -25,26 +26,32 @@ namespace Crabgame.Visual
         private static readonly int AnimAttachArm = Animator.StringToHash("attach arm");
         private static readonly int AnimArmBlast  = Animator.StringToHash("arm blast");
 
+#region Unity Lifetime
         private void Awake() =>
             propertyBlock = new MaterialPropertyBlock();
 
         private void OnEnable()
         {
-            health.OnHurt  += Health_Hurt;
-            health.OnDeath += Health_Death;
+            golem.OnGolemArm += Golem_ArmSkillUsed;
+
+            golem.Health.OnHurt  += Health_Hurt;
+            golem.Health.OnDeath += Health_Death;
 
             GameManager.PlayerState.OnBoughtArm += Golem_ArmAttached;
-            // TODO: Golem Arm Skill event
         }
 
         private void OnDisable()
         {
-            health.OnHurt  -= Health_Hurt;
-            health.OnDeath += Health_Death;
+            golem.OnGolemArm -= Golem_ArmSkillUsed;
+
+            golem.Health.OnHurt  -= Health_Hurt;
+            golem.Health.OnDeath += Health_Death;
 
             GameManager.PlayerState.OnBoughtArm -= Golem_ArmAttached;
         }
+#endregion
 
+#region Health Events
         private void Health_Hurt()
         {
             propertyBlock.SetInt(ShaderHurt, 1);
@@ -86,11 +93,30 @@ namespace Crabgame.Visual
             foreach (GameObject explode in explosions)
                 explode.SetActive(false);
         }
+#endregion
 
         private void Golem_ArmAttached() =>
             animator.SetTrigger(AnimAttachArm);
 
-        private void Golem_ArmBlasted() =>
-            animator.SetTrigger(AnimArmBlast);
+        private void Golem_ArmSkillUsed()
+        {
+            animator.SetBool(AnimArmBlast, true);
+            // wait for animation event callback
+        }
+
+        private void Anim_RunBeam() =>
+            StartCoroutine(StartBeam());
+
+        private IEnumerator StartBeam()
+        {
+            beamSource.SetActive(true);
+            yield return new WaitForSeconds(GameManager.Config.BeamDelay);
+
+            // TODO: render the beam
+            yield return new WaitForSeconds(GameManager.Config.BeamDuration);
+
+            beamSource.SetActive(false);
+            animator.SetBool(AnimArmBlast, false);
+        }
     }
 }

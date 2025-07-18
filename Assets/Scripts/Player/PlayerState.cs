@@ -14,8 +14,8 @@ namespace Crabgame.Player
         public          int scrapAmount;
         [Min(1)] public int minionAmount;
 
-        public bool GolemHasArm { get; private set; }
-        public bool GolemHasLeg { get; private set; }
+        [field: SerializeField] public bool GolemHasArm { get; private set; }
+        [field: SerializeField] public bool GolemHasLeg { get; private set; }
 
         [CreateProperty] public bool CanBuyArm => !GolemHasArm && scrapAmount >= GameManager.Config.UpgradeArmCost;
         [CreateProperty] public bool CanBuyLeg => !GolemHasLeg && scrapAmount >= GameManager.Config.UpgradeLegCost;
@@ -41,7 +41,7 @@ namespace Crabgame.Player
             if (!CanBuyMinions)
                 return;
 
-            minionAmount = MinionUpgrades[minionUpgradeIndex].totalAmount;
+            minionAmount =  MinionUpgrades[minionUpgradeIndex].totalAmount;
             scrapAmount  -= NextMinionUpgradeCost;
 
             minionUpgradeIndex++;
