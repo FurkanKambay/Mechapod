@@ -7,7 +7,9 @@ namespace Crabgame.Player
 {
     public class Golem : MonoBehaviour
     {
-        public event Action OnGolemArm;
+        public event Action OnArmBeamTriggered;
+        public event Action OnArmBeamStarted;
+        public event Action OnArmBeamStopped;
 
         [Header("Input")]
         [SerializeField] private PlayerInput input;
@@ -59,8 +61,17 @@ namespace Crabgame.Player
                 UseArm();
         }
 
-        public void StartBeam() => IsBeaming = true;
-        public void StopBeam()  => IsBeaming = false;
+        public void StartBeam()
+        {
+            IsBeaming = true;
+            OnArmBeamStarted?.Invoke();
+        }
+
+        public void StopBeam()
+        {
+            IsBeaming = false;
+            OnArmBeamStopped?.Invoke();
+        }
 
         private GameConfigSO Config => GameManager.Config;
 
@@ -89,14 +100,13 @@ namespace Crabgame.Player
 
             beamDamageCountdown = Config.BeamDamageRate;
 
-            Vector3 center   = beamOrigin.position + realAimDirection * Config.BeamLength / 2;
-            var     boxSize  = new Vector2(GameManager.Config.BeamLength, Config.BeamWidth);
-            float   boxAngle = BeamAngle;
+            Vector3 center  = beamOrigin.position + realAimDirection * Config.BeamLength / 2;
+            var     boxSize = new Vector2(GameManager.Config.BeamLength, Config.BeamWidth);
 
             int hitCount = Physics2D.OverlapBox(
                 point: center,
                 boxSize,
-                boxAngle,
+                BeamAngle,
                 beamAttackFilter,
                 beamResults
             );
@@ -116,7 +126,7 @@ namespace Crabgame.Player
         private void UseArm()
         {
             isArmBeamUsedUp = false;
-            OnGolemArm?.Invoke();
+            OnArmBeamTriggered?.Invoke();
         }
 
         public void ResetAbilities()

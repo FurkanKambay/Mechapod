@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Crabgame.Entity;
 using Crabgame.Night;
 using Crabgame.Player;
@@ -37,6 +38,7 @@ namespace Crabgame.Managers
         public static MinionManager MinionManager => Instance.minionManager;
         public static EnemyManager  EnemyManager  => Instance.enemyManager;
         public static ScrapManager  ScrapManager  => Instance.scrapManager;
+        public static Golem         Golem         => Instance.golem;
 
         public static PlayerState PlayerState => Instance.playerState;
         public static NightInfo   Tonight     => Instance.nightMapSO.GetNight(Instance.dayNumber - 1);
@@ -73,13 +75,15 @@ namespace Crabgame.Managers
 
         private void Update()
         {
+#if !UNITY_EDITOR
             if (!godModeEnabled)
                 return;
+#endif
 
             Keyboard keyboard = Keyboard.current;
 
             if (keyboard.rightBracketKey.wasPressedThisFrame || keyboard.numpadPlusKey.wasPressedThisFrame)
-                NextPhase();
+                StartCoroutine(NextPhase());
             else if (keyboard.leftBracketKey.wasPressedThisFrame || keyboard.numpadMinusKey.wasPressedThisFrame)
                 NextWave();
 
@@ -101,8 +105,13 @@ namespace Crabgame.Managers
         }
 
         [ContextMenu("Next Phase (Day/Night)")]
-        public void NextPhase()
+        public IEnumerator NextPhase(float delay = 0)
         {
+            while (golem.IsBeaming)
+                yield return null;
+
+            yield return new WaitForSeconds(delay);
+
             if (Keyboard.current?.fKey.isPressed == true)
                 godModeEnabled = true;
 
@@ -181,7 +190,7 @@ namespace Crabgame.Managers
 
             if (waveIndex >= Tonight.Waves.Length)
             {
-                Invoke(nameof(NextPhase), time: gameConfigSO.NightWaitTime);
+                StartCoroutine(NextPhase(gameConfigSO.NightWaitTime));
                 return;
             }
 

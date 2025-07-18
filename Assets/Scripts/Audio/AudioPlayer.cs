@@ -4,6 +4,7 @@ using Crabgame.Managers;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Crabgame.Audio
 {
@@ -35,8 +36,19 @@ namespace Crabgame.Audio
 
         // private EventInstance eventInstance;
 
-        private void OnEnable()  => GameManager.Instance.OnPhaseChange += Game_PhaseChanged;
-        private void OnDisable() => GameManager.Instance.OnPhaseChange -= Game_PhaseChanged;
+        private void OnEnable()
+        {
+            GameManager.Instance.OnPhaseChange += Game_PhaseChanged;
+            GameManager.Golem.OnArmBeamStarted += Golem_BeamStarted;
+            GameManager.Golem.OnArmBeamStopped += Golem_BeamStopped;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.OnPhaseChange -= Game_PhaseChanged;
+            GameManager.Golem.OnArmBeamStarted -= Golem_BeamStarted;
+            GameManager.Golem.OnArmBeamStopped -= Golem_BeamStopped;
+        }
 
         private IEnumerator Start()
         {
@@ -61,6 +73,13 @@ namespace Crabgame.Audio
             // - FMOD Parameters
             entityGetHurt.Description.getParameterDescriptionByName("Entity Type", out paramEntityType);
         }
+
+        private EventInstance golemBeamInstance;
+        private void          Golem_BeamStarted() =>
+            golemLaser.PlayOneShot();
+
+        private void Golem_BeamStopped() =>
+            golemLaser.Instance.stop(STOP_MODE.ALLOWFADEOUT);
 
         public void PlayEntityGetHurt(EntityType entityType)
         {

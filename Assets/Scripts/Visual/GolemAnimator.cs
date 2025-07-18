@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Crabgame.Audio;
 using Crabgame.Managers;
@@ -41,7 +40,7 @@ namespace Crabgame.Visual
             beamSprite.size = new Vector2(GameManager.Config.BeamLength, beamSprite.size.y);
             // beamSprite.transform.localScale = new Vector3(GameManager.Config.BeamLength, 1, 1);
 
-            golem.OnGolemArm += Golem_ArmSkillUsed;
+            golem.OnArmBeamTriggered += Golem_ArmBeamTriggered;
 
             golem.Health.OnHurt  += Health_Hurt;
             golem.Health.OnDeath += Health_Death;
@@ -51,10 +50,10 @@ namespace Crabgame.Visual
 
         private void OnDisable()
         {
-            golem.OnGolemArm -= Golem_ArmSkillUsed;
+            golem.OnArmBeamTriggered -= Golem_ArmBeamTriggered;
 
             golem.Health.OnHurt  -= Health_Hurt;
-            golem.Health.OnDeath += Health_Death;
+            golem.Health.OnDeath -= Health_Death;
 
             GameManager.PlayerState.OnBoughtArm -= Golem_ArmAttached;
         }
@@ -115,7 +114,7 @@ namespace Crabgame.Visual
         private void Golem_ArmAttached() =>
             animator.SetTrigger(AnimAttachArm);
 
-        private void Golem_ArmSkillUsed()
+        private void Golem_ArmBeamTriggered()
         {
             animator.SetBool(AnimArmBlast, true);
             // wait for animation event callback
