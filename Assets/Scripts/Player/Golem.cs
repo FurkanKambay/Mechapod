@@ -60,7 +60,7 @@ namespace Crabgame.Player
         }
 
         public void StartBeam() => IsBeaming = true;
-        public void StopBeam()  => IsBeaming = true;
+        public void StopBeam()  => IsBeaming = false;
 
         private GameConfigSO Config => GameManager.Config;
 
