@@ -3,6 +3,7 @@ using Crabgame.Entity;
 using Crabgame.Night;
 using Crabgame.Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Crabgame.Managers
 {
@@ -67,6 +68,25 @@ namespace Crabgame.Managers
             enemyManager.OnAllKilled  -= Enemies_AllDead;
             golemHealth.OnDeath       -= Golem_Died;
         }
+
+#if UNITY_EDITOR
+        private void Update()
+        {
+            Keyboard keyboard = Keyboard.current;
+
+            if (keyboard.equalsKey.wasPressedThisFrame || keyboard.numpadPlusKey.wasPressedThisFrame)
+                NextPhase();
+
+            if (keyboard.jKey.wasPressedThisFrame)
+                minionManager.Clear();
+
+            if (keyboard.kKey.wasPressedThisFrame)
+                enemyManager.Clear();
+
+            if (keyboard.bKey.wasPressedThisFrame)
+                enemyManager.SpawnMiniBoss();
+        }
+#endif
 
         [ContextMenu("Next Phase (Day/Night)")]
         public void NextPhase()
