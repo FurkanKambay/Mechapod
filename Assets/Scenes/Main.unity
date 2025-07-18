@@ -351,6 +351,7 @@ MonoBehaviour:
   - {fileID: 369307105}
   - {fileID: 1264638328}
   golem: {fileID: 1635832950}
+  miniBossPrefab: {fileID: 3593135751424274486, guid: c14e4e7e8519c9e43bc980b3188ee01c, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,9 @@ namespace Crabgame.Entity
         [SerializeField] private Collider2D   attackCollider;
         [SerializeField] private Collider2D[] detectionTriggers;
 
+        [Header("Config - Special")]
+        [SerializeField] private float speedMultiplier = 1;
+
         [Header("Config - Attack")]
         [SerializeField] private ContactFilter2D attackFilter;
 
@@ -39,7 +42,8 @@ namespace Crabgame.Entity
         [SerializeField] public bool isPerformingAttack;
         [SerializeField] public bool isRecovering;
 
-        public Direction AimDirection => aimDirection ?? moveDirection;
+        public Direction AimDirection    => aimDirection ?? moveDirection;
+        public float     SpeedMultiplier => speedMultiplier;
 
         public bool TurningBlocked { get; private set; }
 

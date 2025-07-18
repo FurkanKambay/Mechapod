@@ -97,9 +97,13 @@ namespace Crabgame.Managers
 
         private void PopulateTonight()
         {
-            minionManager.RespawnAll(PlayerState.minionAmount);
-            enemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
             scrapManager.RespawnAll(Tonight.scrapPileAmount);
+            minionManager.RespawnAll(PlayerState.minionAmount);
+
+            enemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
+
+            if (nightMapSO.MiniBossNight == dayNumber)
+                enemyManager.SpawnMiniBoss();
         }
 
         private void Minions_AllDead()

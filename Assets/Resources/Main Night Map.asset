@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80493111c4f94ebbb244062e67e1a518, type: 3}
   m_Name: Main Night Map
   m_EditorClassIdentifier: 
+  miniBossNight: 10
   nightCount: 10
   nights:
   - scrapPileAmount: 1
