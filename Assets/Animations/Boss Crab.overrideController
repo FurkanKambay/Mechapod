@@ -6,6 +6,6 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Crab Override
-  m_Controller: {fileID: 9100000, guid: c6242639293d5084a9ee0c91b504ac03, type: 2}
+  m_Name: Boss Crab
+  m_Controller: {fileID: 9100000, guid: 64590d3fe2d220e4e8bf3b9baca8b35a, type: 2}
   m_Clips: []
