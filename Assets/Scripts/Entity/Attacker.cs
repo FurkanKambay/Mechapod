@@ -169,7 +169,7 @@ namespace Crabgame.Entity
 
         internal bool ProcAttack()
         {
-            attackResults = new Collider2D[5];
+            // attackResults = new Collider2D[5];
 
             attackBox.eulerAngles = Vector3.forward * lockedDirection.AttackAngle();
             int hitCount = attackCollider.Overlap(attackFilter, attackResults);

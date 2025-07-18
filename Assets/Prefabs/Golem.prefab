@@ -433,7 +433,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 0}
   health: {fileID: 8786735418732223490}
-  beamFollowSpeed: 100
+  beamOrigin: {fileID: 7991082137981591427}
+  beamAttackFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 384
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   beamMinAngle: -155
   beamMaxAngle: 25
 --- !u!1 &3490268048247861904
@@ -463,7 +477,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.18223555, w: 0.9832549}
   m_LocalPosition: {x: 0.3125, y: 0.5625, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7853032348944446423}
@@ -516,8 +530,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 0.7647059}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_DrawMode: 1
+  m_Size: {x: 10, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

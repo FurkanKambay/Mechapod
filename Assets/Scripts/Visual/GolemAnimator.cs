@@ -27,10 +27,6 @@ namespace Crabgame.Visual
 
         private MaterialPropertyBlock propertyBlock;
 
-        private bool  isBeaming;
-        private float targetBeamAngle;
-        private float beamAngle;
-
         private static readonly int ShaderHurt = Shader.PropertyToID("_Hurt");
 
         private static readonly int AnimAttachArm = Animator.StringToHash("attach arm");
@@ -42,7 +38,8 @@ namespace Crabgame.Visual
 
         private void OnEnable()
         {
-            beamSprite.transform.localScale = new Vector3(GameManager.Config.BeamLength, 1, 1);
+            beamSprite.size = new Vector2(GameManager.Config.BeamLength, beamSprite.size.y);
+            // beamSprite.transform.localScale = new Vector3(GameManager.Config.BeamLength, 1, 1);
 
             golem.OnGolemArm += Golem_ArmSkillUsed;
 
@@ -64,25 +61,10 @@ namespace Crabgame.Visual
 
         private void Update()
         {
-            if (!isBeaming)
-                return;
+            beamSprite.enabled = golem.IsBeaming;
 
-            Vector2 beamOrigin = beamSprite.transform.position;
-            Vector2 direction  = golem.AimPoint - beamOrigin;
-
-            targetBeamAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            targetBeamAngle = Mathf.Clamp(targetBeamAngle, golem.BeamMinAngle, golem.BeamMaxAngle);
-
-            float maxDelta = golem.BeamFollowSpeed * Time.deltaTime;
-            beamAngle = Mathf.MoveTowardsAngle(beamAngle, targetBeamAngle, maxDelta);
-
-            // DAMAGE
-            float radians          = Mathf.Deg2Rad * beamAngle;
-            var   realAimDirection = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
-            golem.DamageTargets(realAimDirection);
-            //
-
-            beamSprite.transform.rotation = Quaternion.Euler(0, 0, beamAngle);
+            if (golem.IsBeaming)
+                beamSprite.transform.rotation = Quaternion.Euler(0, 0, golem.BeamAngle);
         }
 #endregion
 
@@ -147,15 +129,12 @@ namespace Crabgame.Visual
             beamSource.gameObject.SetActive(true);
             yield return new WaitForSeconds(GameManager.Config.BeamDelay);
 
-            isBeaming          = true;
             beamSprite.enabled = true;
-
-            // send out damage direction in Update
-
+            golem.StartBeam();
             yield return new WaitForSeconds(GameManager.Config.BeamDuration);
-            // ReSharper disable once Unity.InefficientPropertyAccess
+
             beamSprite.enabled = false;
-            isBeaming          = false;
+            golem.StopBeam();
 
             beamSource.gameObject.SetActive(false);
             animator.SetBool(AnimArmBlast, false);

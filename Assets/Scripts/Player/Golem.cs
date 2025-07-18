@@ -14,9 +14,10 @@ namespace Crabgame.Player
 
         [Header("References")]
         [SerializeField] private Health health;
+        [SerializeField] private Transform beamOrigin;
 
-        [Header("Config")]
-        [SerializeField, Min(10f)] private float beamFollowSpeed = 2f;
+        [Header("Config - Beam")]
+        [SerializeField] private ContactFilter2D beamAttackFilter;
 
         [Range(-360f, 360f)]
         [SerializeField] private float beamMinAngle = 25f;
@@ -26,13 +27,22 @@ namespace Crabgame.Player
 
         public Health Health => health;
 
-        public float BeamFollowSpeed => beamFollowSpeed;
-        public float BeamMinAngle    => beamMinAngle;
-        public float BeamMaxAngle    => beamMaxAngle;
+        public float BeamMinAngle => beamMinAngle;
+        public float BeamMaxAngle => beamMaxAngle;
 
         public Vector2 AimPoint { get; private set; }
 
-        private bool canUseArm;
+        private bool isArmBeamUsedUp;
+
+        // ARM BEAM
+        public bool  IsBeaming { get; private set; }
+        public float BeamAngle { get; private set; }
+
+        private float targetBeamAngle;
+        private float beamDamageCountdown;
+
+        private Collider2D[] beamResults = new Collider2D[5];
+        //
 
         private void Awake()
         {
@@ -43,32 +53,75 @@ namespace Crabgame.Player
         {
             AimPoint = input.AimPosition;
 
-            bool hasArm = GameManager.PlayerState.GolemHasArm;
-
-            if (!hasArm || !canUseArm || !input.WantsToUseArm)
-                return;
-
-            UseArm();
-            canUseArm = false;
+            if (IsBeaming)
+                TickArmBeam();
+            else if (isArmBeamUsedUp && GameManager.PlayerState.GolemHasArm && input.WantsToUseArm)
+                UseArm();
         }
 
-        public void DamageTargets(Vector3 realAimDirection)
-        {
-            Vector3 vector = realAimDirection * GameManager.Config.BeamLength;
-            // TODO: raycast, damage things
+        public void StartBeam() => IsBeaming = true;
+        public void StopBeam()  => IsBeaming = true;
 
-            // maybe limit the damage RATE? (cant one-shot boss)
+        private GameConfigSO Config => GameManager.Config;
+
+        private void TickArmBeam()
+        {
+            Vector2 direction = AimPoint - (Vector2)beamOrigin.position;
+            targetBeamAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            targetBeamAngle = Mathf.Clamp(targetBeamAngle, BeamMinAngle, BeamMaxAngle);
+
+            BeamAngle = Mathf.MoveTowardsAngle(BeamAngle, targetBeamAngle, Config.BeamFollowSpeed * Time.deltaTime);
+
+            float radians          = Mathf.Deg2Rad * BeamAngle;
+            var   realAimDirection = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+            DamageTargets(realAimDirection);
+        }
+
+        private void DamageTargets(Vector3 realAimDirection)
+        {
+            Vector3 beamVector = realAimDirection * Config.BeamLength;
+            Debug.DrawRay(beamOrigin.position, beamVector, Color.red);
+
+            beamDamageCountdown -= Time.deltaTime;
+
+            if (beamDamageCountdown > 0)
+                return;
+
+            beamDamageCountdown = Config.BeamDamageRate;
+
+            Vector3 center   = beamOrigin.position + realAimDirection * Config.BeamLength / 2;
+            var     boxSize  = new Vector2(GameManager.Config.BeamLength, Config.BeamWidth);
+            float   boxAngle = BeamAngle;
+
+            int hitCount = Physics2D.OverlapBox(
+                point: center,
+                boxSize,
+                boxAngle,
+                beamAttackFilter,
+                beamResults
+            );
+
+            if (hitCount <= 0)
+                return;
+
+            Debug.Log($"Beam hits {hitCount}, first: {beamResults[0].name}");
+
+            for (var i = 0; i < hitCount; i++)
+            {
+                var target = beamResults[i].GetComponent<Health>();
+                target.TakeDamage(Config.BeamDamage);
+            }
         }
 
         private void UseArm()
         {
+            isArmBeamUsedUp = false;
             OnGolemArm?.Invoke();
-            canUseArm = false;
         }
 
         public void ResetAbilities()
         {
-            canUseArm = true;
+            isArmBeamUsedUp = true;
         }
     }
 }

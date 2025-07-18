@@ -25,15 +25,37 @@ namespace Crabgame
         public float GameRestartTime => gameRestartTime;
 #endregion
 
-        [Header("Golem")]
+#region Golem
+        [Header("Golem - Beam Time")]
         [SerializeField, Min(0)] private float beamDelay = 1f;
         public float BeamDelay => beamDelay;
 
-        [SerializeField, Min(1)] private float beamDuration = 4f;
+        [SerializeField, Min(1)]
+        private float beamDuration = 4f;
         public float BeamDuration => beamDuration;
 
-        [SerializeField, Min(1)] private float beamLength = 5f;
+        [Header("Golem - Beam Shape")]
+        [SerializeField, Min(1)]
+        private float beamLength = 5f;
         public float BeamLength => beamLength;
+
+        [SerializeField, Min(0f)]
+        private float beamWidth = 1f;
+        public float BeamWidth => beamWidth;
+
+        [Header("Golem - Beam Damage & Speed")]
+        [SerializeField, Min(0f)]
+        private int beamDamage = 10;
+        public int BeamDamage => beamDamage;
+
+        [SerializeField, Min(0f)]
+        private float beamDamageRate = 1f;
+        public float BeamDamageRate => beamDamageRate;
+
+        public float BeamFollowSpeed => beamFollowSpeed;
+        [SerializeField, Min(10f)]
+        private float beamFollowSpeed = 200f;
+#endregion
 
 #region Minions
         [Header("Minions - Move Speed")]
