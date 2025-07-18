@@ -67,5 +67,16 @@ namespace Crabgame.Player
             scrapAmount -= GameManager.Config.UpgradeLegCost;
             OnBoughtLeg?.Invoke();
         }
+
+        public void Reset()
+        {
+            scrapAmount = 0;
+
+            minionAmount       = 1;
+            minionUpgradeIndex = 0;
+
+            GolemHasArm = false;
+            GolemHasLeg = false;
+        }
     }
 }

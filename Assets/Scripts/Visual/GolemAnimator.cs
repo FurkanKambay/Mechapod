@@ -1,4 +1,5 @@
 using System.Collections;
+using Crabgame.Audio;
 using Crabgame.Entity;
 using Crabgame.Managers;
 using UnityEngine;
@@ -61,19 +62,29 @@ namespace Crabgame.Visual
 
         private void Health_Death()
         {
-            StartCoroutine(ExplodeAndDestroy());
+            propertyBlock.SetInt(ShaderHurt, 1);
+            spriteRenderer.SetPropertyBlock(propertyBlock);
+            // Health_Hurt();
+
+            StartCoroutine(ExplodeAndDisable());
         }
 
-        private IEnumerator ExplodeAndDestroy()
+        private IEnumerator ExplodeAndDisable()
         {
             foreach (GameObject explode in explosions)
             {
-                explode.SetActive(true);
                 yield return new WaitForSeconds(explodePadding);
+
+                AudioPlayer.Instance.crabEnemyExplode.PlayOneShot();
+                explode.SetActive(true);
             }
 
             yield return new WaitForSeconds(explodePadding);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+
+            // reset explosions for revival
+            foreach (GameObject explode in explosions)
+                explode.SetActive(false);
         }
 
         private void Golem_ArmAttached() =>

@@ -49,5 +49,11 @@ namespace Crabgame.Entity
             enabled = false;
             OnDeath?.Invoke();
         }
+
+        public void Revive()
+        {
+            enabled = true;
+            health  = maxHealth;
+        }
     }
 }

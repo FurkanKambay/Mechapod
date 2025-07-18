@@ -17,6 +17,9 @@ namespace Crabgame
         [Tooltip("How long to wait after a successful night")]
         [SerializeField] private float nightWaitTime = 1f;
 
+        [Tooltip("How long to wait after a game over to restart")]
+        [SerializeField] private float gameRestartTime = 4f;
+
         [Header("Move Speed")]
         [SerializeField] private float playerMoveSpeed;
         [SerializeField] private float enemyMoveSpeed;
@@ -38,7 +41,8 @@ namespace Crabgame
         [SerializeField] private float playerRandomAttackOffsetMax;
         [SerializeField] private float enemyRandomAttackOffsetMax;
 
-        public float NightWaitTime => nightWaitTime;
+        public float NightWaitTime   => nightWaitTime;
+        public float GameRestartTime => gameRestartTime;
 
         public float PlayerMoveSpeed => playerMoveSpeed;
         public float EnemyMoveSpeed  => enemyMoveSpeed;

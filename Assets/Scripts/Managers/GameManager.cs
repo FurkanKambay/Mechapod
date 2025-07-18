@@ -58,12 +58,14 @@ namespace Crabgame.Managers
         {
             minionManager.OnAllKilled += Minions_AllDead;
             enemyManager.OnAllKilled  += Enemies_AllDead;
+            golemHealth.OnDeath       += Golem_Died;
         }
 
         private void OnDisable()
         {
             minionManager.OnAllKilled -= Minions_AllDead;
             enemyManager.OnAllKilled  -= Enemies_AllDead;
+            golemHealth.OnDeath       -= Golem_Died;
         }
 
         [ContextMenu("Next Phase (Day/Night)")]
@@ -107,7 +109,28 @@ namespace Crabgame.Managers
 
         private void Enemies_AllDead()
         {
-            NextWave();
+            if (golemHealth && !golemHealth.IsDead)
+                NextWave();
+        }
+
+        private void Golem_Died()
+        {
+            Invoke(nameof(ResetGame), Config.GameRestartTime);
+        }
+
+        private void ResetGame()
+        {
+            isNight   = false;
+            dayNumber = 1;
+            waveIndex = 0;
+
+            PlayerState.Reset();
+
+            golemHealth.gameObject.SetActive(true);
+            golemHealth.Revive();
+
+            UpdateTimeScale();
+            OnPhaseChange?.Invoke();
         }
 
         public void NextWave()
@@ -117,7 +140,6 @@ namespace Crabgame.Managers
             if (waveIndex >= Tonight.Waves.Length)
             {
                 Invoke(nameof(NextPhase), time: gameConfigSO.NightWaitTime);
-                // NextPhase();
                 return;
             }
 

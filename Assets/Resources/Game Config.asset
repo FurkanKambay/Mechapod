@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Game Config
   m_EditorClassIdentifier: 
   nightWaitTime: 2
+  gameRestartTime: 4
   playerMoveSpeed: 1.2
   enemyMoveSpeed: 0.8
   moveWhileAttacking: 1
