@@ -22,6 +22,7 @@
             </ui:Label>
             <Bindings>
                 <ui:DataBinding property="enabledSelf" data-source-path="playerState.CanBuyArm" binding-mode="ToTarget" />
+                <ui:DataBinding property="text" data-source-path="playerState.BuyArmText" binding-mode="ToTarget" />
             </Bindings>
         </ui:Button>
     </ui:VisualElement>

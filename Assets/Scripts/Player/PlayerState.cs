@@ -20,6 +20,9 @@ namespace Crabgame.Player
         [CreateProperty] public bool CanBuyArm => !GolemHasArm && scrapAmount >= GameManager.Config.UpgradeArmCost;
         [CreateProperty] public bool CanBuyLeg => !GolemHasLeg && scrapAmount >= GameManager.Config.UpgradeLegCost;
 
+        [CreateProperty] public string BuyArmText =>
+            !GolemHasArm ? "Arm Upgrade" : "Arm Upgraded!";
+
 #region Minion Upgrades
         [CreateProperty] public bool CanBuyMinions =>
             minionUpgradeIndex < MinionUpgrades.Length
@@ -59,7 +62,7 @@ namespace Crabgame.Player
 
         public void GiftArm()
         {
-            GolemHasArm =  true;
+            GolemHasArm = true;
             OnBoughtArm?.Invoke();
         }
 
