@@ -13,6 +13,7 @@ namespace Crabgame
     [CreateAssetMenu]
     public sealed class GameConfigSO : ScriptableObject
     {
+#region Game
         [Header("Game")]
         [Tooltip("How long to wait after a successful night")]
         [SerializeField] private float nightWaitTime = 1f;
@@ -20,11 +21,19 @@ namespace Crabgame
         [Tooltip("How long to wait after a game over to restart")]
         [SerializeField] private float gameRestartTime = 4f;
 
-        [Header("Move Speed")]
+        public float NightWaitTime   => nightWaitTime;
+        public float GameRestartTime => gameRestartTime;
+#endregion
+
+#region Minions
+        [Header("Minions - Move Speed")]
         [SerializeField] private float playerMoveSpeed;
         [SerializeField] private float enemyMoveSpeed;
 
-        [Header("Attack")]
+        public float PlayerMoveSpeed => playerMoveSpeed;
+        public float EnemyMoveSpeed  => enemyMoveSpeed;
+
+        [Header("Minions & Boss - Attack")]
         [Tooltip("Can crabs move while attacking?")]
         [SerializeField] private bool moveWhileAttacking;
 
@@ -41,12 +50,6 @@ namespace Crabgame
         [SerializeField] private float playerRandomAttackOffsetMax;
         [SerializeField] private float enemyRandomAttackOffsetMax;
 
-        public float NightWaitTime   => nightWaitTime;
-        public float GameRestartTime => gameRestartTime;
-
-        public float PlayerMoveSpeed => playerMoveSpeed;
-        public float EnemyMoveSpeed  => enemyMoveSpeed;
-
         public bool MoveWhileAttacking  => moveWhileAttacking;
         public bool MoveWhileRecovering => moveWhileRecovering;
         public bool TurnWhileAttacking  => turnWhileAttacking;
@@ -54,7 +57,9 @@ namespace Crabgame
 
         public float PlayerRandomAttackOffsetMax => playerRandomAttackOffsetMax;
         public float EnemyRandomAttackOffsetMax  => enemyRandomAttackOffsetMax;
+#endregion
 
+#region Economy
         [Header("Economy")]
         [SerializeField] private int upgradeArmCost;
         [SerializeField] private int             upgradeLegCost;
@@ -63,5 +68,6 @@ namespace Crabgame
         public int             UpgradeArmCost => upgradeArmCost;
         public int             UpgradeLegCost => upgradeLegCost;
         public MinionUpgrade[] MinionUpgrades => minionUpgrades;
+#endregion
     }
 }
