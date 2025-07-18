@@ -75,7 +75,8 @@ namespace Crabgame.Audio
         }
 
         private EventInstance golemBeamInstance;
-        private void          Golem_BeamStarted() =>
+
+        private void Golem_BeamStarted() =>
             golemLaser.PlayOneShot();
 
         private void Golem_BeamStopped() =>
