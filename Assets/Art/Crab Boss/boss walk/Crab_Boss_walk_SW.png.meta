@@ -1,46 +1,7 @@
 fileFormatVersion: 2
 guid: 7575e62da162e2d46816941739596638
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 9157346816045791036
-    second: Crab_Boss_walk_SW_0
-  - first:
-      213: -1999125243802914149
-    second: Crab_Boss_walk_SW_1
-  - first:
-      213: 4314963781695049936
-    second: Crab_Boss_walk_SW_2
-  - first:
-      213: -2218306498589213483
-    second: Crab_Boss_walk_SW_3
-  - first:
-      213: 2772396084821269290
-    second: Crab_Boss_walk_SW_4
-  - first:
-      213: -6542095947652211332
-    second: Crab_Boss_walk_SW_5
-  - first:
-      213: -8082716953677101345
-    second: Crab_Boss_walk_SW_6
-  - first:
-      213: 8833819202322946118
-    second: Crab_Boss_walk_SW_7
-  - first:
-      213: -4854118449512358445
-    second: Crab_Boss_walk_SW_8
-  - first:
-      213: -5981528515274932225
-    second: Crab_Boss_walk_SW_9
-  - first:
-      213: 7331847834496308888
-    second: Crab_Boss_walk_SW_10
-  - first:
-      213: -2840648727070615692
-    second: Crab_Boss_walk_SW_11
-  - first:
-      213: 7381370000739614029
-    second: Crab_Boss_walk_SW_12
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -73,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -87,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,9 +70,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,298 +108,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_0
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 436
-        width: 62
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c37b677596e651f70800000000000000
-      internalID: 9157346816045791036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_1
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 442
-        width: 16
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b927c9dbe2ea144e0800000000000000
-      internalID: -1999125243802914149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_2
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 438
-        width: 64
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0d01c92a2b4d1eb30800000000000000
-      internalID: 4314963781695049936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_3
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 440
-        width: 66
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5dc36ac1efdf631e0800000000000000
-      internalID: -2218306498589213483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_4
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 440
-        width: 67
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2b9474ec87897620800000000000000
-      internalID: 2772396084821269290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_5
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 439
-        width: 67
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7ddaa9a56ec535a0800000000000000
-      internalID: -6542095947652211332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_6
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 341
-        width: 66
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd68c0431cb64df80800000000000000
-      internalID: -8082716953677101345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_7
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 339
-        width: 67
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 648db7cc2c7089a70800000000000000
-      internalID: 8833819202322946118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_8
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 339
-        width: 66
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3dd55270df4b2acb0800000000000000
-      internalID: -4854118449512358445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_9
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 339
-        width: 64
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ffffa21c1875dfca0800000000000000
-      internalID: -5981528515274932225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_10
-      rect:
-        serializedVersion: 2
-        x: 397
-        y: 339
-        width: 63
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8969e5a72c4ffb560800000000000000
-      internalID: 7331847834496308888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_11
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 244
-        width: 62
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4775a4b780df398d0800000000000000
-      internalID: -2840648727070615692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crab_Boss_walk_SW_12
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 244
-        width: 63
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4d3fc158e4ef6660800000000000000
-      internalID: 7381370000739614029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
