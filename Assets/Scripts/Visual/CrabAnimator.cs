@@ -71,8 +71,6 @@ namespace Crabgame.Visual
 
         private void Health_Hurt()
         {
-            AudioPlayer.Instance.PlayEntityGetHurt(attacker.Health.EntityType);
-
             propertyBlock.SetInt(ShaderHurt, 1);
             spriteRenderer.SetPropertyBlock(propertyBlock);
 
@@ -88,8 +86,6 @@ namespace Crabgame.Visual
 
         private void Health_Death()
         {
-            AudioPlayer.Instance.PlayEntityDeath(attacker.Health.EntityType);
-
             animator.SetTrigger(AnimDie);
             Destroy(attacker.gameObject, deathDestroyDelay);
         }
