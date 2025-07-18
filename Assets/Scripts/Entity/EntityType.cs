@@ -5,6 +5,7 @@ namespace Crabgame.Entity
         PlayerGolem,
         PlayerMinion,
         EnemyMinion,
-        ScrapPile
+        ScrapPile,
+        EnemyMiniBoss
     }
 }

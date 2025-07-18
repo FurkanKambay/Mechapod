@@ -12,6 +12,8 @@ namespace Crabgame.Entity
         {
             GameManager.PlayerState.scrapAmount += scrapsGranted;
             Destroy(gameObject);
+
+            base.Die();
         }
     }
 }

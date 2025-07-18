@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd1cb0960ed659e4b90e0540007450cd
+guid: cdd072933d89a9b499641e750aec1c6d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,29 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hit_star_0
+      name: explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772c44ad692b2e94fa2503945eca49ff
+      internalID: 828975035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_1
       rect:
         serializedVersion: 2
         x: 32
@@ -118,21 +140,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d3b880173e00eb48bb85bbbed194350
-      internalID: 1137561562
+      spriteID: 533fed3ea880f6148992067237ab9c9e
+      internalID: 1329455304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hit_star_1
+      name: explosion_2
       rect:
         serializedVersion: 2
         x: 64
@@ -140,21 +162,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc834d04dca475445ad6df2f32bcbf8f
-      internalID: 1820467486
+      spriteID: 6019d732de01a194a8e58e898db3112f
+      internalID: -2003799887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hit_star_2
+      name: explosion_3
       rect:
         serializedVersion: 2
         x: 96
@@ -162,21 +184,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 437ff0b295744d34aacbe87476c349a6
-      internalID: 1743854768
+      spriteID: 550032d5700e1c241bdb175d93ba3aff
+      internalID: -53320678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hit_star_3
+      name: explosion_4
       rect:
         serializedVersion: 2
         x: 0
@@ -184,21 +206,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15fbf3a8068588f4cadb821de50c7cb9
-      internalID: -165755729
+      spriteID: 7b9242ba15f8d374aa2dd4252be0191e
+      internalID: 733224874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hit_star_4
+      name: explosion_5
       rect:
         serializedVersion: 2
         x: 32
@@ -206,21 +228,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ca43989c736cd145bba36a8468d5618
-      internalID: 8604108
+      spriteID: 225e220e1d13baf4182cc9bca0ad7ffb
+      internalID: 272085916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hit_star_5
+      name: explosion_6
       rect:
         serializedVersion: 2
         x: 64
@@ -228,25 +250,47 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9346b22761dbdff4aaf9821614bb7791
-      internalID: 1133454104
+      spriteID: 6af259f5c8a300242bb55236ccb46c65
+      internalID: -1966808348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hit_star_6
+      name: explosion_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1c87307b7413e4d94dc9f2272f412c
+      internalID: -2047347394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 33
         width: 32
         height: 32
       alignment: 0
@@ -257,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e6681a26a6b7d844915db7db2cf1fd0
-      internalID: 264423202
+      spriteID: 1d73a9e2bd9f2b44faf6762c4a25406d
+      internalID: -1071649527
       vertices: []
       indices: 
       edges: []
@@ -279,13 +323,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      hit_star_0: 1137561562
-      hit_star_1: 1820467486
-      hit_star_2: 1743854768
-      hit_star_3: -165755729
-      hit_star_4: 8604108
-      hit_star_5: 1133454104
-      hit_star_6: 264423202
+      explosion_0: 828975035
+      explosion_1: 1329455304
+      explosion_2: -2003799887
+      explosion_3: -53320678
+      explosion_4: 733224874
+      explosion_5: 272085916
+      explosion_6: -1966808348
+      explosion_7: -2047347394
+      explosion_8: -1071649527
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

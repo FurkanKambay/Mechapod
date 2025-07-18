@@ -1,4 +1,5 @@
 using System;
+using Crabgame.Audio;
 using UnityEngine;
 
 namespace Crabgame.Entity
@@ -31,7 +32,10 @@ namespace Crabgame.Entity
             health -= amount;
 
             if (health > 0)
+            {
+                AudioPlayer.Instance.PlayEntityGetHurt(entityType);
                 OnHurt?.Invoke();
+            }
             else
                 Die();
         }
@@ -40,8 +44,16 @@ namespace Crabgame.Entity
         {
             health = 0;
 
+            AudioPlayer.Instance.PlayEntityDeath(entityType);
+
             enabled = false;
             OnDeath?.Invoke();
+        }
+
+        public void Revive()
+        {
+            enabled = true;
+            health  = maxHealth;
         }
     }
 }

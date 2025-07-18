@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Game Config
   m_EditorClassIdentifier: 
   nightWaitTime: 2
+  gameRestartTime: 4
   playerMoveSpeed: 1.2
   enemyMoveSpeed: 0.8
   moveWhileAttacking: 1
@@ -23,3 +24,8 @@ MonoBehaviour:
   enemyRandomAttackOffsetMax: 0
   upgradeArmCost: 25
   upgradeLegCost: 100
+  minionUpgrades:
+  - totalAmount: 2
+    scrapCost: 15
+  - totalAmount: 4
+    scrapCost: 25
