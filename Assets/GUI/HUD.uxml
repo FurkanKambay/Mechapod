@@ -2,8 +2,8 @@
     <Style src="project://database/Assets/GUI/HUD.uss?fileID=7433441132597879392&amp;guid=c49bf2821421fb64aaeec0fdab8fbdab&amp;type=3#HUD" />
     <ui:ProgressBar name="GolemHPBar" value="50" data-source-type="Crabgame.Managers.GameManager, Crabgame">
         <Bindings>
-            <ui:DataBinding property="highValue" data-source-path="golemHealth.maxHealth" binding-mode="ToTarget" />
-            <ui:DataBinding property="value" data-source-path="golemHealth.health" binding-mode="ToTarget" />
+            <ui:DataBinding property="highValue" data-source-path="golem.health.maxHealth" binding-mode="ToTarget" />
+            <ui:DataBinding property="value" data-source-path="golem.health.health" binding-mode="ToTarget" />
         </Bindings>
     </ui:ProgressBar>
     <ui:VisualElement name="ScrapContainer" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="container">
