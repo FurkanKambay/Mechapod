@@ -16,8 +16,8 @@ MonoBehaviour:
   gameRestartTime: 4
   beamDelay: 0.2
   beamDuration: 5
-  beamLength: 10
-  beamWidth: 1
+  beamLength: 15
+  beamWidth: 0.6
   beamDamage: 10
   beamDamageRate: 0.5
   beamFollowSpeed: 100

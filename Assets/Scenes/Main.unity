@@ -1617,6 +1617,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 48194823967105136, guid: 13f6dc2e6c399134fb64c6ea7113513a, type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 619394801}
     - target: {fileID: 3080589856471975100, guid: 13f6dc2e6c399134fb64c6ea7113513a, type: 3}
       propertyPath: m_Name
       value: Golem

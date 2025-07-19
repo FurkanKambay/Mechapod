@@ -3,6 +3,7 @@ using Crabgame.Audio;
 using Crabgame.Managers;
 using Crabgame.Player;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace Crabgame.Visual
 {
@@ -12,10 +13,12 @@ namespace Crabgame.Visual
         [SerializeField] private Golem golem;
         [SerializeField] private Animator       animator;
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Light2D        globalLight;
 
         [Header("References - Beam")]
         [SerializeField] private SpriteRenderer beamSource;
         [SerializeField] private SpriteRenderer beamSprite;
+        [SerializeField] private Light2D        beamLight;
 
         [Header("References - Death")]
         [SerializeField] private GameObject[] explosions;
@@ -23,6 +26,12 @@ namespace Crabgame.Visual
         [Header("Config")]
         [SerializeField, Min(0)] private float hurtDuration = 0.5f;
         [SerializeField, Min(0)] private float explodePadding = 0.2f;
+
+        [Header("Config - Lighting")]
+        [SerializeField, Min(0)] private float lightIntensity = 1f;
+        [SerializeField, Min(0)] private float lightIntensityBeaming = 0.5f;
+
+        private static GameConfigSO Config => GameManager.Config;
 
         private MaterialPropertyBlock propertyBlock;
 
@@ -37,8 +46,11 @@ namespace Crabgame.Visual
 
         private void OnEnable()
         {
-            beamSprite.size = new Vector2(GameManager.Config.BeamLength, beamSprite.size.y);
-            // beamSprite.transform.localScale = new Vector3(GameManager.Config.BeamLength, 1, 1);
+            beamSprite.size = new Vector2(Config.BeamLength, Config.BeamWidth);
+
+            Transform lightTransform = beamLight.transform;
+            lightTransform.localScale    = new Vector3(Config.BeamLength,     Config.BeamWidth, 1);
+            lightTransform.localPosition = new Vector3(Config.BeamLength / 2, 0,                0);
 
             golem.OnArmBeamTriggered += Golem_ArmBeamTriggered;
 
@@ -128,15 +140,22 @@ namespace Crabgame.Visual
             beamSource.gameObject.SetActive(true);
             yield return new WaitForSeconds(GameManager.Config.BeamDelay);
 
-            beamSprite.enabled = true;
+            // sprite + light
+            beamSprite.gameObject.SetActive(true);
+            globalLight.intensity = lightIntensityBeaming;
+
             golem.StartBeam();
             yield return new WaitForSeconds(GameManager.Config.BeamDuration);
 
-            beamSprite.enabled = false;
-            golem.StopBeam();
+            // revert light
+            globalLight.intensity = lightIntensity;
 
+            // source + beam sprites, anim
+            beamSprite.gameObject.SetActive(false);
             beamSource.gameObject.SetActive(false);
             animator.SetBool(AnimArmBlast, false);
+
+            golem.StopBeam();
         }
     }
 }
