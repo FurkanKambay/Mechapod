@@ -31,6 +31,10 @@ namespace Crabgame.Entity
         public Health      Health => health;
         public Rigidbody2D Body   => body;
 
+        public Direction AimDirection    => aimDirection ?? moveDirection;
+        public float     SpeedMultiplier => speedMultiplier;
+        public bool      TurningBlocked  { get; private set; }
+
         [Header("State")]
         [SerializeField] private Vector2 velocity;
         [SerializeField] private Direction moveDirection;
@@ -42,22 +46,14 @@ namespace Crabgame.Entity
         [SerializeField] public bool isPerformingAttack;
         [SerializeField] public bool isRecovering;
 
-        public Direction AimDirection    => aimDirection ?? moveDirection;
-        public float     SpeedMultiplier => speedMultiplier;
-
-        public bool TurningBlocked { get; private set; }
-
         private SpawnerManager sourceSpawner;
+        private Direction?     aimDirection;
+        private bool           shouldAttack;
 
-        private Direction? aimDirection;
-
-        private Collider2D[] attackResults    = new Collider2D[5];
-        private Collider2D[] detectionResults = new Collider2D[1];
-
-        private Transform[] attackBoxes;
-        private Transform[] detectionBoxes;
-
-        private bool shouldAttack;
+        private          Transform[]  attackBoxes;
+        private          Transform[]  detectionBoxes;
+        private readonly Collider2D[] attackResults    = new Collider2D[5];
+        private readonly Collider2D[] detectionResults = new Collider2D[1];
 
         private void Awake()
         {
@@ -125,7 +121,6 @@ namespace Crabgame.Entity
             if (shouldAttack)
                 return true;
 
-            detectionResults = new Collider2D[1];
             int hitCount = GetDetections(lockedDirection);
 
             if (hitCount > 0)
