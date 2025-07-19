@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerGroup" id="{af3cb7a0-f72e-4edf-ab45-a52130ee70a7}">
+		<property name="name">
+			<value>DayNight Music</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{ea75b297-df56-4097-b991-d6f084dc1298}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{fa6b33d4-09e2-4ce0-8ca3-28ea3f552b46}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{bd12d934-6ea4-4032-bfc3-d9a0f36a5178}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{ea75b297-df56-4097-b991-d6f084dc1298}">
+		<relationship name="effects">
+			<destination>{de27a597-96bf-4b47-a29c-926c883bfb68}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{fa6b33d4-09e2-4ce0-8ca3-28ea3f552b46}" />
+	<object class="MixerBusFader" id="{de27a597-96bf-4b47-a29c-926c883bfb68}" />
+</objects>
