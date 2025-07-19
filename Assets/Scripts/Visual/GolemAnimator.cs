@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using Crabgame.Audio;
 using Crabgame.Managers;
 using Crabgame.Player;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 
 namespace Crabgame.Visual
 {
@@ -20,6 +20,7 @@ namespace Crabgame.Visual
         [SerializeField] private SpriteRenderer beamSource;
         [SerializeField] private SpriteRenderer beamSprite;
         [SerializeField] private Light2D        beamLight;
+        [SerializeField] private Light2D        sourceLight;
 
         [Header("References - Death")]
         [SerializeField] private GameObject[] explosions;
@@ -32,6 +33,7 @@ namespace Crabgame.Visual
         [SerializeField, Min(0)] private float globalLightIntensity = 1f;
         [SerializeField, Min(0)] private float globalLightIntensityBeaming = 0.5f;
         [SerializeField, Min(1)] private float lightFalloffMultiplier      = 1.5f;
+        [SerializeField]         private Color beamLightColor              = Color.white;
 
         private static GameConfigSO Config => GameManager.Config;
 
@@ -60,12 +62,21 @@ namespace Crabgame.Visual
             lightTransform.localScale    = new Vector3(Config.BeamLength,     lightWidth, 1f);
             lightTransform.localPosition = new Vector3(Config.BeamLength / 2, 0f,         0f);
 
+            beamLight.color   = beamLightColor;
+            sourceLight.color = beamLightColor;
+
             golem.OnArmBeamTriggered += Golem_ArmBeamTriggered;
 
             golem.Health.OnHurt  += Health_Hurt;
             golem.Health.OnDeath += Health_Death;
 
             GameManager.PlayerState.OnBoughtArm += Golem_ArmAttached;
+        }
+
+        private void OnValidate()
+        {
+            beamLight.color   = beamLightColor;
+            sourceLight.color = beamLightColor;
         }
 
         private void OnDisable()
