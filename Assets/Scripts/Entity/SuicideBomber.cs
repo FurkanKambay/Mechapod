@@ -29,10 +29,9 @@ namespace Crabgame.Entity
         private IEnumerator BlowUpWithDelay(Health target)
         {
             float delayMeters = radiusTrigger.radius / 2f;
-            float speed       = GameManager.Config.EnemyMoveSpeed * bomber.SpeedMultiplier;
-            float delay       = delayMeters / speed;
+            float timeToReach = delayMeters / bomber.MoveSpeed;
 
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(timeToReach);
 
             int damage = bomber.Health.EntityType switch
             {

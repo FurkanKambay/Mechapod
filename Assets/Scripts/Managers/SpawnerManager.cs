@@ -44,7 +44,7 @@ namespace Crabgame.Managers
                 Vector2 entityPosition = entity.transform.position;
                 Vector2 direction      = Vector2.ClampMagnitude(targetPoint - entityPosition, 1f);
 
-                entity.Body.linearVelocity = direction * (MoveSpeed * entity.SpeedMultiplier);
+                entity.Body.linearVelocity = direction * entity.MoveSpeed;
             }
         }
 

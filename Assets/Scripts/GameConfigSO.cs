@@ -59,14 +59,52 @@ namespace Crabgame
 
 #region Minions
         [Header("Minions - Move Speed")]
-        [SerializeField] private float playerMoveSpeed;
-        [SerializeField] private float enemyMoveSpeed;
+        [SerializeField] private float playerMoveSpeed = 1.2f;
+        [SerializeField] private float enemyMoveSpeed = 0.8f;
+        [SerializeField] private float bossMoveSpeed  = 0.4f;
 
         public float PlayerMoveSpeed => playerMoveSpeed;
         public float EnemyMoveSpeed  => enemyMoveSpeed;
+        public float BossMoveSpeed   => bossMoveSpeed;
 
-        // Crab Attacks
-        [Header("Minions & Boss - Attack")]
+        // Attacks
+        [Header("Minions - Attack")]
+        [SerializeField, Min(0f)] private int playerAttackDamage = 10;
+        [SerializeField, Min(0f)] private float playerAttackRange = 1.2f;
+        [SerializeField, Min(0f)] private float playerAttackRate  = 1.2f;
+
+        [SerializeField, Min(0f)] private int   enemyAttackDamage = 10;
+        [SerializeField, Min(0f)] private float enemyAttackRange  = 1f;
+        [SerializeField, Min(0f)] private float enemyAttackRate   = 2f;
+
+        [SerializeField, Min(0f)] private int   bossAttackDamage = 50;
+        [SerializeField, Min(0f)] private float bossAttackRange  = 2f;
+        [SerializeField, Min(0f)] private float bossAttackRate   = 3.5f;
+
+        public int   PlayerAttackDamage => playerAttackDamage;
+        public float PlayerAttackRange  => playerAttackRange;
+        public float PlayerAttackRate   => playerAttackRate;
+
+        public int   EnemyAttackDamage => enemyAttackDamage;
+        public float EnemyAttackRange  => enemyAttackRange;
+        public float EnemyAttackRate   => enemyAttackRate;
+
+        public int   BossAttackDamage => bossAttackDamage;
+        public float BossAttackRange  => bossAttackRange;
+        public float BossAttackRate   => bossAttackRate;
+
+        // Explosion
+        [Header("Minions & Boss - Explosion")]
+        [SerializeField] private int minionExplosionDamage;
+        [SerializeField] private int miniBossExplosionDamage;
+
+        public int MinionExplosionDamage   => minionExplosionDamage;
+        public int MiniBossExplosionDamage => miniBossExplosionDamage;
+#endregion
+
+#region Attack Strategy
+        // Crabs Attack Strategy
+        [Header("Minions & Boss - Attack Strategy")]
         [Tooltip("Can crabs move while attacking?")]
         [SerializeField] private bool moveWhileAttacking;
 
@@ -91,14 +129,6 @@ namespace Crabgame
 
         public float PlayerRandomAttackOffsetMax => playerRandomAttackOffsetMax;
         public float EnemyRandomAttackOffsetMax  => enemyRandomAttackOffsetMax;
-
-        // Explosion
-        [Header("Minions & Boss - Explosion")]
-        [SerializeField] private int minionExplosionDamage;
-        [SerializeField] private int miniBossExplosionDamage;
-
-        public int MinionExplosionDamage   => minionExplosionDamage;
-        public int MiniBossExplosionDamage => miniBossExplosionDamage;
 #endregion
 
 #region Economy

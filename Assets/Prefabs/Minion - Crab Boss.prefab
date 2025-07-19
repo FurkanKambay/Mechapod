@@ -181,24 +181,8 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8849985566391529547, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
-      propertyPath: damage
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849985566391529547, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
-      propertyPath: attackRate
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849985566391529547, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
-      propertyPath: attackRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849985566391529547, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
       propertyPath: detectionRange
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849985566391529547, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
-      propertyPath: speedMultiplier
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8865998409080239306, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
       propertyPath: m_LocalScale.x

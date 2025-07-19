@@ -15,15 +15,8 @@ namespace Crabgame.Entity
         [SerializeField] private Collider2D[] attackTriggers;
         [SerializeField] private Collider2D[] detectionTriggers;
 
-        [Header("Config - Special")]
-        [SerializeField] private float speedMultiplier = 1;
-
         [Header("Config - Attack")]
         [SerializeField] private ContactFilter2D attackFilter;
-
-        [SerializeField] private int   damage;
-        [SerializeField] private float attackRange;
-        [SerializeField] private float attackRate;
 
         [Header("Config - Detection")]
         [SerializeField] private float detectionRange;
@@ -31,9 +24,40 @@ namespace Crabgame.Entity
         public Health      Health => health;
         public Rigidbody2D Body   => body;
 
-        public Direction AimDirection    => aimDirection ?? moveDirection;
-        public float     SpeedMultiplier => speedMultiplier;
-        public bool      TurningBlocked  { get; private set; }
+        public Direction AimDirection   => aimDirection ?? moveDirection;
+        public bool      TurningBlocked { get; private set; }
+
+        public int AttackDamage => health.EntityType switch
+        {
+            EntityType.PlayerMinion  => GameManager.Config.PlayerAttackDamage,
+            EntityType.EnemyMinion   => GameManager.Config.EnemyAttackDamage,
+            EntityType.EnemyMiniBoss => GameManager.Config.BossAttackDamage,
+            _                        => 0
+        };
+
+        public float AttackRange => health.EntityType switch
+        {
+            EntityType.PlayerMinion  => GameManager.Config.PlayerAttackRange,
+            EntityType.EnemyMinion   => GameManager.Config.EnemyAttackRange,
+            EntityType.EnemyMiniBoss => GameManager.Config.BossAttackRange,
+            _                        => 0
+        };
+
+        public float AttackRate => health.EntityType switch
+        {
+            EntityType.PlayerMinion  => GameManager.Config.PlayerAttackRate,
+            EntityType.EnemyMinion   => GameManager.Config.EnemyAttackRate,
+            EntityType.EnemyMiniBoss => GameManager.Config.BossAttackRate,
+            _                        => 0
+        };
+
+        public float MoveSpeed => health.EntityType switch
+        {
+            EntityType.PlayerMinion  => GameManager.Config.PlayerMoveSpeed,
+            EntityType.EnemyMinion   => GameManager.Config.EnemyMoveSpeed,
+            EntityType.EnemyMiniBoss => GameManager.Config.BossMoveSpeed,
+            _                        => 0
+        };
 
         [Header("State")]
         [SerializeField] private Vector2 velocity;
@@ -77,7 +101,7 @@ namespace Crabgame.Entity
 
             attackTimer += Time.deltaTime;
 
-            if (attackTimer < attackRate)
+            if (attackTimer < AttackRate)
                 return;
 
             shouldAttack = ShouldAttack();
@@ -177,7 +201,7 @@ namespace Crabgame.Entity
             for (var i = 0; i < hitCount; i++)
             {
                 if (attackResults[i] && attackResults[i].TryGetComponent(out Health target))
-                    target.TakeDamage(damage);
+                    target.TakeDamage(AttackDamage);
             }
 
             return true;
@@ -195,14 +219,18 @@ namespace Crabgame.Entity
                 detectionBoxes[i] = detectionTriggers[i].transform;
         }
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
             InitTriggers();
 
+            if (!Application.isPlaying)
+                return;
+
             foreach (Transform box in attackBoxes)
             {
                 Vector3 attackScale = box.localScale;
-                attackScale.x  = attackRange;
+                attackScale.x  = AttackRange;
                 box.localScale = attackScale;
             }
 
@@ -213,5 +241,6 @@ namespace Crabgame.Entity
                 box.localScale   = detectionScale;
             }
         }
+#endif
     }
 }

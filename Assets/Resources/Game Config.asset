@@ -23,14 +23,24 @@ MonoBehaviour:
   beamFollowSpeed: 100
   playerMoveSpeed: 1.2
   enemyMoveSpeed: 0.8
+  bossMoveSpeed: 0.4
+  playerAttackDamage: 10
+  playerAttackRange: 1
+  playerAttackRate: 1
+  enemyAttackDamage: 10
+  enemyAttackRange: 1
+  enemyAttackRate: 1
+  bossAttackDamage: 20
+  bossAttackRange: 3
+  bossAttackRate: 3
+  minionExplosionDamage: 10
+  miniBossExplosionDamage: 1000
   moveWhileAttacking: 1
   moveWhileRecovering: 0
   turnWhileAttacking: 0
   turnWhileRecovering: 0
   playerRandomAttackOffsetMax: 0
   enemyRandomAttackOffsetMax: 0
-  minionExplosionDamage: 10
-  miniBossExplosionDamage: 1000
   upgradeArmCost: 25
   upgradeLegCost: 100
   minionUpgrades:
