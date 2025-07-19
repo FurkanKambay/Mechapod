@@ -5,7 +5,7 @@
 			<value>UI Golem New Limb</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{2266afca-d067-4684-8f3d-088eda7daddf}</destination>
@@ -28,9 +28,6 @@
 		<relationship name="timeline">
 			<destination>{5989a23a-fb22-4b85-b860-cc29aeee5f1d}</destination>
 		</relationship>
-		<relationship name="parameters">
-			<destination>{7806b255-1477-4652-9543-8f3c2773a970}</destination>
-		</relationship>
 		<relationship name="banks">
 			<destination>{291fcb6b-944d-403f-bc0c-167feb5a19ec}</destination>
 		</relationship>
@@ -42,7 +39,7 @@
 	</object>
 	<object class="MasterTrack" id="{c9717522-da9a-4138-bdd7-b9bc76aedfcb}">
 		<relationship name="modules">
-			<destination>{c0aa8e34-408e-41f6-86f4-02fb8940c17d}</destination>
+			<destination>{ade2ae7b-d5ca-4e2a-a911-61bccb9c34cd}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{1d3e1e35-e340-4ce9-85dd-72ba7e2ed261}</destination>
@@ -62,13 +59,8 @@
 	<object class="EventAutomatableProperties" id="{ddb8939a-f162-4e96-a042-e49e1b0ae993}" />
 	<object class="MarkerTrack" id="{b11cacf4-5b62-4646-b590-bbd6c855695d}" />
 	<object class="Timeline" id="{5989a23a-fb22-4b85-b860-cc29aeee5f1d}">
-		<property name="isProxyEnabled">
-			<value>false</value>
-		</property>
-	</object>
-	<object class="ActionSheet" id="{7806b255-1477-4652-9543-8f3c2773a970}">
 		<relationship name="modules">
-			<destination>{c0aa8e34-408e-41f6-86f4-02fb8940c17d}</destination>
+			<destination>{ade2ae7b-d5ca-4e2a-a911-61bccb9c34cd}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1d3e1e35-e340-4ce9-85dd-72ba7e2ed261}">
@@ -82,9 +74,15 @@
 			<destination>{6166e9d5-1b7f-4f1f-bdf4-9ebe8936c0fc}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{c0aa8e34-408e-41f6-86f4-02fb8940c17d}">
-		<relationship name="sounds">
-			<destination>{ef6f63a4-2a39-46d2-82c9-694e36526ae3}</destination>
+	<object class="SingleSound" id="{ade2ae7b-d5ca-4e2a-a911-61bccb9c34cd}">
+		<property name="length">
+			<value>1.058095238095238</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.30000000000000004</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{2f975cba-4f66-4a77-8552-3d3e3522980a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{ac94a523-c7cb-47e5-bcd8-310905ececb4}">
@@ -99,7 +97,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{74db67f1-388a-4955-90d5-25333aaa1e31}" />
-	<object class="SingleSound" id="{ef6f63a4-2a39-46d2-82c9-694e36526ae3}" />
 	<object class="MixerBusFader" id="{a3399951-ecfd-4553-90f9-f4d5e46acf74}" />
 	<object class="MixerBusFader" id="{836d31a8-d89e-44a6-bb3e-1062f2d50c67}" />
 </objects>
