@@ -29,6 +29,8 @@ MonoBehaviour:
   turnWhileRecovering: 0
   playerRandomAttackOffsetMax: 0
   enemyRandomAttackOffsetMax: 0
+  minionExplosionDamage: 10
+  miniBossExplosionDamage: 1000
   upgradeArmCost: 25
   upgradeLegCost: 100
   minionUpgrades:

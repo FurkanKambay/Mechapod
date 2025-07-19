@@ -1,4 +1,6 @@
+using System;
 using Crabgame.Audio;
+using Crabgame.Managers;
 using UnityEngine;
 
 namespace Crabgame.Entity
@@ -9,19 +11,20 @@ namespace Crabgame.Entity
         [SerializeField] private Health health;
         [SerializeField] private GameObject explosionAnim;
 
-        [Header("Config")]
-        [SerializeField] private int damageAmount;
-
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (!health || health.IsDead)
                 return;
 
-            if (!other.collider.CompareTag("Player"))
+            if (!other.CompareTag("Player"))
                 return;
 
-            var golem = other.collider.GetComponent<Health>();
-            golem.TakeDamage(damageAmount);
+            var golem = other.GetComponent<Health>();
+            golem.TakeDamage(health.EntityType switch
+            {
+                EntityType.EnemyMiniBoss => GameManager.Config.MiniBossExplosionDamage,
+                _                        => GameManager.Config.MinionExplosionDamage
+            });
 
             explosionAnim.SetActive(true);
             AudioPlayer.Instance.crabEnemyExplode.PlayOneShot();
