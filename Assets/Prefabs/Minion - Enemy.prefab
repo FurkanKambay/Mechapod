@@ -208,7 +208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6878567571270666461, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_Radius
-      value: 0.25
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878567571270666461, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6934820150694588300, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalScale.x
