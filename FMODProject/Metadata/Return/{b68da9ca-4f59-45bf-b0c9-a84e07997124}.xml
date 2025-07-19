@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{b68da9ca-4f59-45bf-b0c9-a84e07997124}">
+		<property name="name">
+			<value>Enemy Minion</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{e2c8c220-7185-4d9f-91bf-4c474321fc93}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{e526677f-1e19-4bf7-9244-cd3ed88603ac}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{e2c8c220-7185-4d9f-91bf-4c474321fc93}">
+		<relationship name="effects">
+			<destination>{d6b13e2f-a5c0-4b66-869a-7e91c0b5032f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{e526677f-1e19-4bf7-9244-cd3ed88603ac}" />
+	<object class="MixerBusFader" id="{d6b13e2f-a5c0-4b66-869a-7e91c0b5032f}" />
+</objects>
