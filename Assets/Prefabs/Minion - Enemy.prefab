@@ -130,6 +130,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 92faa88a509ba3341946a922ae44039d, type: 2}
+    - target: {fileID: 2947917428747800108, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2947917428747800108, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -297053107
+      objectReference: {fileID: 0}
     - target: {fileID: 3080589856471975100, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_Name
       value: Minion - Enemy
