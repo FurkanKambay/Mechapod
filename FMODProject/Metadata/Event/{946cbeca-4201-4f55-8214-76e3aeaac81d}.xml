@@ -56,7 +56,14 @@
 			<destination>{bd12d934-6ea4-4032-bfc3-d9a0f36a5178}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{cef5eb76-0cc5-4cb9-b4ea-f28ede55479a}" />
+	<object class="EventAutomatableProperties" id="{cef5eb76-0cc5-4cb9-b4ea-f28ede55479a}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="voiceStealing">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{4a7df49d-6b06-4b26-8587-1a4ac9b12cac}" />
 	<object class="Timeline" id="{1f7aed1c-cb66-469a-aa4d-1a7a20542748}">
 		<relationship name="modules">
@@ -67,6 +74,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1f7d8a73-e87f-48eb-b0de-facfa6e03197}">
+		<property name="volume">
+			<value>-17.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{d0b692e9-b910-4e12-927d-18eebb87b353}</destination>
 		</relationship>
@@ -96,7 +106,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>1.3600000000000001</value>
+			<value>1.4000000000000001</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{1f7aed1c-cb66-469a-aa4d-1a7a20542748}</destination>
