@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 311100450487684671, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 311100450487684671, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 801069475986759246, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
       propertyPath: m_Name
       value: Minion - Crab Boss
@@ -44,10 +52,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: bd86413e6f465a9498c147f4fc83ae52, type: 2}
+    - target: {fileID: 4010198916261403538, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010198916261403538, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4474176809394171223, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 8f59531018cfa7c4ba09afa110228fa4, type: 2}
+    - target: {fileID: 4551702957093108402, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551702957093108402, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4747043020433094014, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
       propertyPath: m_LocalScale.x
       value: 2

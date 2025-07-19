@@ -12,7 +12,7 @@ namespace Crabgame.Entity
         [Header("References")]
         [SerializeField] private Health health;
         [SerializeField] private Rigidbody2D  body;
-        [SerializeField] private Collider2D   attackCollider;
+        [SerializeField] private Collider2D[] attackTriggers;
         [SerializeField] private Collider2D[] detectionTriggers;
 
         [Header("Config - Special")]
@@ -54,7 +54,7 @@ namespace Crabgame.Entity
         private Collider2D[] attackResults    = new Collider2D[5];
         private Collider2D[] detectionResults = new Collider2D[1];
 
-        private Transform   attackBox;
+        private Transform[] attackBoxes;
         private Transform[] detectionBoxes;
 
         private bool shouldAttack;
@@ -126,7 +126,7 @@ namespace Crabgame.Entity
                 return true;
 
             detectionResults = new Collider2D[1];
-            int hitCount = UpdateDetections(lockedDirection);
+            int hitCount = GetDetections(lockedDirection);
 
             if (hitCount > 0)
                 return true;
@@ -138,7 +138,7 @@ namespace Crabgame.Entity
                 if (direction == lockedDirection)
                     continue;
 
-                hitCount = UpdateDetections(direction);
+                hitCount = GetDetections(direction);
 
                 if (hitCount == 0)
                     continue;
@@ -151,11 +151,10 @@ namespace Crabgame.Entity
             return false;
         }
 
-        private int UpdateDetections(Direction direction)
+        private int GetDetections(Direction direction)
         {
-            int index = (int)direction - 1;
-            detectionBoxes[index].eulerAngles = Vector3.forward * direction.AttackAngle();
-            return detectionTriggers[index].Overlap(attackFilter, detectionResults);
+            Collider2D trigger = detectionTriggers[(int)direction - 1];
+            return trigger.Overlap(attackFilter, detectionResults);
         }
 
         private void PerformAttack()
@@ -169,13 +168,12 @@ namespace Crabgame.Entity
 
         internal bool ProcAttack()
         {
-            // attackResults = new Collider2D[5];
-
-            attackBox.eulerAngles = Vector3.forward * lockedDirection.AttackAngle();
-            int hitCount = attackCollider.Overlap(attackFilter, attackResults);
-
             isPerformingAttack = false;
             isRecovering       = true;
+
+            Collider2D trigger  = attackTriggers[(int)lockedDirection - 1];
+            int        hitCount = trigger.Overlap(attackFilter, attackResults);
+
             OnAttackProcced?.Invoke(hitCount != 0);
 
             if (hitCount == 0)
@@ -183,8 +181,8 @@ namespace Crabgame.Entity
 
             for (var i = 0; i < hitCount; i++)
             {
-                var target = attackResults[i].GetComponent<Health>();
-                target.TakeDamage(damage);
+                if (attackResults[i] && attackResults[i].TryGetComponent(out Health target))
+                    target.TakeDamage(damage);
             }
 
             return true;
@@ -192,9 +190,11 @@ namespace Crabgame.Entity
 
         private void InitTriggers()
         {
-            attackBox = attackCollider.transform;
-
+            Array.Resize(ref attackBoxes,    attackTriggers.Length);
             Array.Resize(ref detectionBoxes, detectionTriggers.Length);
+
+            for (var i = 0; i < attackTriggers.Length; i++)
+                attackBoxes[i] = attackTriggers[i].transform;
 
             for (var i = 0; i < detectionTriggers.Length; i++)
                 detectionBoxes[i] = detectionTriggers[i].transform;
@@ -204,9 +204,12 @@ namespace Crabgame.Entity
         {
             InitTriggers();
 
-            Vector3 attackScale = attackBox.localScale;
-            attackScale.x        = attackRange;
-            attackBox.localScale = attackScale;
+            foreach (Transform box in attackBoxes)
+            {
+                Vector3 attackScale = box.localScale;
+                attackScale.x  = attackRange;
+                box.localScale = attackScale;
+            }
 
             foreach (Transform box in detectionBoxes)
             {

@@ -130,6 +130,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 92faa88a509ba3341946a922ae44039d, type: 2}
+    - target: {fileID: 1619777425050992992, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2231368618046087232, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705762191146882253, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2947917428747800108, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -158,6 +170,10 @@ PrefabInstance:
       propertyPath: entityType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4789660211556389269, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5559261324161850763, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: deathDestroyDelay
       value: 2
@@ -166,9 +182,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6545936714556354104, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: attackRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: detectionRange
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: attackFilter.layerMask.m_Bits
@@ -177,6 +209,14 @@ PrefabInstance:
     - target: {fileID: 6878567571270666461, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_Radius
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934820150694588300, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389732418421818793, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
