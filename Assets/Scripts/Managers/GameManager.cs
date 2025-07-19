@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Crabgame.Audio;
 using Crabgame.Night;
 using Crabgame.Player;
 using UnityEngine;
@@ -160,11 +161,15 @@ namespace Crabgame.Managers
         private void Enemies_AllDead()
         {
             if (golem && golem.Health && !golem.Health.IsDead)
+            {
                 NextWave();
+                AudioPlayer.Instance.uiNightSuccess.PlayOneShot();
+            }
         }
 
         private void Golem_Died()
         {
+            AudioPlayer.Instance.uiGameOver.PlayOneShot();
             Invoke(nameof(ResetGame), Config.GameRestartTime);
         }
 
