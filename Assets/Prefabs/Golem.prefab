@@ -357,7 +357,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 0.5, z: 1}
+  m_LocalScale: {x: 10, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7991082137981591427}
@@ -379,9 +379,9 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.9490196, g: 0.92156863, b: 0.49803922, a: 1}
-  m_Intensity: 3
-  m_LightVolumeIntensity: 1
-  m_LightVolumeEnabled: 0
+  m_Intensity: 1
+  m_LightVolumeIntensity: 0.2
+  m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 3724ca7169b08241000000004d544bee37d68b24abeed6ee
   m_LightCookieSprite: {fileID: 21300000, guid: ac8a5009bc043d64995696f22df7ac38, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 2
+  m_ShapeLightFalloffSize: 0.15
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
   - {x: -0.5, y: -0.5, z: 0}
@@ -982,8 +982,9 @@ MonoBehaviour:
   - {fileID: 6767297334000914618}
   hurtDuration: 0.5
   explodePadding: 0.3
-  lightIntensity: 1
-  lightIntensityBeaming: 0.5
+  globalLightIntensity: 1
+  globalLightIntensityBeaming: 0.5
+  lightFalloffMultiplier: 1.5
 --- !u!1 &6767297334000914618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1292,7 @@ MonoBehaviour:
   m_FalloffIntensity: 0.35
   m_Color: {r: 0.9490196, g: 0.92156863, b: 0.49803922, a: 1}
   m_Intensity: 1
-  m_LightVolumeIntensity: 1.5
+  m_LightVolumeIntensity: 0.8
   m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: abeed6ee
   m_LightCookieSprite: {fileID: 21300000, guid: ac8a5009bc043d64995696f22df7ac38, type: 3}

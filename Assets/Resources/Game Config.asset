@@ -15,14 +15,14 @@ MonoBehaviour:
   nightWaitTime: 2
   gameRestartTime: 4
   beamDelay: 0.2
-  beamDuration: 5
+  beamDuration: 248.1
   beamLength: 15
   beamWidth: 0.6
-  beamDamage: 10
-  beamDamageRate: 0.5
-  beamFollowSpeed: 100
+  beamDamage: 0
+  beamDamageRate: 3
+  beamFollowSpeed: 880.8
   playerMoveSpeed: 1.2
-  enemyMoveSpeed: 0.8
+  enemyMoveSpeed: 0
   moveWhileAttacking: 1
   moveWhileRecovering: 0
   turnWhileAttacking: 0

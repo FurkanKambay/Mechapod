@@ -4,6 +4,7 @@ using Crabgame.Managers;
 using Crabgame.Player;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 namespace Crabgame.Visual
 {
@@ -28,12 +29,14 @@ namespace Crabgame.Visual
         [SerializeField, Min(0)] private float explodePadding = 0.2f;
 
         [Header("Config - Lighting")]
-        [SerializeField, Min(0)] private float lightIntensity = 1f;
-        [SerializeField, Min(0)] private float lightIntensityBeaming = 0.5f;
+        [SerializeField, Min(0)] private float globalLightIntensity = 1f;
+        [SerializeField, Min(0)] private float globalLightIntensityBeaming = 0.5f;
+        [SerializeField, Min(1)] private float lightFalloffMultiplier      = 1.5f;
 
         private static GameConfigSO Config => GameManager.Config;
 
         private MaterialPropertyBlock propertyBlock;
+        private Transform             lightTransform;
 
         private static readonly int ShaderHurt = Shader.PropertyToID("_Hurt");
 
@@ -41,16 +44,21 @@ namespace Crabgame.Visual
         private static readonly int AnimArmBlast  = Animator.StringToHash("arm blast");
 
 #region Unity Lifetime
-        private void Awake() =>
-            propertyBlock = new MaterialPropertyBlock();
+        private void Awake()
+        {
+            propertyBlock  = new MaterialPropertyBlock();
+            lightTransform = beamLight.transform;
+        }
 
         private void OnEnable()
         {
             beamSprite.size = new Vector2(Config.BeamLength, Config.BeamWidth);
 
-            Transform lightTransform = beamLight.transform;
-            lightTransform.localScale    = new Vector3(Config.BeamLength,     Config.BeamWidth, 1);
-            lightTransform.localPosition = new Vector3(Config.BeamLength / 2, 0,                0);
+            // includes falloff (for single-axis support)
+            float lightWidth = Config.BeamWidth * lightFalloffMultiplier;
+
+            lightTransform.localScale    = new Vector3(Config.BeamLength,     lightWidth, 1f);
+            lightTransform.localPosition = new Vector3(Config.BeamLength / 2, 0f,         0f);
 
             golem.OnArmBeamTriggered += Golem_ArmBeamTriggered;
 
@@ -142,13 +150,13 @@ namespace Crabgame.Visual
 
             // sprite + light
             beamSprite.gameObject.SetActive(true);
-            globalLight.intensity = lightIntensityBeaming;
+            globalLight.intensity = globalLightIntensityBeaming;
 
             golem.StartBeam();
             yield return new WaitForSeconds(GameManager.Config.BeamDuration);
 
             // revert light
-            globalLight.intensity = lightIntensity;
+            globalLight.intensity = globalLightIntensity;
 
             // source + beam sprites, anim
             beamSprite.gameObject.SetActive(false);
