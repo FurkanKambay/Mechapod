@@ -227,6 +227,7 @@ namespace Crabgame.Entity
             if (!Application.isPlaying)
                 return;
 
+            return;
             foreach (Transform box in attackBoxes)
             {
                 Vector3 attackScale = box.localScale;
