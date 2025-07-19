@@ -10,6 +10,7 @@ namespace Crabgame.Player
     {
         public event Action OnBoughtArm;
         public event Action OnBoughtLeg;
+        public event Action OnBoughtMinions;
 
         public          int scrapAmount;
         [Min(1)] public int minionAmount;
@@ -20,8 +21,7 @@ namespace Crabgame.Player
         [CreateProperty] public bool CanBuyArm => !GolemHasArm && scrapAmount >= GameManager.Config.UpgradeArmCost;
         [CreateProperty] public bool CanBuyLeg => !GolemHasLeg && scrapAmount >= GameManager.Config.UpgradeLegCost;
 
-        [CreateProperty] public string BuyArmText =>
-            !GolemHasArm ? "Arm Upgrade" : "Arm Upgraded!";
+        [CreateProperty] public string BuyArmText => !GolemHasArm ? "Arm Upgrade" : "Arm Upgraded!";
 
 #region Minion Upgrades
         [CreateProperty] public bool CanBuyMinions =>
@@ -48,38 +48,47 @@ namespace Crabgame.Player
             scrapAmount  -= NextMinionUpgradeCost;
 
             minionUpgradeIndex++;
+            OnBoughtMinions?.Invoke();
         }
 #endregion
 
+#region Golem Arms
         public void BuyArm()
         {
             if (!CanBuyArm)
                 return;
 
             scrapAmount -= GameManager.Config.UpgradeArmCost;
-            GiftArm();
+            GiveArm();
         }
 
-        public void GiftArm()
+        public void GiveArm()
         {
             GolemHasArm = true;
             OnBoughtArm?.Invoke();
         }
+#endregion
 
+#region Golem Legs
         public void BuyLeg()
         {
             if (!CanBuyLeg)
                 return;
 
-            GolemHasLeg =  true;
             scrapAmount -= GameManager.Config.UpgradeLegCost;
+            GiveLeg();
+        }
+
+        public void GiveLeg()
+        {
+            GolemHasLeg = true;
             OnBoughtLeg?.Invoke();
         }
+#endregion
 
         public void Reset()
         {
-            scrapAmount = 0;
-
+            scrapAmount        = 0;
             minionAmount       = 1;
             minionUpgradeIndex = 0;
 

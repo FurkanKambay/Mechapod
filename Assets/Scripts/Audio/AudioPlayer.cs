@@ -42,18 +42,20 @@ namespace Crabgame.Audio
             GameManager.Golem.OnArmBeamStarted += Golem_BeamStarted;
             GameManager.Golem.OnArmBeamStopped += Golem_BeamStopped;
 
-            GameManager.PlayerState.OnBoughtArm += Golem_LimbUpgraded;
-            GameManager.PlayerState.OnBoughtLeg += Golem_LimbUpgraded;
+            GameManager.PlayerState.OnBoughtMinions += Golem_LimbUpgraded; // reuse
+            GameManager.PlayerState.OnBoughtArm     += Golem_LimbUpgraded;
+            GameManager.PlayerState.OnBoughtLeg     += Golem_LimbUpgraded;
         }
 
         private void OnDisable()
         {
-            GameManager.Instance.OnPhaseChange  -= Game_PhaseChanged;
-            GameManager.Golem.OnArmBeamStarted  -= Golem_BeamStarted;
-            GameManager.Golem.OnArmBeamStopped  -= Golem_BeamStopped;
+            GameManager.Instance.OnPhaseChange -= Game_PhaseChanged;
+            GameManager.Golem.OnArmBeamStarted -= Golem_BeamStarted;
+            GameManager.Golem.OnArmBeamStopped -= Golem_BeamStopped;
 
-            GameManager.PlayerState.OnBoughtArm -= Golem_LimbUpgraded;
-            GameManager.PlayerState.OnBoughtLeg -= Golem_LimbUpgraded;
+            GameManager.PlayerState.OnBoughtMinions -= Golem_LimbUpgraded;
+            GameManager.PlayerState.OnBoughtArm     -= Golem_LimbUpgraded;
+            GameManager.PlayerState.OnBoughtLeg     -= Golem_LimbUpgraded;
         }
 
         private IEnumerator Start()

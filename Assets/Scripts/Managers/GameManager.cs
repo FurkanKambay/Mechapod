@@ -100,7 +100,7 @@ namespace Crabgame.Managers
                 enemyManager.SpawnMiniBoss();
 
             if (keyboard.aKey.wasPressedThisFrame)
-                playerState.GiftArm();
+                playerState.GiveArm();
         }
 
         [ContextMenu("Next Phase (Day/Night)")]
