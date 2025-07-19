@@ -29,6 +29,9 @@ namespace Crabgame.Entity
 
         public void TakeDamage(int amount)
         {
+            if (!enabled)
+                return;
+
             health -= amount;
 
             if (health > 0)
