@@ -41,13 +41,19 @@ namespace Crabgame.Audio
             GameManager.Instance.OnPhaseChange += Game_PhaseChanged;
             GameManager.Golem.OnArmBeamStarted += Golem_BeamStarted;
             GameManager.Golem.OnArmBeamStopped += Golem_BeamStopped;
+
+            GameManager.PlayerState.OnBoughtArm += Golem_LimbUpgraded;
+            GameManager.PlayerState.OnBoughtLeg += Golem_LimbUpgraded;
         }
 
         private void OnDisable()
         {
-            GameManager.Instance.OnPhaseChange -= Game_PhaseChanged;
-            GameManager.Golem.OnArmBeamStarted -= Golem_BeamStarted;
-            GameManager.Golem.OnArmBeamStopped -= Golem_BeamStopped;
+            GameManager.Instance.OnPhaseChange  -= Game_PhaseChanged;
+            GameManager.Golem.OnArmBeamStarted  -= Golem_BeamStarted;
+            GameManager.Golem.OnArmBeamStopped  -= Golem_BeamStopped;
+
+            GameManager.PlayerState.OnBoughtArm -= Golem_LimbUpgraded;
+            GameManager.PlayerState.OnBoughtLeg -= Golem_LimbUpgraded;
         }
 
         private IEnumerator Start()
@@ -81,6 +87,9 @@ namespace Crabgame.Audio
 
         private void Golem_BeamStopped() =>
             golemLaser.Instance.stop(STOP_MODE.ALLOWFADEOUT);
+
+        private void Golem_LimbUpgraded() =>
+            uiGolemNewLimb.PlayOneShot();
 
         public void PlayEntityGetHurt(EntityType entityType)
         {
