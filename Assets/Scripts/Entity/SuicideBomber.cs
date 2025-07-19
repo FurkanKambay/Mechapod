@@ -21,8 +21,9 @@ namespace Crabgame.Entity
                 return;
 
             bomber.Health.enabled = false;
-            var golem = other.GetComponent<Health>();
+            bomber.enabled        = false;
 
+            var golem = other.GetComponent<Health>();
             StartCoroutine(BlowUpWithDelay(golem));
         }
 
