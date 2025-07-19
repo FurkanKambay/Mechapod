@@ -65,6 +65,7 @@ namespace Crabgame
         public float PlayerMoveSpeed => playerMoveSpeed;
         public float EnemyMoveSpeed  => enemyMoveSpeed;
 
+        // Crab Attacks
         [Header("Minions & Boss - Attack")]
         [Tooltip("Can crabs move while attacking?")]
         [SerializeField] private bool moveWhileAttacking;
@@ -78,17 +79,26 @@ namespace Crabgame
         [Tooltip("Can crabs turn while recovering after an attack?")]
         [SerializeField] private bool turnWhileRecovering;
 
-        [Header("Attack Offset (Random Max)")]
-        [SerializeField] private float playerRandomAttackOffsetMax;
-        [SerializeField] private float enemyRandomAttackOffsetMax;
-
         public bool MoveWhileAttacking  => moveWhileAttacking;
         public bool MoveWhileRecovering => moveWhileRecovering;
         public bool TurnWhileAttacking  => turnWhileAttacking;
         public bool TurnWhileRecovering => turnWhileRecovering;
 
+        // Attack Offset
+        [Header("Attack Offset (Random Max)")]
+        [SerializeField] private float playerRandomAttackOffsetMax;
+        [SerializeField] private float enemyRandomAttackOffsetMax;
+
         public float PlayerRandomAttackOffsetMax => playerRandomAttackOffsetMax;
         public float EnemyRandomAttackOffsetMax  => enemyRandomAttackOffsetMax;
+
+        // Explosion
+        [Header("Minions & Boss - Explosion")]
+        [SerializeField] private int minionExplosionDamage;
+        [SerializeField] private int miniBossExplosionDamage;
+
+        public int MinionExplosionDamage   => minionExplosionDamage;
+        public int MiniBossExplosionDamage => miniBossExplosionDamage;
 #endregion
 
 #region Economy

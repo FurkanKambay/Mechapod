@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &505929058632496182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747376776519186139}
+  - component: {fileID: 5394635453268863691}
+  - component: {fileID: 6070736689843542999}
+  m_Layer: 7
+  m_Name: Bomber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &747376776519186139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505929058632496182}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6195765935306511105}
+  m_Father: {fileID: 5559164904311253285}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5394635453268863691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505929058632496182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0130f977a0a1426caa8dc910a18f2a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1973560790989649150}
+  explosionAnim: {fileID: 9122654862521021663}
+--- !u!58 &6070736689843542999
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505929058632496182}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &9122654862521021663
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +96,7 @@ GameObject:
   - component: {fileID: 769792114540063903}
   - component: {fileID: 701608318516356641}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Explosion anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +115,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5559164904311253285}
+  m_Father: {fileID: 747376776519186139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &769792114540063903
 SpriteRenderer:
@@ -238,39 +322,16 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7853032348944446423, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 6195765935306511105}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3080589856471975100, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5603315115612701163}
+      addedObject: {fileID: 747376776519186139}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
---- !u!1 &801069475986759246 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3080589856471975100, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
-  m_PrefabInstance: {fileID: 2440260876938664690}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &-5603315115612701163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801069475986759246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0130f977a0a1426caa8dc910a18f2a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 1973560790989649150}
-  explosionAnim: {fileID: 9122654862521021663}
-  damageAmount: 10
 --- !u!114 &1973560790989649150 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4233088172766391820, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
   m_PrefabInstance: {fileID: 2440260876938664690}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801069475986759246}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb0e1d644912546478969721a105c1c1, type: 3}
