@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{a7b8d0e5-6f64-41aa-9083-a8aa2d3d690b}">
+		<property name="name">
+			<value>Lazer </value>
+		</property>
+		<relationship name="folder">
+			<destination>{5ce339f9-10de-46b0-a108-a40c45e39d7a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4e961273-26b9-403c-b9d6-325acd3b88f6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4e961273-26b9-403c-b9d6-325acd3b88f6}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
