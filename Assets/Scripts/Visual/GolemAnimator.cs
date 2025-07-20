@@ -66,6 +66,7 @@ namespace Crabgame.Visual
             sourceLight.color = beamLightColor;
 
             golem.OnArmBeamTriggered += Golem_ArmBeamTriggered;
+            golem.OnArmBeamStopped   += Golem_ArmBeamStopped;
 
             golem.Health.OnHurt  += Health_Hurt;
             golem.Health.OnDeath += Health_Death;
@@ -82,6 +83,7 @@ namespace Crabgame.Visual
         private void OnDisable()
         {
             golem.OnArmBeamTriggered -= Golem_ArmBeamTriggered;
+            golem.OnArmBeamStopped   -= Golem_ArmBeamStopped;
 
             golem.Health.OnHurt  -= Health_Hurt;
             golem.Health.OnDeath -= Health_Death;
@@ -154,6 +156,17 @@ namespace Crabgame.Visual
         private void Anim_RunBeam() =>
             StartCoroutine(StartBeam());
 
+        private void Golem_ArmBeamStopped()
+        {
+            // revert light
+            globalLight.intensity = globalLightIntensity;
+
+            // source + beam sprites, anim
+            beamSprite.gameObject.SetActive(false);
+            beamSource.gameObject.SetActive(false);
+            animator.SetBool(AnimArmBlast, false);
+        }
+
         private IEnumerator StartBeam()
         {
             beamSource.gameObject.SetActive(true);
@@ -164,16 +177,8 @@ namespace Crabgame.Visual
             globalLight.intensity = globalLightIntensityBeaming;
 
             golem.StartBeam();
+
             yield return new WaitForSeconds(GameManager.Config.BeamDuration);
-
-            // revert light
-            globalLight.intensity = globalLightIntensity;
-
-            // source + beam sprites, anim
-            beamSprite.gameObject.SetActive(false);
-            beamSource.gameObject.SetActive(false);
-            animator.SetBool(AnimArmBlast, false);
-
             golem.StopBeam();
         }
     }

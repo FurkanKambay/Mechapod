@@ -107,10 +107,12 @@ namespace Crabgame.Managers
         [ContextMenu("Next Phase (Day/Night)")]
         public IEnumerator NextPhase(float delay = 0)
         {
-            while (golem.IsBeaming)
-                yield return null;
+            // golem.StopBeam();
 
             yield return new WaitForSeconds(delay);
+
+            while (golem.IsBeaming)
+                yield return null;
 
             if (Keyboard.current?.fKey.isPressed == true)
                 godModeEnabled = true;
