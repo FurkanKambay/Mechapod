@@ -131,7 +131,6 @@
 
 .upgrade-cost-icon {
     background-image: url("project://database/Assets/Art/Objects/Scrap_pile_battlefield.png?fileID=2800000&guid=30bd1f64e6a53ee409441fc4e6229aee&type=3#Scrap_pile_battlefield");
-    background-position-x: center 0;
     -unity-background-scale-mode: scale-to-fit;
     height: 64px;
     width: 64px;
