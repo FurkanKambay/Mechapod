@@ -30,7 +30,7 @@ MonoBehaviour:
   enemyAttackDamage: 10
   enemyAttackRange: 1
   enemyAttackRate: 1
-  bossAttackDamage: 20
+  bossAttackDamage: 17
   bossAttackRange: 3
   bossAttackRate: 3
   minionExplosionDamage: 10

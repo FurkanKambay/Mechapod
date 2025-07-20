@@ -121,10 +121,6 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7853146279403734905, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
-      propertyPath: deathDestroyDelay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7853146279403734905, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
       propertyPath: 'walkClips.Array.data[0]'
       value: 
       objectReference: {fileID: 7400000, guid: 244c0b851d68fa946a309947cebad948, type: 2}
