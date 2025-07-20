@@ -34,16 +34,15 @@ namespace Crabgame.Player
 
         public Vector2 AimPoint { get; private set; }
 
-        private bool isArmBeamUsedUp;
-
         // ARM BEAM
-        public bool  IsBeaming { get; private set; }
-        public float BeamAngle { get; private set; }
+        public bool  IsArmBeamAvailable { get; private set; }
+        public bool  IsBeaming          { get; private set; }
+        public float BeamAngle          { get; private set; }
 
         private float targetBeamAngle;
         private float beamDamageCountdown;
 
-        private Collider2D[] beamResults = new Collider2D[5];
+        private readonly Collider2D[] beamResults = new Collider2D[5];
         //
 
         private void Awake()
@@ -57,7 +56,7 @@ namespace Crabgame.Player
 
             if (IsBeaming)
                 TickArmBeam();
-            else if (isArmBeamUsedUp && GameManager.PlayerState.GolemHasArm && input.WantsToUseArm)
+            else if (IsArmBeamAvailable && GameManager.PlayerState.GolemHasArm && input.WantsToUseArm)
                 UseArm();
         }
 
@@ -123,13 +122,13 @@ namespace Crabgame.Player
 
         private void UseArm()
         {
-            isArmBeamUsedUp = false;
+            IsArmBeamAvailable = false;
             OnArmBeamTriggered?.Invoke();
         }
 
         public void ResetAbilities()
         {
-            isArmBeamUsedUp = true;
+            IsArmBeamAvailable = true;
         }
     }
 }

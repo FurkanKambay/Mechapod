@@ -50,6 +50,7 @@ namespace Crabgame.Managers
         public bool IsNight   => isNight;
 
         private bool godModeEnabled;
+        private bool playerMinionsAllDead;
 
         private void Awake()
         {
@@ -67,6 +68,7 @@ namespace Crabgame.Managers
             minionManager.OnAllKilled += Minions_AllDead;
             enemyManager.OnAllKilled  += Enemies_AllDead;
             golem.Health.OnDeath      += Golem_Died;
+            golem.OnArmBeamStopped    += Golem_ArmBeamStopped;
         }
 
         private void OnDisable()
@@ -74,6 +76,7 @@ namespace Crabgame.Managers
             minionManager.OnAllKilled -= Minions_AllDead;
             enemyManager.OnAllKilled  -= Enemies_AllDead;
             golem.Health.OnDeath      -= Golem_Died;
+            golem.OnArmBeamStopped    -= Golem_ArmBeamStopped;
         }
 
         private void Update()
@@ -162,16 +165,28 @@ namespace Crabgame.Managers
 
         private void PopulateTonight()
         {
-            scrapManager.RespawnAll(Tonight.scrapPileAmount);
+            playerMinionsAllDead = false;
             minionManager.RespawnAll(PlayerState.minionAmount);
+
+            scrapManager.RespawnAll(Tonight.scrapPileAmount);
 
             enemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
             enemyManager.SpawnMiniBosses(Tonight.GetMiniBossAmount(waveIndex));
         }
 
+        private void Golem_ArmBeamStopped() =>
+            SpeedUpGame_IfNoActionAvailable();
+
         private void Minions_AllDead()
         {
-            // player can rely on golem abilities
+            playerMinionsAllDead = true;
+            SpeedUpGame_IfNoActionAvailable();
+        }
+
+        private void SpeedUpGame_IfNoActionAvailable()
+        {
+            if (playerMinionsAllDead && !Golem.IsArmBeamAvailable)
+                Time.timeScale = 3;
         }
 
         private void Enemies_AllDead()
