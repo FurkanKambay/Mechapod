@@ -45,6 +45,9 @@ namespace Crabgame.UI
 #if UNITY_EDITOR
         private void OnValidate()
         {
+            if (!Application.isPlaying || blackBackground == null)
+                return;
+
             SetTransition(isTransitioning);
         }
 #endif
