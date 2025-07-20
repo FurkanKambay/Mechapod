@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+#wrapper {
+    --btn: var(--itchio_button_color);
+    --btn_f: var(--itchio_button_fg_color);
+    --t: var(--itchio_text_color);
+    --b: var(--itchio_bg_color);
+    --b2: var(--itchio_bg2_color);
+    --b2s: var(--itchio_bg2_sub);
+    --br: var(--itchio_border_color);
+    --l: var(--itchio_link_color);
+}
+
+.custom-img-compare {
+    position: relative;
+    width: fit-content;
+    padding-bottom: 1em;
+    margin: auto
+}
+
+.custom-img-compare img {
+    display: block;
+    height: 100%;
+    max-width: unset
+}
+
+.custom-img-compare>img {
+    max-width: 100%
+}
+
+.custom-img-compare>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    max-width: 100%;
+    width: 50%;
+    padding-bottom: 1em;
+    overflow: hidden;
+    resize: horizontal
+}
+
+.custom-img-compare>div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: calc(100% - .2rem);
+    border-right: 2px solid var(--l)
+}
+
+.custom-img-compare>div::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: calc(-.5em + 1px);
+    background: var(--l);
+    height: .8rem;
+    width: 1.25rem;
+    clip-path: circle(50%)
+}
+
+dl.custom-info {
+    display: grid;
+    grid-template-columns: auto auto
+}
+
+dl.custom-info>* {
+    margin: .2em 8px
+}
+
+dl.custom-info>dt {
+    text-align: right;
+    font-weight: 700
+}
+
+dl.custom-info.custom-left {
+    grid-template-columns: min-content auto
+}
+
+dl.custom-info.custom-right {
+    grid-template-columns: auto min-content
+}
+
+#wrapper kbd {
+    font-size: .8em;
+    background: var(--br);
+    border-radius: 5px;
+    border-bottom: 3px solid var(--b2s);
+    padding: .1ch .8ch
+}
+
+.custom-tip {
+    position: relative
+}
+
+.custom-tip:has(> img) {
+    display: inline-block
+}
+
+.custom-tip:has(> img)>img {
+    position: relative
+}
+
+.custom-tip>.custom-tip-content {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: fit-content;
+    padding: .2em .5em;
+    color: var(--t);
+    background: var(--b2);
+    border: 1px solid var(--br);
+    border-radius: 6px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 99;
+    transition: .25s;
+    opacity: 0;
+    transform: translate(-50%, 100%)
+}
+
+.custom-tip>.custom-tip-content.custom-top {
+    bottom: 100%;
+    transform: translate(-50%, 0)
+}
+
+.custom-tip>.custom-tip-content.custom-left {
+    left: 0;
+    bottom: 50%;
+    transform: translate(-100%, 50%)
+}
+
+.custom-tip>.custom-tip-content.custom-right {
+    left: 100%;
+    bottom: 50%;
+    transform: translate(0, 50%)
+}
+
+.custom-tip:hover>.custom-tip-content {
+    opacity: 1;
+    transform: translate(-50%, calc(100% + .5em))
+}
+
+.custom-tip:hover>.custom-tip-content.custom-top {
+    transform: translate(-50%, -.5em)
+}
+
+.custom-tip:hover>.custom-tip-content.custom-left {
+    transform: translate(calc(-100% - .5em), 50%)
+}
+
+.custom-tip:hover>.custom-tip-content.custom-right {
+    transform: translate(.5em, 50%)
+}
+
+abbr.custom-tip {
+    text-decoration: 2px underline dotted var(--l)
+}
+
+.game_comments_widget .avatar_container[href="https://itch.io/profile/FurkanKambay"]+.post_header>.post_author::after {
+    content: ""
+}
+
+.game_comments_widget .avatar_container+.post_header>.post_author {
+    display: inline-flex
+}
+
+.game_comments_widget .avatar_container+.post_header>.post_author::before {
+    order: 3
+}
+
+.game_comments_widget .avatar_container+.post_header>.post_author::after,
+.game_comments_widget .avatar_container+.post_header>.post_author::before {
+    display: inline-block;
+    background: var(--btn);
+    color: var(--btn_f);
+    padding: .1em .5em;
+    margin-left: .5em;
+    border-radius: 3px;
+    font-size: .9em;
+    font-weight: 700
+}
