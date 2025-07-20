@@ -1,3 +1,4 @@
+using System.Collections;
 using Crabgame.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ namespace Crabgame.UI
     {
         [Header("References")]
         [SerializeField] private UIDocument document;
+        [SerializeField] private SceneTransition sceneTransition;
 
         private VisualElement root;
 
@@ -49,7 +51,13 @@ namespace Crabgame.UI
         }
 
         private void GameManager_PhaseChange() =>
+            StartCoroutine(UpdateUI());
+
+        private IEnumerator UpdateUI()
+        {
             root.visible = !GameManager.Instance.IsNight;
+            yield return null;
+        }
 
         private void ContinueButton_Clicked() =>
             StartCoroutine(GameManager.Instance.NextPhase());

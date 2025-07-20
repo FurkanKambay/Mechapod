@@ -1,0 +1,55 @@
+:root {
+    -unity-font-definition: url("project://database/Assets/GUI/GravityRegular5.ttf?fileID=12800000&guid=6666a9301f3448147acd8ee589f243eb&type=3#GravityRegular5");
+    font-size: 30px;
+}
+
+#black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    background-color: rgb(0, 0, 0);
+}
+
+#game-over-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-over-label {
+    color: rgb(224, 224, 224);
+}
+
+#game-success-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    background-image: url("project://database/Assets/Art/Background/Success_screen.png?fileID=2800000&guid=0f79c9c873fcd444dbb4f91939b8d3e5&type=3#Success_screen");
+    justify-content: flex-end;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+}
+
+#escaped-label {
+    color: rgb(224, 224, 224);
+}
+
+#thanks-label {
+    color: rgb(224, 224, 224);
+    font-size: 15px;
+}
