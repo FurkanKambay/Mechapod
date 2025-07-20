@@ -107,7 +107,7 @@
     transition-timing-function: ease-out-elastic;
 }
 
-:enabled > .hidden-content {
+.hidden-content {
     visibility: hidden;
 }
 
