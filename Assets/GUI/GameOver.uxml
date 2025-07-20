@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/GUI/GameOver.uss?fileID=7433441132597879392&amp;guid=cc1fc147eb8243b46a95125462f598a0&amp;type=3#GameOver" />
     <ui:VisualElement name="black" picking-mode="Ignore" />
     <ui:VisualElement name="game-over-panel" picking-mode="Ignore">
-        <ui:Label text="Game Over :(" name="game-over-label" />
+        <ui:Label text="You Lost :(" name="game-over-label" />
     </ui:VisualElement>
     <ui:VisualElement name="game-success-panel" picking-mode="Ignore">
         <ui:Label text="You&apos;ve escaped!" name="escaped-label" />
