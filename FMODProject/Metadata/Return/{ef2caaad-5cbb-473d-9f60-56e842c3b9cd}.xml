@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{ef2caaad-5cbb-473d-9f60-56e842c3b9cd}">
+		<property name="volume">
+			<value>-18.5</value>
+		</property>
+		<property name="name">
+			<value>Crab Walking</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{3b7da958-a23f-452f-926a-dbb927590047}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{14760071-4fe1-4b28-aebf-212b210efa8c}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{3b7da958-a23f-452f-926a-dbb927590047}">
+		<relationship name="effects">
+			<destination>{ae0f750e-b907-471b-99f1-52c6b74ed57a}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{14760071-4fe1-4b28-aebf-212b210efa8c}" />
+	<object class="MixerBusFader" id="{ae0f750e-b907-471b-99f1-52c6b74ed57a}" />
+</objects>

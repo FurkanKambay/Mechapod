@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="MixerReturn" id="{e89de5bd-74f9-42eb-8349-da3d05c20244}">
 		<property name="volume">
-			<value>-14</value>
+			<value>-13</value>
 		</property>
 		<property name="name">
 			<value>Golem Growl</value>
