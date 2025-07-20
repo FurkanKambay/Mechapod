@@ -129,7 +129,11 @@ namespace Crabgame.Managers
 
                 // loop back to day 1
                 if (dayNumber > nightMapSO.NightCount)
+                {
                     dayNumber = 1;
+                    yield return GameSuccess();
+                    yield break;
+                }
             }
 
             isNight   = !isNight;
@@ -178,14 +182,47 @@ namespace Crabgame.Managers
             }
         }
 
-        private void Golem_Died(Health source)
+        private void Golem_Died(Health source) =>
+            StartCoroutine(GameFail());
+
+        private IEnumerator GameSuccess()
         {
+            // AudioPlayer.Instance.uiGameSuccess.PlayOneShot();
+            ClearEntities();
+
+            sceneTransition.GameSuccess(true);
+            yield return new WaitForSecondsRealtime(Config.GameRestartTime);
+
+            sceneTransition.GameSuccess(false);
+            ResetGame();
+        }
+
+        private IEnumerator GameFail()
+        {
+            ClearEntities();
+            // Time.timeScale = 0f; // gets reset in ResetGame
+
             AudioPlayer.Instance.uiGameOver.PlayOneShot();
-            Invoke(nameof(ResetGame), Config.GameRestartTime);
+
+            yield return new WaitForSecondsRealtime(Config.GameRestartTime);
+            sceneTransition.GameOver(true);
+            yield return new WaitForSecondsRealtime(Config.GameRestartTime);
+            sceneTransition.GameOver(false);
+
+            ResetGame();
+        }
+
+        private void ClearEntities()
+        {
+            minionManager.Clear();
+            enemyManager.Clear();
+            scrapManager.Clear();
         }
 
         private void ResetGame()
         {
+            ClearEntities();
+
             isNight   = false;
             dayNumber = 1;
             waveIndex = 0;

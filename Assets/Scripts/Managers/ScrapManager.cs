@@ -68,7 +68,7 @@ namespace Crabgame.Managers
             return true;
         }
 
-        private void Clear()
+        public void Clear()
         {
             foreach (ScrapPile pile in piles)
             {

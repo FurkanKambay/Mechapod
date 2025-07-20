@@ -46,6 +46,18 @@ namespace Crabgame.UI
             yield return new WaitForSecondsRealtime(transitionDuration);
         }
 
+        public void GameSuccess(bool show)
+        {
+            SetTransition(show);
+            SetGameSuccess(show);
+        }
+
+        public void GameOver(bool show)
+        {
+            SetTransition(show);
+            SetGameOver(show);
+        }
+
         private void SetTransition(bool value)
         {
             showTransition                = value;
