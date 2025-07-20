@@ -1,4 +1,6 @@
 :root {
+    -unity-font-definition: url("project://database/Assets/GUI/GravityRegular5.ttf?fileID=12800000&guid=6666a9301f3448147acd8ee589f243eb&type=3#GravityRegular5");
+    font-size: 15px;
 }
 
 #DayContainer {
