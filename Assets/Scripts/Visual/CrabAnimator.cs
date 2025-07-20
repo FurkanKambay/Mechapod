@@ -21,7 +21,6 @@ namespace Crabgame.Visual
 
         [Header("Config")]
         [SerializeField, Min(0)] private float hurtDuration = 0.5f;
-        [SerializeField, Min(0)] private float deathDestroyDelay = 2f;
 
         [Header("State")]
         [SerializeField] private AnimatorOverrideController animController;
@@ -88,11 +87,8 @@ namespace Crabgame.Visual
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
-        private void Health_Death()
-        {
+        private void Health_Death() =>
             animator.SetTrigger(AnimDie);
-            Destroy(attacker.gameObject, deathDestroyDelay);
-        }
 
         private void Attack_Performed() =>
             animator.SetTrigger(AnimAttack);

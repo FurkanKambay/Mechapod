@@ -86,8 +86,8 @@ namespace Crabgame.Entity
             lockedDirection = Direction.SouthEast;
         }
 
-        private void OnEnable()  => health.OnDeath += Health_Death;
-        private void OnDisable() => health.OnDeath -= Health_Death;
+        private void Start()  => health.OnDeath += Health_Death;
+        private void OnDestroy() => health.OnDeath -= Health_Death;
 
         private void Update()
         {

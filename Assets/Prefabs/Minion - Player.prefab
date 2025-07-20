@@ -376,7 +376,6 @@ MonoBehaviour:
   - {fileID: 742881819417279670}
   - {fileID: 3986889995221811680}
   - {fileID: 5716032739797451694}
-  speedMultiplier: 1
   attackFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -701,7 +700,6 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 250d33cad28b0104b84ec84fb0c2f909, type: 2}
   - {fileID: 7400000, guid: 9b96e4de443b53d4a9da11a861d7d27d, type: 2}
   hurtDuration: 0.25
-  deathDestroyDelay: 3
   animController: {fileID: 0}
 --- !u!1 &4562206981307196872
 GameObject:

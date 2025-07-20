@@ -14,6 +14,7 @@ namespace Crabgame.Managers
         [SerializeField] protected Attacker entityPrefab;
 
         [Header("Base - Config")]
+        [SerializeField, Min(0)] private float deathDestroyDelay = 2f;
         [SerializeField] protected Vector3[] spawnPoints;
 
         [Header("Base - State")]
@@ -83,6 +84,8 @@ namespace Crabgame.Managers
         {
             entity.Body.simulated = false;
             entities.Remove(entity);
+
+            Destroy(entity.gameObject, deathDestroyDelay);
 
             if (entities.Count == 0)
                 OnAllKilled?.Invoke();
