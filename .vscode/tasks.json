@@ -3,7 +3,7 @@
     "tasks": [
         {
             "label": "Butler Push",
-            "command": "butler push --if-changed Builds/Web furkankambay/crab:web; butler push --if-changed Builds/Win furkankambay/crab:win",
+            "command": "butler push --if-changed Builds/Web furkankambay/mechapod:web; butler push --if-changed Builds/Win furkankambay/mechapod:win",
             "type": "shell",
             "args": [],
             "problemMatcher": [],
@@ -14,7 +14,7 @@
         },
         {
             "label": "Butler Push (dry-run)",
-            "command": "butler push --dry-run --if-changed Builds/Web furkankambay/crab:web; butler push --dry-run --if-changed Builds/Win furkankambay/crab:win",
+            "command": "butler push --dry-run --if-changed Builds/Web furkankambay/mechapod:web; butler push --dry-run --if-changed Builds/Win furkankambay/mechapod:win",
             "type": "shell",
             "args": [],
             "problemMatcher": [],
