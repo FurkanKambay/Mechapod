@@ -31,10 +31,17 @@ namespace Crabgame.Player
         [CreateProperty] public int NextMinionUpgradeCost =>
             CanBuyMinions ? MinionUpgrades[minionUpgradeIndex].scrapCost : -1;
 
-        [CreateProperty] public string BuyMinionsText =>
-            minionUpgradeIndex < MinionUpgrades.Length ?
-                $"+{MinionUpgrades[minionUpgradeIndex].totalAmount} Minions"
-                : "Minions Full!";
+        [CreateProperty] public string BuyMinionsText
+        {
+            get
+            {
+                if (minionUpgradeIndex >= MinionUpgrades.Length)
+                    return "Minions Full!";
+
+                int delta = MinionUpgrades[minionUpgradeIndex].totalAmount - minionAmount;
+                return $"+{delta} Minion" + (delta == 1 ? "" : "s");
+            }
+        }
 
         private MinionUpgrade[] MinionUpgrades => GameManager.Config.MinionUpgrades;
         private int             minionUpgradeIndex;

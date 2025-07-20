@@ -114,8 +114,6 @@ namespace Crabgame.Player
             if (hitCount <= 0)
                 return;
 
-            Debug.Log($"Beam hits {hitCount}, first: {beamResults[0].name}");
-
             for (var i = 0; i < hitCount; i++)
             {
                 var target = beamResults[i].GetComponent<Health>();
