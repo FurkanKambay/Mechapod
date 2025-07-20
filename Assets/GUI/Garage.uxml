@@ -4,22 +4,28 @@
     <ui:Button text="&gt; Start Night" name="ContinueButton" class="continue-button button" />
     <ui:VisualElement name="top-panel" style="-unity-text-align: lower-left;">
         <ui:Button text="+0 Minions" name="MinionUpgradeButton" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="upgrade-button button">
-            <ui:Label text="25" class="hidden-content upgrade-cost-label">
-                <Bindings>
-                    <ui:DataBinding property="text" data-source-path="playerState.NextMinionUpgradeCost" binding-mode="ToTarget" />
-                </Bindings>
-            </ui:Label>
+            <ui:VisualElement class="hidden-content upgrade-cost">
+                <ui:VisualElement class="upgrade-cost-icon" />
+                <ui:Label text="25" class="upgrade-cost-label">
+                    <Bindings>
+                        <ui:DataBinding property="text" data-source-path="playerState.NextMinionUpgradeCost" binding-mode="ToTarget" />
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
             <Bindings>
                 <ui:DataBinding property="enabledSelf" data-source-path="playerState.CanBuyMinions" binding-mode="ToTarget" />
                 <ui:DataBinding property="text" data-source-path="playerState.BuyMinionsText" binding-mode="ToTarget" />
             </Bindings>
         </ui:Button>
         <ui:Button text="Arm Upgrade" name="ArmUpgradeButton" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="upgrade-button button">
-            <ui:Label text="25" class="hidden-content upgrade-cost-label">
-                <Bindings>
-                    <ui:DataBinding property="text" data-source-path="gameConfigSO.upgradeArmCost" binding-mode="ToTarget" />
-                </Bindings>
-            </ui:Label>
+            <ui:VisualElement class="hidden-content upgrade-cost">
+                <ui:VisualElement class="upgrade-cost-icon" />
+                <ui:Label text="25" class="upgrade-cost-label">
+                    <Bindings>
+                        <ui:DataBinding property="text" data-source-path="gameConfigSO.upgradeArmCost" binding-mode="ToTarget" />
+                    </Bindings>
+                </ui:Label>
+            </ui:VisualElement>
             <Bindings>
                 <ui:DataBinding property="enabledSelf" data-source-path="playerState.CanBuyArm" binding-mode="ToTarget" />
                 <ui:DataBinding property="text" data-source-path="playerState.BuyArmText" binding-mode="ToTarget" />

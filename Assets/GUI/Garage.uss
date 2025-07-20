@@ -53,7 +53,7 @@
     top: 5%;
     flex-direction: row;
     justify-content: center;
-    height: 16%;
+    height: 15%;
 }
 
 .upgrade-button {
@@ -70,11 +70,19 @@
     border-bottom-left-radius: 12px;
     font-size: 200%;
     min-width: 20%;
-    align-self: flex-start;
     width: 20%;
-    height: 33%;
+    height: 50%;
     -unity-text-align: lower-center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 16px;
+    margin-left: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
 .upgrade-button:disabled {
@@ -93,29 +101,52 @@
 .upgrade-button:enabled:active {
     background-color: limegreen;
     color: white;
-    width: 40%;
+    width: 25%;
     transition-property: width;
     transition-duration: 0.8s;
     transition-timing-function: ease-out-elastic;
 }
 
-.upgrade-button > .hidden-content {
+:enabled > .hidden-content {
     visibility: hidden;
 }
 
-.upgrade-button:enabled:hover > .hidden-content {
+:enabled:hover > .hidden-content {
     visibility: visible;
 }
 
-.upgrade-cost-label {
+.upgrade-cost {
+    flex-direction: row;
     position: absolute;
-    color: rgb(255, 213, 105);
-    align-self: center;
-    -unity-text-align: middle-right;
+    top: 20px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.upgrade-cost-icon {
     background-image: url("project://database/Assets/Art/Objects/Scrap_pile_battlefield.png?fileID=2800000&guid=30bd1f64e6a53ee409441fc4e6229aee&type=3#Scrap_pile_battlefield");
-    width: 78px;
-    height: 50%;
+    background-position-x: center 0;
     -unity-background-scale-mode: scale-to-fit;
-    background-position-y: bottom 6px;
-    background-position-x: left 0;
+    height: 64px;
+    width: 64px;
+    background-position-y: bottom 10px;
+}
+
+.upgrade-cost-label {
+    color: rgb(255, 213, 105);
+    -unity-text-align: middle-right;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
 }
