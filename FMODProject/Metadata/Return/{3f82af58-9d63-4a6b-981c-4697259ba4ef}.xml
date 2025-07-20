@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{3f82af58-9d63-4a6b-981c-4697259ba4ef}">
+		<property name="volume">
+			<value>-12</value>
+		</property>
+		<property name="name">
+			<value>Night Success</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{5c1cb049-673b-437f-b0a0-fc01b56c1092}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{0222373a-5c73-4382-8a43-1a88582a43b7}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{5c1cb049-673b-437f-b0a0-fc01b56c1092}">
+		<relationship name="effects">
+			<destination>{73e9bc75-5733-4743-9a1a-9f607a7d9b42}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{0222373a-5c73-4382-8a43-1a88582a43b7}" />
+	<object class="MixerBusFader" id="{73e9bc75-5733-4743-9a1a-9f607a7d9b42}" />
+</objects>

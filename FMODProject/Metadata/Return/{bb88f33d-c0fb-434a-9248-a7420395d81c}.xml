@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="MixerReturn" id="{bb88f33d-c0fb-434a-9248-a7420395d81c}">
 		<property name="volume">
-			<value>-5.5</value>
+			<value>-11</value>
 		</property>
 		<property name="name">
 			<value>Player Minion Death</value>
