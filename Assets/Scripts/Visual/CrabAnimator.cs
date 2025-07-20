@@ -31,7 +31,7 @@ namespace Crabgame.Visual
 
         private static readonly int AnimAttack = Animator.StringToHash("attack");
         private static readonly int AnimDie    = Animator.StringToHash("die");
-        private static readonly int AnimHit   = Animator.StringToHash("hit");
+        private static readonly int AnimHit    = Animator.StringToHash("hit");
 
         private void Awake()
         {
@@ -72,23 +72,27 @@ namespace Crabgame.Visual
 
         private void Health_Hurt(Health source)
         {
-            propertyBlock.SetInt(ShaderHurt, 1);
-            spriteRenderer.SetPropertyBlock(propertyBlock);
+            StartCoroutine(ApplyHurtShader());
 
             hitStarAnimator.SetTrigger(AnimHit);
-
-            StartCoroutine(RevertShader(hurtDuration));
         }
 
-        private IEnumerator RevertShader(float delay)
+        private void Health_Death(Health source)
         {
-            yield return new WaitForSeconds(delay);
+            StartCoroutine(ApplyHurtShader());
+
+            hitStarAnimator.SetTrigger(AnimHit);
+            animator.SetTrigger(AnimDie);
+        }
+
+        private IEnumerator ApplyHurtShader()
+        {
+            propertyBlock.SetInt(ShaderHurt, 1);
+            spriteRenderer.SetPropertyBlock(propertyBlock);
+            yield return new WaitForSeconds(hurtDuration);
             propertyBlock.SetInt(ShaderHurt, 0);
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
-
-        private void Health_Death(Health source) =>
-            animator.SetTrigger(AnimDie);
 
         private void Attack_Performed() =>
             animator.SetTrigger(AnimAttack);
