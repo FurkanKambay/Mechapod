@@ -40,6 +40,7 @@ namespace Crabgame.Audio
 
         // Parameters
         private PARAMETER_DESCRIPTION paramEntityType;
+        private PARAMETER_DESCRIPTION paramDamageSource;
 
         // private EventInstance eventInstance;
 
@@ -86,7 +87,8 @@ namespace Crabgame.Audio
             uiNightSuccess.Init();
 
             // - FMOD Parameters
-            entityGetHurt.Description.getParameterDescriptionByName("Entity Type", out paramEntityType);
+            entityGetHurt.Description.getParameterDescriptionByName("Entity Type",   out paramEntityType);
+            entityGetHurt.Description.getParameterDescriptionByName("Damage Source", out paramDamageSource);
         }
 
         private EventInstance golemBeamInstance;
@@ -104,6 +106,18 @@ namespace Crabgame.Audio
         {
             entityGetHurt.Description.createInstance(out EventInstance instance);
             instance.setParameterByID(paramEntityType.id, entityType.GetHashCode());
+
+            DamageSource_FMOD damageSource = entityType switch
+            {
+                EntityType.PlayerGolem   => DamageSource_FMOD.GolemLaser,
+                EntityType.PlayerMinion  => DamageSource_FMOD.PlayerMinion,
+                EntityType.EnemyMinion   => DamageSource_FMOD.EnemyMinion,
+                EntityType.EnemyMiniBoss => (DamageSource_FMOD)3,
+                _                        => (DamageSource_FMOD)4
+            };
+
+            instance.setParameterByID(paramDamageSource.id, (float)damageSource);
+
             instance.start();
             instance.release();
         }
