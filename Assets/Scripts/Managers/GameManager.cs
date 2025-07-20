@@ -99,7 +99,7 @@ namespace Crabgame.Managers
             else if (keyboard.mKey.wasPressedThisFrame)
                 minionManager.Spawn(1);
             else if (keyboard.bKey.wasPressedThisFrame)
-                enemyManager.SpawnMiniBoss();
+                enemyManager.SpawnMiniBosses(1);
 
             if (keyboard.aKey.wasPressedThisFrame)
                 playerState.GiveArm();
@@ -151,9 +151,7 @@ namespace Crabgame.Managers
             minionManager.RespawnAll(PlayerState.minionAmount);
 
             enemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
-
-            if (nightMapSO.MiniBossNight == dayNumber)
-                enemyManager.SpawnMiniBoss();
+            enemyManager.SpawnMiniBosses(Tonight.GetMiniBossAmount(waveIndex));
         }
 
         private void Minions_AllDead()

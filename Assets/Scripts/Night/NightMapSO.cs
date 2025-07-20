@@ -6,19 +6,12 @@ namespace Crabgame.Night
     [CreateAssetMenu]
     public sealed class NightMapSO : ScriptableObject
     {
-        [Header("Special")]
-        [SerializeField, Min(1)] private int miniBossNight = 10;
-        public int MiniBossNight => miniBossNight;
-
         [Header("Night Map")]
-        [Min(1)]
-        [SerializeField] private int nightCount = 10;
-
+        [SerializeField, Min(1)] private int nightCount = 10;
         [SerializeField] private NightInfo[] nights;
 
-        public int NightCount => nightCount;
-
-        public NightInfo[] Nights => nights;
+        public int         NightCount => nightCount;
+        public NightInfo[] Nights     => nights;
 
         public NightInfo GetNight(int dayIndex)
         {
@@ -33,8 +26,6 @@ namespace Crabgame.Night
 
         private void OnValidate()
         {
-            miniBossNight = Math.Clamp(miniBossNight, 1, nightCount);
-
             Array.Resize(ref nights, nightCount);
 
             foreach (NightInfo nightInfo in nights)

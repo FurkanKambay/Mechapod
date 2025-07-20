@@ -26,11 +26,7 @@ namespace Crabgame.Managers
                 MoveAll(golemTransform.position);
         }
 
-        public void SpawnMiniBoss()
-        {
-            Attacker miniBoss = Instantiate(miniBossPrefab, spawnPoints[0], Quaternion.identity, transform);
-            miniBoss.RegisterSpawner(this);
-            entities.Add(miniBoss);
-        }
+        public void SpawnMiniBosses(int amount) =>
+            Spawn(miniBossPrefab, amount);
     }
 }

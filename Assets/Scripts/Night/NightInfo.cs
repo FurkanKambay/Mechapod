@@ -19,5 +19,13 @@ namespace Crabgame.Night
 
             return waves[waveIndex].EnemyAmount;
         }
+
+        public int GetMiniBossAmount(int waveIndex)
+        {
+            if (waveIndex < 0 || waveIndex >= waves.Length)
+                return 0;
+
+            return waves[waveIndex].MiniBossAmount;
+        }
     }
 }
