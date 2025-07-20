@@ -117,11 +117,14 @@ namespace Crabgame.Managers
             while (golem.IsBeaming)
                 yield return null;
 
+            if (Keyboard.current?.fKey.isPressed == true)
+            {
+                Debug.Log("[Mechapod] Godmode enabled!");
+                godModeEnabled = true;
+            }
+
             // go to black screen
             yield return sceneTransition.StartTransition();
-
-            if (Keyboard.current?.fKey.isPressed == true)
-                godModeEnabled = true;
 
             if (isNight)
             {

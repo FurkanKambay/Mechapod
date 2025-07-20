@@ -36,10 +36,10 @@ namespace Crabgame.Player
             get
             {
                 if (minionUpgradeIndex >= MinionUpgrades.Length)
-                    return "Minions Full!";
+                    return "Frames Full!";
 
                 int delta = MinionUpgrades[minionUpgradeIndex].totalAmount - minionAmount;
-                return $"+{delta} Minion" + (delta == 1 ? "" : "s");
+                return $"+{delta} Frame" + (delta == 1 ? "" : "s");
             }
         }
 

@@ -51,6 +51,9 @@ namespace Crabgame.Visual
         {
             propertyBlock  = new MaterialPropertyBlock();
             lightTransform = beamLight.transform;
+
+            propertyBlock.SetInt(ShaderHurt, 0);
+            spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
         private void OnEnable()
