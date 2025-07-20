@@ -45,6 +45,8 @@ namespace Crabgame.Player
         private readonly Collider2D[] beamResults = new Collider2D[5];
         //
 
+        private static GameConfigSO Config => GameManager.Config;
+
         private void Awake()
         {
             ResetAbilities();
@@ -71,8 +73,6 @@ namespace Crabgame.Player
             IsBeaming = false;
             OnArmBeamStopped?.Invoke();
         }
-
-        private GameConfigSO Config => GameManager.Config;
 
         private void TickArmBeam()
         {
