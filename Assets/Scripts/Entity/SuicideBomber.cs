@@ -34,17 +34,19 @@ namespace Crabgame.Entity
 
             yield return new WaitForSeconds(timeToReach);
 
-            int damage = bomber.Health.EntityType switch
+            Health bomberHealth = bomber.Health;
+
+            int damage = bomberHealth.EntityType switch
             {
                 EntityType.EnemyMiniBoss => GameManager.Config.MiniBossExplosionDamage,
                 _                        => GameManager.Config.MinionExplosionDamage
             };
 
-            target.TakeDamage(damage);
+            target.TakeDamage(damage, bomberHealth);
 
             explosionAnim.SetActive(true);
             AudioPlayer.Instance.crabEnemyExplode.PlayOneShot();
-            bomber.Health.Die();
+            bomberHealth.Die(bomberHealth);
         }
     }
 }

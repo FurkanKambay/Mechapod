@@ -8,12 +8,12 @@ namespace Crabgame.Entity
         [Header("Scrap")]
         [SerializeField, Min(1)] private int scrapsGranted = 1;
 
-        public override void Die()
+        public override void Die(Health source)
         {
             GameManager.PlayerState.scrapAmount += scrapsGranted;
             Destroy(gameObject);
 
-            base.Die();
+            base.Die(source);
         }
     }
 }

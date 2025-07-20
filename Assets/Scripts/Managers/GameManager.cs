@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Crabgame.Audio;
+using Crabgame.Entity;
 using Crabgame.Night;
 using Crabgame.Player;
 using UnityEngine;
@@ -169,7 +170,7 @@ namespace Crabgame.Managers
             }
         }
 
-        private void Golem_Died()
+        private void Golem_Died(Health source)
         {
             AudioPlayer.Instance.uiGameOver.PlayOneShot();
             Invoke(nameof(ResetGame), Config.GameRestartTime);

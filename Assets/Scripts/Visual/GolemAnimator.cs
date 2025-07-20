@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Crabgame.Audio;
+using Crabgame.Entity;
 using Crabgame.Managers;
 using Crabgame.Player;
 using UnityEngine;
@@ -101,7 +102,7 @@ namespace Crabgame.Visual
 #endregion
 
 #region Health Events
-        private void Health_Hurt()
+        private void Health_Hurt(Health source)
         {
             propertyBlock.SetInt(ShaderHurt, 1);
             spriteRenderer.SetPropertyBlock(propertyBlock);
@@ -116,7 +117,7 @@ namespace Crabgame.Visual
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
-        private void Health_Death()
+        private void Health_Death(Health source)
         {
             propertyBlock.SetInt(ShaderHurt, 1);
             spriteRenderer.SetPropertyBlock(propertyBlock);

@@ -8,6 +8,13 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 namespace Crabgame.Audio
 {
+    public enum DamageSource_FMOD
+    {
+        PlayerMinion,
+        EnemyMinion,
+        GolemLaser
+    }
+
     public class AudioPlayer : MonoBehaviour
     {
         [SerializeField] private StudioEventEmitter musicEmitter;

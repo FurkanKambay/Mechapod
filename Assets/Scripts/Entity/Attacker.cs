@@ -86,7 +86,7 @@ namespace Crabgame.Entity
             lockedDirection = Direction.SouthEast;
         }
 
-        private void Start()  => health.OnDeath += Health_Death;
+        private void Start()     => health.OnDeath += Health_Death;
         private void OnDestroy() => health.OnDeath -= Health_Death;
 
         private void Update()
@@ -110,7 +110,7 @@ namespace Crabgame.Entity
                 PerformAttack();
         }
 
-        private void Health_Death()
+        private void Health_Death(Health source)
         {
             if (sourceSpawner)
                 sourceSpawner.Despawn(this);
@@ -201,7 +201,7 @@ namespace Crabgame.Entity
             for (var i = 0; i < hitCount; i++)
             {
                 if (attackResults[i] && attackResults[i].TryGetComponent(out Health target))
-                    target.TakeDamage(AttackDamage);
+                    target.TakeDamage(AttackDamage, health);
             }
 
             return true;
@@ -228,6 +228,7 @@ namespace Crabgame.Entity
                 return;
 
             return;
+
             foreach (Transform box in attackBoxes)
             {
                 Vector3 attackScale = box.localScale;

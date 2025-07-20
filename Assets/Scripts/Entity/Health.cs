@@ -6,8 +6,8 @@ namespace Crabgame.Entity
 {
     public class Health : MonoBehaviour
     {
-        public event Action OnHurt;
-        public event Action OnDeath;
+        public event Action<Health> OnHurt;
+        public event Action<Health> OnDeath;
 
         [Header("Config")]
         [SerializeField] private EntityType entityType;
@@ -27,7 +27,7 @@ namespace Crabgame.Entity
             health = maxHealth;
         }
 
-        public void TakeDamage(int amount)
+        public void TakeDamage(int amount, Health source)
         {
             if (!enabled)
                 return;
@@ -37,20 +37,20 @@ namespace Crabgame.Entity
             if (health > 0)
             {
                 AudioPlayer.Instance.PlayEntityGetHurt(entityType);
-                OnHurt?.Invoke();
+                OnHurt?.Invoke(source);
             }
             else
-                Die();
+                Die(source);
         }
 
-        public virtual void Die()
+        public virtual void Die(Health source)
         {
             health = 0;
 
             AudioPlayer.Instance.PlayEntityDeath(entityType);
 
             enabled = false;
-            OnDeath?.Invoke();
+            OnDeath?.Invoke(source);
         }
 
         public void Revive()

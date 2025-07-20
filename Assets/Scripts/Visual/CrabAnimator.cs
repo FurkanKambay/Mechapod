@@ -70,7 +70,7 @@ namespace Crabgame.Visual
                 animController[attackClips[0]] = attackClips[clipIndex];
         }
 
-        private void Health_Hurt()
+        private void Health_Hurt(Health source)
         {
             propertyBlock.SetInt(ShaderHurt, 1);
             spriteRenderer.SetPropertyBlock(propertyBlock);
@@ -87,7 +87,7 @@ namespace Crabgame.Visual
             spriteRenderer.SetPropertyBlock(propertyBlock);
         }
 
-        private void Health_Death() =>
+        private void Health_Death(Health source) =>
             animator.SetTrigger(AnimDie);
 
         private void Attack_Performed() =>

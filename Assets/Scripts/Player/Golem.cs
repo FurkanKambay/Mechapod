@@ -117,7 +117,7 @@ namespace Crabgame.Player
             for (var i = 0; i < hitCount; i++)
             {
                 var target = beamResults[i].GetComponent<Health>();
-                target.TakeDamage(Config.BeamDamage);
+                target.TakeDamage(Config.BeamDamage, health);
             }
         }
 
