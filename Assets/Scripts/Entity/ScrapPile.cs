@@ -5,12 +5,9 @@ namespace Crabgame.Entity
 {
     public class ScrapPile : Health
     {
-        [Header("Scrap")]
-        [SerializeField, Min(1)] private int scrapsGranted = 1;
-
         public override void Die(Health source)
         {
-            GameManager.PlayerState.scrapAmount += scrapsGranted;
+            GameManager.PlayerState.scrapAmount += GameManager.Config.ScrapsPerPile;
             Destroy(gameObject);
 
             base.Die(source);

@@ -133,10 +133,13 @@ namespace Crabgame
 
 #region Economy
         [Header("Economy")]
-        [SerializeField] private int upgradeArmCost;
-        [SerializeField] private int             upgradeLegCost;
+        [SerializeField, Min(1)] private int scrapsPerPile = 10;
+        [SerializeField, Min(1)] private int upgradeArmCost = 25;
+        [SerializeField, Min(1)] private int upgradeLegCost = 100;
+
         [SerializeField] private MinionUpgrade[] minionUpgrades;
 
+        public int             ScrapsPerPile  => scrapsPerPile;
         public int             UpgradeArmCost => upgradeArmCost;
         public int             UpgradeLegCost => upgradeLegCost;
         public MinionUpgrade[] MinionUpgrades => minionUpgrades;

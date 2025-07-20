@@ -86,7 +86,6 @@ MonoBehaviour:
   entityType: 3
   maxHealth: 10
   health: 10
-  scrapsGranted: 10
 --- !u!1 &5348490424478097691
 GameObject:
   m_ObjectHideFlags: 0

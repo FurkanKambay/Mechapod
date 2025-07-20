@@ -41,6 +41,7 @@ MonoBehaviour:
   turnWhileRecovering: 0
   playerRandomAttackOffsetMax: 0
   enemyRandomAttackOffsetMax: 0
+  scrapsPerPile: 10
   upgradeArmCost: 25
   upgradeLegCost: 100
   minionUpgrades:
