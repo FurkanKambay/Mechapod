@@ -3,7 +3,7 @@
     <ui:VisualElement name="BG" class="background" />
     <ui:Button text="&gt; Start Night" name="ContinueButton" class="continue-button button" />
     <ui:VisualElement name="top-panel" style="-unity-text-align: lower-left;">
-        <ui:Button text="+0 Minions" name="MinionUpgradeButton" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="upgrade-button button">
+        <ui:Button text="+0 Frames" name="MinionUpgradeButton" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="upgrade-button button">
             <ui:VisualElement class="hidden-content upgrade-cost">
                 <ui:VisualElement class="upgrade-cost-icon" />
                 <ui:Label text="25" class="upgrade-cost-label">
