@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{7a666207-4947-434b-805e-25f7ba09a89a}">
+		<property name="volume">
+			<value>-6</value>
+		</property>
+		<property name="name">
+			<value>Night Music</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{1e0c6413-21a3-4805-a1cb-ee82b7e4a3fe}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{2b223ee3-c835-4675-b146-70dd9c87f6c6}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{1e0c6413-21a3-4805-a1cb-ee82b7e4a3fe}">
+		<relationship name="effects">
+			<destination>{50f66984-44cb-4348-a0e6-6c76c78e51f5}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{2b223ee3-c835-4675-b146-70dd9c87f6c6}" />
+	<object class="MixerBusFader" id="{50f66984-44cb-4348-a0e6-6c76c78e51f5}" />
+</objects>

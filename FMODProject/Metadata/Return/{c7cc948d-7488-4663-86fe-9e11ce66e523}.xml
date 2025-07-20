@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{c7cc948d-7488-4663-86fe-9e11ce66e523}">
+		<property name="name">
+			<value>Scrap Pile</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{93f7e0e6-b644-4ba1-bd75-1993731cd9e2}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f82cd59a-8000-4c82-9de0-891e3188fd17}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{93f7e0e6-b644-4ba1-bd75-1993731cd9e2}">
+		<relationship name="effects">
+			<destination>{f84de6e7-81af-43fd-b834-d1fcaac745e3}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f82cd59a-8000-4c82-9de0-891e3188fd17}" />
+	<object class="MixerBusFader" id="{f84de6e7-81af-43fd-b834-d1fcaac745e3}" />
+</objects>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{ebf67407-10f4-458e-9f63-4a9e7495c7b8}">
+		<property name="volume">
+			<value>-14.5</value>
+		</property>
+		<property name="name">
+			<value>Crab Enemy Explode</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{9fb9d3a1-160b-4a43-8343-58df934458c0}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{3637b819-e615-4cef-9876-15a5be143163}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{9fb9d3a1-160b-4a43-8343-58df934458c0}">
+		<relationship name="effects">
+			<destination>{9428c657-3638-484e-926e-f08abccb8314}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{3637b819-e615-4cef-9876-15a5be143163}" />
+	<object class="MixerBusFader" id="{9428c657-3638-484e-926e-f08abccb8314}" />
+</objects>

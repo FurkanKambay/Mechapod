@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{73629f1c-bb25-4c82-8388-2d4a72504c31}">
+		<property name="name">
+			<value>Crab Attack</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{4388f177-568b-41e4-8e0f-187ad58a7aa2}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{41658f83-c664-4fab-9e9d-f31d93e92dcd}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{4388f177-568b-41e4-8e0f-187ad58a7aa2}">
+		<relationship name="effects">
+			<destination>{6ca013fa-1c08-4ede-bf31-6b2467d3a587}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{41658f83-c664-4fab-9e9d-f31d93e92dcd}" />
+	<object class="MixerBusFader" id="{6ca013fa-1c08-4ede-bf31-6b2467d3a587}" />
+</objects>

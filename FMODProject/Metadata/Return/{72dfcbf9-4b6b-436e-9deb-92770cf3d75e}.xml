@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{72dfcbf9-4b6b-436e-9deb-92770cf3d75e}">
+		<property name="name">
+			<value>Golem Leg Stomp</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{1601b717-4e95-4393-a417-f6b8995752d1}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{328d13c7-d5a3-4982-ac0a-0bb875285d11}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{1601b717-4e95-4393-a417-f6b8995752d1}">
+		<relationship name="effects">
+			<destination>{74ec6c26-d548-40ad-9e4d-1bc125b75a1f}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{328d13c7-d5a3-4982-ac0a-0bb875285d11}" />
+	<object class="MixerBusFader" id="{74ec6c26-d548-40ad-9e4d-1bc125b75a1f}" />
+</objects>

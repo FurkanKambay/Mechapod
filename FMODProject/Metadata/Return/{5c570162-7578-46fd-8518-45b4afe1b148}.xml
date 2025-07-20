@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{5c570162-7578-46fd-8518-45b4afe1b148}">
+		<property name="name">
+			<value>Golem Shockwave</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{5e25b73c-6bb6-4c0e-b6fe-934cf97bf27b}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f177caaa-c216-404b-889d-2c1bd0058955}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{5e25b73c-6bb6-4c0e-b6fe-934cf97bf27b}">
+		<relationship name="effects">
+			<destination>{a1a537d6-a086-48d5-abca-e21b74932b2b}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f177caaa-c216-404b-889d-2c1bd0058955}" />
+	<object class="MixerBusFader" id="{a1a537d6-a086-48d5-abca-e21b74932b2b}" />
+</objects>

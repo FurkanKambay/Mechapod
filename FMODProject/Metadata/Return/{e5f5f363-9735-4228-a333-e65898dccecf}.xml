@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{e5f5f363-9735-4228-a333-e65898dccecf}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
+		<property name="name">
+			<value>Golem gets attachment</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{97f42f2d-886b-49b6-988a-e42f2fd917d8}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{b4fed50e-ab36-4937-b74d-606d9a4b3959}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{97f42f2d-886b-49b6-988a-e42f2fd917d8}">
+		<relationship name="effects">
+			<destination>{6ef88721-719a-4ae4-a028-14f97ee57214}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{b4fed50e-ab36-4937-b74d-606d9a4b3959}" />
+	<object class="MixerBusFader" id="{6ef88721-719a-4ae4-a028-14f97ee57214}" />
+</objects>

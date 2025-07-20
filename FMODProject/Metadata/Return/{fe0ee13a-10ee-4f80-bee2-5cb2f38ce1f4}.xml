@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{fe0ee13a-10ee-4f80-bee2-5cb2f38ce1f4}">
+		<property name="volume">
+			<value>-1</value>
+		</property>
+		<property name="name">
+			<value>Golem Laser</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{ddf3770a-cdc9-4832-876e-e713be1621a5}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{9fe2572a-d3e5-43c1-a6bc-283b766b2cf9}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{ddf3770a-cdc9-4832-876e-e713be1621a5}">
+		<relationship name="effects">
+			<destination>{3c84aeed-a374-406a-b9e7-dd01e091eb82}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{9fe2572a-d3e5-43c1-a6bc-283b766b2cf9}" />
+	<object class="MixerBusFader" id="{3c84aeed-a374-406a-b9e7-dd01e091eb82}" />
+</objects>

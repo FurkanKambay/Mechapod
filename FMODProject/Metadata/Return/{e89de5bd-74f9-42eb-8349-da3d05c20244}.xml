@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{e89de5bd-74f9-42eb-8349-da3d05c20244}">
+		<property name="volume">
+			<value>-14</value>
+		</property>
+		<property name="name">
+			<value>Golem Growl</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{c3bf7f97-6d71-4e22-b3e0-aa772d36a3d8}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{2f0efe87-974e-43e6-b6e1-f9a82f8e78f8}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{c3bf7f97-6d71-4e22-b3e0-aa772d36a3d8}">
+		<relationship name="effects">
+			<destination>{5a6cbe3a-b919-4ac9-bbc9-dd302e562ef6}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{2f0efe87-974e-43e6-b6e1-f9a82f8e78f8}" />
+	<object class="MixerBusFader" id="{5a6cbe3a-b919-4ac9-bbc9-dd302e562ef6}" />
+</objects>
