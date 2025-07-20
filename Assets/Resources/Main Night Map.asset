@@ -12,48 +12,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80493111c4f94ebbb244062e67e1a518, type: 3}
   m_Name: Main Night Map
   m_EditorClassIdentifier: 
-  miniBossNight: 10
   nightCount: 10
   nights:
   - scrapPileAmount: 1
     waves:
     - enemyAmount: 1
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 2
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 3
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 2
+      miniBossAmount: 0
     - enemyAmount: 2
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 3
+      miniBossAmount: 0
     - enemyAmount: 3
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 4
+      miniBossAmount: 1
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 3
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 3
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 4
+      miniBossAmount: 1
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 3
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 3
+      miniBossAmount: 0
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 4
+      miniBossAmount: 0
     - enemyAmount: 3
+      miniBossAmount: 0
