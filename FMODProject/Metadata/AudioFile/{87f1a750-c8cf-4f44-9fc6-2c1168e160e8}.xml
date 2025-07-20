@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{87f1a750-c8cf-4f44-9fc6-2c1168e160e8}">
+		<property name="assetPath">
+			<value>Crab death new new.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.50931972789115643</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7cafe2e-d423-4a2c-9faf-24d0c3fc9714}</destination>
+		</relationship>
+	</object>
+</objects>

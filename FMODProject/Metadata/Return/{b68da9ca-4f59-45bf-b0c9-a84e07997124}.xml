@@ -5,7 +5,7 @@
 			<value>-6.5</value>
 		</property>
 		<property name="name">
-			<value>Enemy Minion</value>
+			<value>Enemy Minion Hurt</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{e2c8c220-7185-4d9f-91bf-4c474321fc93}</destination>

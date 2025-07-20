@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="MixerReturn" id="{0bebb81f-cda8-4fdd-a22c-f045dd8065d6}">
+		<property name="name">
+			<value>Player Minion Hurt</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{363e6669-5e49-40ba-a50f-d0085cd8cdb1}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{92483211-6158-4787-9876-8fec03587d10}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{5aeb9694-ebf0-4043-8346-3f95f88fd596}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{363e6669-5e49-40ba-a50f-d0085cd8cdb1}">
+		<relationship name="effects">
+			<destination>{6b662b37-01fc-4dcd-9a41-611326de2cea}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{92483211-6158-4787-9876-8fec03587d10}" />
+	<object class="MixerBusFader" id="{6b662b37-01fc-4dcd-9a41-611326de2cea}" />
+</objects>
