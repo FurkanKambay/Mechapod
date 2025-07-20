@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{63e9fe68-4b94-448e-a5e4-9db80376195e}">
+		<property name="name">
+			<value>Damage Source</value>
+		</property>
+		<relationship name="folder">
+			<destination>{5ce339f9-10de-46b0-a108-a40c45e39d7a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ca265127-5844-4a49-8534-23edd9de05ca}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ca265127-5844-4a49-8534-23edd9de05ca}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Minion</value>
+			<value>Enemy</value>
+			<value>Laser</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

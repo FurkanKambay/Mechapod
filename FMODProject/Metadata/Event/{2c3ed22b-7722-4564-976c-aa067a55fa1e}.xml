@@ -242,7 +242,6 @@
 		<relationship name="effects">
 			<destination>{dd17b2d4-e1ab-40b4-9fc7-e00a488d6080}</destination>
 			<destination>{cd312149-f510-4033-b749-cee90494db9a}</destination>
-			<destination>{492ec021-da24-45bf-b1cf-059eff5b8621}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{39ac684a-84e8-4b02-ab28-938f5990f555}" />
@@ -312,20 +311,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{cd312149-f510-4033-b749-cee90494db9a}" />
-	<object class="PitchShifterEffect" id="{492ec021-da24-45bf-b1cf-059eff5b8621}">
-		<property name="pitch">
-			<value>0.709999979</value>
-		</property>
-		<property name="fftSize">
-			<value>820</value>
-		</property>
-		<property name="overlap">
-			<value>1</value>
-		</property>
-		<property name="maxChannels">
-			<value>2.29999995</value>
-		</property>
-	</object>
 	<object class="AutomationCurve" id="{71c49e5b-93d8-478f-b6cb-7ba4607eae85}">
 		<relationship name="parameter">
 			<destination>{8f2cc45a-9931-41df-9f38-2fcaf7efa466}</destination>
@@ -412,7 +397,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-63.9999924</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{9c65ad06-5097-4524-94b9-8c6b18a740cf}">
@@ -420,7 +405,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-42.7499962</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{eb2c22c8-ee13-4d5b-9f33-b4d10233e332}">
@@ -428,7 +413,7 @@
 			<value>2</value>
 		</property>
 		<property name="value">
-			<value>-63.9999924</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{329a57d4-cef6-44b8-a035-f5d1f696195e}">
@@ -436,7 +421,7 @@
 			<value>3</value>
 		</property>
 		<property name="value">
-			<value>-63.9999924</value>
+			<value>-80</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{7c81c7d6-5c08-4fe6-8af7-7f4f4edbddcc}">
