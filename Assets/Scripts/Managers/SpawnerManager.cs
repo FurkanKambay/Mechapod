@@ -49,7 +49,10 @@ namespace Crabgame.Managers
             }
         }
 
-        public void Spawn(int count)
+        public void Spawn(int count) =>
+            Spawn(entityPrefab, count);
+
+        protected void Spawn(Attacker prefab, int count)
         {
             string entityName = entityPrefab.name;
 
@@ -64,7 +67,7 @@ namespace Crabgame.Managers
                 }
 
                 Attacker attacker = Instantiate(
-                    entityPrefab,
+                    prefab,
                     spawnPoints[spawnedIndex],
                     Quaternion.identity,
                     transform

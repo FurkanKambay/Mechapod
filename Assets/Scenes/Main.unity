@@ -329,6 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityPrefab: {fileID: 8849985566391529547, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
+  deathDestroyDelay: 2
   spawnPoints:
   - {x: 5.3125, y: -3.1875, z: 0}
   - {x: 5.96875, y: -1.84375, z: 0}
@@ -1774,6 +1775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityPrefab: {fileID: 6560894379872987833, guid: 7ceaf463c9cb1694d8e2e65136f98109, type: 3}
+  deathDestroyDelay: 2
   spawnPoints:
   - {x: -2.5625, y: 0.28125, z: 0}
   - {x: -1.4375, y: 0.9375, z: 0}
