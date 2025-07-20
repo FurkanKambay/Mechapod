@@ -109,6 +109,7 @@ namespace Crabgame.Managers
         public IEnumerator NextPhase(float delay = 0)
         {
             // golem.StopBeam();
+            AudioPlayer.Instance.uiNightSuccess.PlayOneShot();
 
             yield return new WaitForSeconds(delay);
 
@@ -162,10 +163,7 @@ namespace Crabgame.Managers
         private void Enemies_AllDead()
         {
             if (golem && golem.Health && !golem.Health.IsDead)
-            {
                 NextWave();
-                AudioPlayer.Instance.uiNightSuccess.PlayOneShot();
-            }
         }
 
         private void Golem_Died(Health source)
