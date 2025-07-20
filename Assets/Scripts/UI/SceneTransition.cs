@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,7 +13,9 @@ namespace Crabgame.UI
         [SerializeField] private float transitionDuration = 0.2f;
 
         [Header("State")]
-        [SerializeField] private bool isTransitioning;
+        [SerializeField] private bool showTransition;
+        [SerializeField] private bool showGameOver;
+        [SerializeField] private bool showGameSuccess;
 
         private VisualElement root;
         private VisualElement blackBackground;
@@ -28,19 +31,39 @@ namespace Crabgame.UI
 
             SetGameOver(false);
             SetGameSuccess(false);
+            SetTransition(false);
         }
 
-        public void SetTransition(bool value)
+        public IEnumerator StartTransition()
         {
-            isTransitioning               = value;
-            blackBackground.style.opacity = isTransitioning ? 1f : 0f;
+            SetTransition(true);
+            yield return new WaitForSecondsRealtime(transitionDuration);
         }
 
-        public void SetGameOver(bool value) =>
-            gameOverPanel.visible = value;
+        public IEnumerator EndTransition()
+        {
+            SetTransition(false);
+            yield return new WaitForSecondsRealtime(transitionDuration);
+        }
 
-        public void SetGameSuccess(bool value) =>
-            gameSuccessPanel.visible = value;
+        private void SetTransition(bool value)
+        {
+            showTransition                = value;
+            blackBackground.style.opacity = showTransition ? 1f : 0f;
+        }
+
+        private void SetGameOver(bool value)
+        {
+            showGameOver          = value;
+            gameOverPanel.visible = showGameOver;
+        }
+
+        private void SetGameSuccess(bool value)
+        {
+            showGameSuccess          = value;
+            gameSuccessPanel.visible = showGameSuccess;
+            // gameSuccessPanel.style.opacity = value ? 1f : 0f;
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
@@ -48,7 +71,9 @@ namespace Crabgame.UI
             if (!Application.isPlaying || blackBackground == null)
                 return;
 
-            SetTransition(isTransitioning);
+            SetTransition(showTransition);
+            SetGameOver(showGameOver);
+            SetGameSuccess(showGameSuccess);
         }
 #endif
     }

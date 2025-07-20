@@ -4,6 +4,7 @@ using Crabgame.Audio;
 using Crabgame.Entity;
 using Crabgame.Night;
 using Crabgame.Player;
+using Crabgame.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,9 +23,10 @@ namespace Crabgame.Managers
         // used in HUD.uxml
         [Header("References - Scene")]
         [SerializeField] private MinionManager minionManager;
-        [SerializeField] private EnemyManager enemyManager;
-        [SerializeField] private ScrapManager scrapManager;
-        [SerializeField] private Golem        golem;
+        [SerializeField] private EnemyManager    enemyManager;
+        [SerializeField] private ScrapManager    scrapManager;
+        [SerializeField] private Golem           golem;
+        [SerializeField] private SceneTransition sceneTransition;
 
         [Header("State - Game")]
         [SerializeField] private bool isNight;
@@ -115,6 +117,9 @@ namespace Crabgame.Managers
             while (golem.IsBeaming)
                 yield return null;
 
+            // go to black screen
+            yield return sceneTransition.StartTransition();
+
             if (Keyboard.current?.fKey.isPressed == true)
                 godModeEnabled = true;
 
@@ -143,6 +148,9 @@ namespace Crabgame.Managers
 
             UpdateTimeScale();
             OnPhaseChange?.Invoke();
+
+            // hide black screen
+            yield return sceneTransition.EndTransition();
         }
 
         private void PopulateTonight()

@@ -1168,6 +1168,7 @@ MonoBehaviour:
   enemyManager: {fileID: 483954851}
   scrapManager: {fileID: 1300099108}
   golem: {fileID: 1635832954}
+  sceneTransition: {fileID: 1093252468}
   isNight: 0
   dayNumber: 1
   waveIndex: 0
@@ -1463,8 +1464,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 1093252467}
-  transitionDuration: 1
-  isTransitioning: 0
+  transitionDuration: 0.5
+  showTransition: 0
+  showGameOver: 0
+  showGameSuccess: 0
 --- !u!114 &1264638328 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8849985566391529547, guid: 62dd9ca4d5b8d0d43a61028d8171264f, type: 3}
@@ -1975,7 +1978,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 1931550144}
-  sceneTransition: {fileID: 0}
 --- !u!1001 &2077024678
 PrefabInstance:
   m_ObjectHideFlags: 0
