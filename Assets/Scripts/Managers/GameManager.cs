@@ -222,7 +222,7 @@ namespace Crabgame.Managers
 
             AudioPlayer.Instance.uiGameOver.PlayOneShot();
 
-            yield return new WaitForSecondsRealtime(Config.GameRestartTime);
+            yield return new WaitForSecondsRealtime(Config.GameRestartTime / 2f);
             sceneTransition.GameOver(true);
             yield return new WaitForSecondsRealtime(Config.GameRestartTime);
             sceneTransition.GameOver(false);
