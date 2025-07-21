@@ -49,5 +49,5 @@ MonoBehaviour:
     scrapCost: 15
   - totalAmount: 4
     scrapCost: 25
-  - totalAmount: 2
+  - totalAmount: 6
     scrapCost: 35
