@@ -37,6 +37,7 @@ namespace Crabgame.Editor
                 if (!EditorGUI.EndChangeCheck())
                     continue;
 
+                EditorUtility.SetDirty(target);
                 Undo.RecordObject(this, "Modify minion spawn point");
                 spawnPoints[i] = newPoint;
 
