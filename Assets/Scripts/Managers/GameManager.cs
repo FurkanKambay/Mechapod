@@ -192,12 +192,7 @@ namespace Crabgame.Managers
         private void Enemies_AllDead()
         {
             if (golem && golem.Health && !golem.Health.IsDead)
-            {
-                bool nightEnded = !NextWave();
-
-                if (nightEnded)
-                    AudioPlayer.Instance.uiNightSuccess.PlayOneShot();
-            }
+                NextWave();
         }
 
         private void Golem_Died(Health source) =>
@@ -254,18 +249,25 @@ namespace Crabgame.Managers
             OnPhaseChange?.Invoke();
         }
 
-        private bool NextWave()
+        private void NextWave()
         {
             waveIndex++;
 
-            if (waveIndex >= Tonight.Waves.Length)
-            {
-                StartCoroutine(NextPhase(gameConfigSO.NightWaitTime));
-                return false;
-            }
+            bool isDayFinished = waveIndex >= Tonight.Waves.Length;
 
-            EnemyManager.Spawn(Tonight.GetEnemyAmount(waveIndex));
-            return true;
+            if (isDayFinished)
+                StartCoroutine(WaveFinished());
+            else
+                EnemyManager.Spawn(Tonight.GetEnemyAmount(waveIndex));
+        }
+
+        private IEnumerator WaveFinished()
+        {
+            yield return new WaitForSecondsRealtime(gameConfigSO.NightWaitTime / 2f);
+
+            AudioPlayer.Instance.uiNightSuccess.PlayOneShot();
+
+            yield return NextPhase(gameConfigSO.NightWaitTime / 2f);
         }
 
         private void UpdateTimeScale() =>
