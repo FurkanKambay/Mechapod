@@ -892,6 +892,7 @@ GameObject:
   - component: {fileID: 737097495}
   - component: {fileID: 737097496}
   - component: {fileID: 737097497}
+  - component: {fileID: 737097498}
   m_Layer: 0
   m_Name: "\U0001F3A7 Audio Player"
   m_TagString: Untagged
@@ -926,7 +927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84d141e1fdb4d4b91a14885b9c4b1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicEmitter: {fileID: 737097497}
+  garageMusicEmitter: {fileID: 737097497}
+  battleMusicEmitter: {fileID: 737097498}
   entityGetHurt:
     reference:
       Guid:
@@ -1030,11 +1032,42 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
+      Data1: -1707818432
+      Data2: 1153950710
+      Data3: -1765824589
+      Data4: -1801649462
+    Path: event:/Music - Garage
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &737097498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737097494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
       Data1: -360026951
       Data2: 1237946348
       Data3: -1857893733
       Data4: -335087773
-    Path: event:/Music
+    Path: event:/Music - Battle
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
