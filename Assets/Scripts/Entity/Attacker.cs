@@ -1,5 +1,6 @@
 using System;
 using Crabgame.Managers;
+using UnityEditor;
 using UnityEngine;
 
 namespace Crabgame.Entity
@@ -82,7 +83,9 @@ namespace Crabgame.Entity
         private void Awake()
         {
             InitTriggers();
-            attackTimer     = -attackOffset;
+            attackTimer = -attackOffset;
+
+            moveDirection   = Direction.SouthEast;
             lockedDirection = Direction.SouthEast;
         }
 
@@ -97,14 +100,15 @@ namespace Crabgame.Entity
                 return;
             }
 
-            UpdateAimDirection();
-
             attackTimer += Time.deltaTime;
 
             if (attackTimer < AttackRate)
                 return;
 
-            shouldAttack = ShouldAttack();
+            if (!shouldAttack)
+                shouldAttack = ShouldAttack();
+
+            UpdateAimDirection();
 
             if (shouldAttack)
                 PerformAttack();
@@ -220,6 +224,24 @@ namespace Crabgame.Entity
         }
 
 #if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            Vector3 origin = transform.position;
+
+            if (aimDirection.HasValue)
+            {
+                Handles.color = Color.blue;
+
+                Vector3 direction = aimDirection.Value.ToVector2();
+                Handles.DrawLine(origin, origin + direction);
+            }
+
+            Handles.color = Color.red;
+
+            Vector3 dir = lockedDirection.ToVector2();
+            Handles.DrawLine(origin, origin + dir);
+        }
+
         private void OnValidate()
         {
             InitTriggers();
