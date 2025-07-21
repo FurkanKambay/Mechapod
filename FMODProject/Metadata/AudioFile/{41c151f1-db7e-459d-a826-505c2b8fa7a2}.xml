@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{41c151f1-db7e-459d-a826-505c2b8fa7a2}">
+		<property name="assetPath">
+			<value>UI/EOG SFX.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.3378684807256231</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a7cafe2e-d423-4a2c-9faf-24d0c3fc9714}</destination>
+		</relationship>
+	</object>
+</objects>
