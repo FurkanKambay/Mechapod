@@ -2,8 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Butler Push",
-            "command": "butler push --if-changed Builds/Web furkankambay/mechapod:web; butler push --if-changed Builds/Win furkankambay/mechapod:win",
+            "label": "Butler Push: Windows",
+            "command": "butler push --if-changed Builds/Win furkankambay/mechapod:win",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": "none"
+        },
+        {
+            "label": "Butler Push: WebGL",
+            "command": "butler push --if-changed Builds/Web furkankambay/mechapod:web",
             "type": "shell",
             "args": [],
             "problemMatcher": [],
