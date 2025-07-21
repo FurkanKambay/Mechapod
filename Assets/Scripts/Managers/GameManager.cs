@@ -218,11 +218,11 @@ namespace Crabgame.Managers
         private IEnumerator GameFail()
         {
             ClearEntities();
-            // Time.timeScale = 0f; // gets reset in ResetGame
+
+            yield return new WaitForSecondsRealtime(Config.GameRestartTime / 2f);
 
             AudioPlayer.Instance.uiGameOver.PlayOneShot();
 
-            yield return new WaitForSecondsRealtime(Config.GameRestartTime / 2f);
             sceneTransition.GameOver(true);
             yield return new WaitForSecondsRealtime(Config.GameRestartTime);
             sceneTransition.GameOver(false);
