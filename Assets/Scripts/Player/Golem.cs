@@ -52,6 +52,10 @@ namespace Crabgame.Player
             ResetAbilities();
         }
 
+        private void OnEnable()  => GameManager.Instance.OnPhaseChange += GameManager_PhaseChange;
+
+        private void OnDisable() => GameManager.Instance.OnPhaseChange -= GameManager_PhaseChange;
+
         private void Update()
         {
             AimPoint = input.AimPosition;
@@ -60,6 +64,11 @@ namespace Crabgame.Player
                 TickArmBeam();
             else if (IsArmBeamAvailable && GameManager.PlayerState.GolemHasArm && input.WantsToUseArm)
                 UseArm();
+        }
+
+        private void GameManager_PhaseChange()
+        {
+            StopBeam();
         }
 
         public void StartBeam()

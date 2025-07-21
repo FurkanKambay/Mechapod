@@ -113,12 +113,9 @@ namespace Crabgame.Managers
         [ContextMenu("Next Phase (Day/Night)")]
         public IEnumerator NextPhase(float delay = 0)
         {
-            // golem.StopBeam();
+            yield return new WaitForSecondsRealtime(delay);
 
-            yield return new WaitForSeconds(delay);
-
-            while (golem.IsBeaming)
-                yield return null;
+            golem.StopBeam();
 
             if (Keyboard.current?.fKey.isPressed == true)
             {
@@ -230,6 +227,8 @@ namespace Crabgame.Managers
 
         private void ClearEntities()
         {
+            golem.enabled = false;
+
             minionManager.Clear();
             enemyManager.Clear();
             scrapManager.Clear();
@@ -245,6 +244,7 @@ namespace Crabgame.Managers
 
             PlayerState.Reset();
 
+            golem.enabled = true;
             golem.Health.gameObject.SetActive(true);
             golem.Health.Revive();
 
