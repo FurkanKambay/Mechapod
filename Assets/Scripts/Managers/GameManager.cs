@@ -185,6 +185,9 @@ namespace Crabgame.Managers
 
         private void SpeedUpGame_IfNoActionAvailable()
         {
+            if (!golem || !golem.Health || golem.Health.IsDead)
+                return;
+
             if (playerMinionsAllDead && !golem.IsArmBeamAvailable && !golem.IsBeaming)
                 Time.timeScale = 3;
         }
