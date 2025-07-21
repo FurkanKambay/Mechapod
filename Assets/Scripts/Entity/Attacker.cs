@@ -85,8 +85,13 @@ namespace Crabgame.Entity
             InitTriggers();
             attackTimer = -attackOffset;
 
-            moveDirection   = Direction.SouthEast;
-            lockedDirection = Direction.SouthEast;
+            moveDirection = health ? health.EntityType switch
+            {
+                EntityType.PlayerMinion => Direction.SouthEast,
+                _                       => Direction.NorthWest
+            } : Direction.NorthWest;
+
+            lockedDirection = moveDirection;
         }
 
         private void Start()     => health.OnDeath += Health_Death;
