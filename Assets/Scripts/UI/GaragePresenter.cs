@@ -51,11 +51,17 @@ namespace Crabgame.UI
         private void GameManager_PhaseChange() =>
             UpdateUI();
 
-        private void UpdateUI() =>
-            root.visible = !GameManager.Instance.IsNight;
+        private void UpdateUI()
+        {
+            root.visible           = !GameManager.Instance.IsNight;
+            continueButton.visible = !GameManager.Instance.IsNight;
+        }
 
-        private void ContinueButton_Clicked() =>
+        private void ContinueButton_Clicked()
+        {
+            continueButton.visible = false;
             StartCoroutine(GameManager.Instance.NextPhase());
+        }
 
         private static void ArmUpgradeButton_Clicked() =>
             GameManager.PlayerState.BuyArm();
