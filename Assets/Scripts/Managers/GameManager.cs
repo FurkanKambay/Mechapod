@@ -185,7 +185,9 @@ namespace Crabgame.Managers
             if (!golem || !golem.Health || golem.Health.IsDead)
                 return;
 
-            if (playerMinionsAllDead && !golem.IsArmBeamAvailable && !golem.IsBeaming)
+            bool armBeamPossible = playerState.GolemHasArm && golem.IsArmBeamAvailable && !golem.IsBeaming;
+
+            if (playerMinionsAllDead && !armBeamPossible)
                 Time.timeScale = 3;
         }
 
