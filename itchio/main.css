@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 #wrapper {
+    --b: var(--itchio_bg_color);
     --btn: var(--itchio_button_color);
     --btn_f: var(--itchio_button_fg_color);
     --t: var(--itchio_text_color);
@@ -9,6 +10,21 @@
     --b2s: var(--itchio_bg2_sub);
     --br: var(--itchio_border_color);
     --l: var(--itchio_link_color);
+}
+
+.custom-rating {
+    display: inline-flex;
+    color: var(inherit, var(--l));
+    text-decoration: none
+}
+
+.custom-rating>span {
+    transition: .15s ease-out;
+    cursor: pointer
+}
+
+.custom-rating>span:hover~span {
+    color: var(--t)
 }
 
 .custom-img-compare {
@@ -158,8 +174,24 @@ abbr.custom-tip {
     text-decoration: 2px underline dotted var(--l)
 }
 
-.game_comments_widget .avatar_container[href="https://itch.io/profile/FurkanKambay"]+.post_header>.post_author::after {
-    content: ""
+.game_comments_widget .avatar_container[href="https://itch.io/profile/furkankambay"]+.post_header>.post_author::before {
+    content: "Lead"
+}
+
+.game_comments_widget .avatar_container[href="https://itch.io/profile/furkankambay"]+.post_header>.post_author::after {
+    content: "Programmer"
+}
+
+.game_comments_widget .avatar_container[href="https://itch.io/profile/bullstorm6"]+.post_header>.post_author::after {
+    content: "Artist"
+}
+
+.game_comments_widget .avatar_container[href="https://itch.io/profile/wademakesnoise"]+.post_header>.post_author::after {
+    content: "Sound Designer"
+}
+
+.game_comments_widget .avatar_container[href="https://itch.io/profile/ryanmelzer"]+.post_header>.post_author::after {
+    content: "Music"
 }
 
 .game_comments_widget .avatar_container+.post_header>.post_author {
