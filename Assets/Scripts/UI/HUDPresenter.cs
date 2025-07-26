@@ -8,27 +8,24 @@ namespace Crabgame.UI
     {
         [Header("References")]
         [SerializeField] private UIDocument document;
+        [SerializeField] private PlayerInput playerInput;
 
-        private VisualElement hpBar;
+        private Button laserButton;
 
         private void Awake()
         {
             document.enabled = true;
 
             VisualElement root = document.rootVisualElement;
-            hpBar = root.Q("GolemHPBar");
+            laserButton = root.Q<Button>("LaserButton");
 
-            root.visible  = true;
-
+            root.visible    = true;
             root.dataSource = GameManager.Instance;
 
-            GameManager_PhaseChange();
+            laserButton.clicked += LaserButton_Clicked;
         }
 
-        private void OnEnable()  => GameManager.Instance.OnPhaseChange += GameManager_PhaseChange;
-        private void OnDisable() => GameManager.Instance.OnPhaseChange -= GameManager_PhaseChange;
-
-        private void GameManager_PhaseChange() =>
-            hpBar.visible = GameManager.Instance.IsNight;
+        private void LaserButton_Clicked() =>
+            playerInput.RequestToUseArm();
     }
 }

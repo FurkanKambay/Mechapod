@@ -4,6 +4,7 @@
         <Bindings>
             <ui:DataBinding property="highValue" data-source-path="golem.health.maxHealth" binding-mode="ToTarget" />
             <ui:DataBinding property="value" data-source-path="golem.health.health" binding-mode="ToTarget" />
+            <ui:DataBinding property="style.visibility" data-source-path="isNight" binding-mode="ToTarget" />
         </Bindings>
     </ui:ProgressBar>
     <ui:VisualElement name="ScrapContainer" data-source-type="Crabgame.Managers.GameManager, Crabgame" class="container">
@@ -21,5 +22,16 @@
                 <ui:DataBinding property="text" data-source-path="dayNumber" binding-mode="ToTarget" />
             </Bindings>
         </ui:Label>
+    </ui:VisualElement>
+    <ui:VisualElement name="ButtonsContainer" data-source-type="Crabgame.Managers.GameManager, Crabgame">
+        <ui:Button text="Laser" name="LaserButton" class="skill-button">
+            <Bindings>
+                <ui:DataBinding property="style.display" data-source-path="playerState._GolemHasArm_k__BackingField" binding-mode="ToTarget" />
+                <ui:DataBinding property="enabledSelf" data-source-path="golem.CanLaunchArmBeam" binding-mode="ToTarget" />
+            </Bindings>
+        </ui:Button>
+        <Bindings>
+            <ui:DataBinding property="style.display" data-source-path="isNight" binding-mode="ToTarget" />
+        </Bindings>
     </ui:VisualElement>
 </ui:UXML>

@@ -1,6 +1,7 @@
 using System;
 using Crabgame.Entity;
 using Crabgame.Managers;
+using Unity.Properties;
 using UnityEngine;
 
 namespace Crabgame.Player
@@ -39,6 +40,10 @@ namespace Crabgame.Player
         public bool  IsBeaming          { get; private set; }
         public float BeamAngle          { get; private set; }
 
+        [CreateProperty]
+        public bool CanLaunchArmBeam =>
+            GameManager.PlayerState.GolemHasArm && IsArmBeamAvailable && !IsBeaming;
+
         private float targetBeamAngle;
         private float beamDamageCountdown;
 
@@ -62,7 +67,7 @@ namespace Crabgame.Player
 
             if (IsBeaming)
                 TickArmBeam();
-            else if (IsArmBeamAvailable && GameManager.PlayerState.GolemHasArm && input.WantsToUseArm)
+            else if (CanLaunchArmBeam && input.WantsToUseArm)
                 UseArm();
         }
 

@@ -34,5 +34,8 @@ namespace Crabgame
             AimPosition    = mainCamera.ScreenToWorldPoint(AimPointScreen);
             WantsToUseArm  = golemArm.action.triggered;
         }
+
+        public void RequestToUseArm() =>
+            WantsToUseArm = true;
     }
 }
