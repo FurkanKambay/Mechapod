@@ -24,8 +24,19 @@
             "group": "none"
         },
         {
-            "label": "Butler Push (dry-run)",
-            "command": "butler push --dry-run --if-changed Builds/Web furkankambay/mechapod:web; butler push --dry-run --if-changed Builds/Win furkankambay/mechapod:win",
+            "label": "Butler Push: Windows (dry-run)",
+            "command": "butler push --dry-run --if-changed Builds/Win furkankambay/mechapod:win",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": "none"
+        },
+        {
+            "label": "Butler Push: WebGL (dry-run)",
+            "command": "butler push --dry-run --if-changed Builds/Web furkankambay/mechapod:web",
             "type": "shell",
             "args": [],
             "problemMatcher": [],
