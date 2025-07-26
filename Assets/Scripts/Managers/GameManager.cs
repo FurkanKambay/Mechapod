@@ -164,11 +164,9 @@ namespace Crabgame.Managers
         {
             playerMinionsAllDead = false;
             minionManager.RespawnAll(PlayerState.minionAmount);
-
             scrapManager.RespawnAll(Tonight.scrapPileAmount);
 
-            enemyManager.RespawnAll(Tonight.GetEnemyAmount(waveIndex));
-            enemyManager.SpawnMiniBosses(Tonight.GetMiniBossAmount(waveIndex));
+            enemyManager.SpawnWave(Tonight.Waves[waveIndex]);
         }
 
         private void Golem_ArmBeamStopped() =>
@@ -261,10 +259,7 @@ namespace Crabgame.Managers
             if (isDayFinished)
                 StartCoroutine(WaveFinished());
             else
-            {
-                enemyManager.SpawnMiniBosses(Tonight.GetMiniBossAmount(waveIndex));
-                enemyManager.Spawn(Tonight.GetEnemyAmount(waveIndex));
-            }
+                enemyManager.SpawnWave(Tonight.Waves[waveIndex]);
         }
 
         private IEnumerator WaveFinished()

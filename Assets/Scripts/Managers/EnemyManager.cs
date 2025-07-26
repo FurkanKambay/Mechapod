@@ -1,4 +1,5 @@
 using Crabgame.Entity;
+using Crabgame.Night;
 using UnityEngine;
 
 namespace Crabgame.Managers
@@ -25,7 +26,13 @@ namespace Crabgame.Managers
                 MoveAll(golemTransform.position);
         }
 
-        public void SpawnMiniBosses(int amount) =>
+        public void SpawnWave(EnemyWave wave)
+        {
+            Spawn(wave.EnemyAmount);
+            SpawnMiniBosses(wave.MiniBossAmount);
+        }
+
+        internal void SpawnMiniBosses(int amount) =>
             Spawn(miniBossPrefab, amount);
     }
 }
