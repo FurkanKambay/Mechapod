@@ -7,8 +7,7 @@ namespace Crabgame.Managers
         [Header("References")]
         [SerializeField] private PlayerInput input;
 
-        protected override float MoveSpeed             => GameManager.Config.PlayerMoveSpeed;
-        protected override float RandomAttackOffsetMax => GameManager.Config.PlayerRandomAttackOffsetMax;
+        protected override float MoveSpeed => GameManager.Config.PlayerMoveSpeed;
 
         private void Awake()
         {

@@ -121,14 +121,6 @@ namespace Crabgame
         public bool MoveWhileRecovering => moveWhileRecovering;
         public bool TurnWhileAttacking  => turnWhileAttacking;
         public bool TurnWhileRecovering => turnWhileRecovering;
-
-        // Attack Offset
-        [Header("Attack Offset (Random Max)")]
-        [SerializeField] private float playerRandomAttackOffsetMax;
-        [SerializeField] private float enemyRandomAttackOffsetMax;
-
-        public float PlayerRandomAttackOffsetMax => playerRandomAttackOffsetMax;
-        public float EnemyRandomAttackOffsetMax  => enemyRandomAttackOffsetMax;
 #endregion
 
 #region Economy

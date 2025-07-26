@@ -24,7 +24,6 @@ namespace Crabgame.Managers
         public Vector3[] SpawnPoints => spawnPoints;
 
         protected abstract float MoveSpeed             { get; }
-        protected abstract float RandomAttackOffsetMax { get; }
 
         protected void MoveAll(Vector2 targetPoint)
         {
@@ -75,9 +74,6 @@ namespace Crabgame.Managers
 
                 attacker.RegisterSpawner(this);
                 attacker.name = $"{entityName} {spawnedIndex + 1}";
-
-                // TODO: try manually setting the offset from Spawner
-                attacker.attackOffset = Random.value * RandomAttackOffsetMax;
 
                 entities.Add(attacker);
             }

@@ -9,8 +9,7 @@ namespace Crabgame.Managers
         [SerializeField] private Health golem;
         [SerializeField] private Attacker miniBossPrefab;
 
-        protected override float MoveSpeed             => GameManager.Config.EnemyMoveSpeed;
-        protected override float RandomAttackOffsetMax => GameManager.Config.EnemyRandomAttackOffsetMax;
+        protected override float MoveSpeed => GameManager.Config.EnemyMoveSpeed;
 
         private Transform golemTransform;
 
