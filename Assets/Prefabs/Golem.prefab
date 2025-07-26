@@ -984,7 +984,7 @@ MonoBehaviour:
   hurtDuration: 0.5
   explodePadding: 0.3
   globalLightIntensity: 1
-  globalLightIntensityBeaming: 0.5
+  globalLightIntensityBeaming: 0.3
   lightFalloffMultiplier: 1.5
   beamLightColor: {r: 0.8784314, g: 0.16078432, b: 0.16862746, a: 1}
 --- !u!1 &6767297334000914618
