@@ -261,7 +261,10 @@ namespace Crabgame.Managers
             if (isDayFinished)
                 StartCoroutine(WaveFinished());
             else
-                EnemyManager.Spawn(Tonight.GetEnemyAmount(waveIndex));
+            {
+                enemyManager.SpawnMiniBosses(Tonight.GetMiniBossAmount(waveIndex));
+                enemyManager.Spawn(Tonight.GetEnemyAmount(waveIndex));
+            }
         }
 
         private IEnumerator WaveFinished()
