@@ -65,9 +65,9 @@ MonoBehaviour:
   - scrapPileAmount: 2
     waves:
     - enemyAmount: 4
-      miniBossAmount: 0
+      miniBossAmount: 1
     - enemyAmount: 4
-      miniBossAmount: 0
+      miniBossAmount: 1
     - enemyAmount: 3
       miniBossAmount: 0
   - scrapPileAmount: 2
@@ -76,5 +76,5 @@ MonoBehaviour:
       miniBossAmount: 1
     - enemyAmount: 4
       miniBossAmount: 0
-    - enemyAmount: 3
-      miniBossAmount: 1
+    - enemyAmount: 5
+      miniBossAmount: 2
