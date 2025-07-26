@@ -72,26 +72,32 @@ namespace Crabgame
         [SerializeField, Min(0f)] private int playerAttackDamage = 10;
         [SerializeField, Min(0f)] private float playerAttackRange = 1.2f;
         [SerializeField, Min(0f)] private float playerAttackRate  = 1.2f;
+        [SerializeField, Min(1)]  private int   playerMaxTargets  = 3;
 
         [SerializeField, Min(0f)] private int   enemyAttackDamage = 10;
         [SerializeField, Min(0f)] private float enemyAttackRange  = 1f;
         [SerializeField, Min(0f)] private float enemyAttackRate   = 2f;
+        [SerializeField, Min(1)]  private int   enemyMaxTargets   = 2;
 
         [SerializeField, Min(0f)] private int   bossAttackDamage = 50;
         [SerializeField, Min(0f)] private float bossAttackRange  = 2f;
         [SerializeField, Min(0f)] private float bossAttackRate   = 3.5f;
+        [SerializeField, Min(1)]  private int   bossMaxTargets   = 4;
 
         public int   PlayerAttackDamage => playerAttackDamage;
         public float PlayerAttackRange  => playerAttackRange;
         public float PlayerAttackRate   => playerAttackRate;
+        public int   PlayerMaxTargets   => playerMaxTargets;
 
         public int   EnemyAttackDamage => enemyAttackDamage;
         public float EnemyAttackRange  => enemyAttackRange;
         public float EnemyAttackRate   => enemyAttackRate;
+        public int   EnemyMaxTargets   => enemyMaxTargets;
 
         public int   BossAttackDamage => bossAttackDamage;
         public float BossAttackRange  => bossAttackRange;
         public float BossAttackRate   => bossAttackRate;
+        public int   BossMaxTargets   => bossMaxTargets;
 
         // Explosion
         [Header("Minions & Boss - Explosion")]

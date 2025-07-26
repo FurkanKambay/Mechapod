@@ -27,12 +27,15 @@ MonoBehaviour:
   playerAttackDamage: 10
   playerAttackRange: 1.1
   playerAttackRate: 1
+  playerMaxTargets: 3
   enemyAttackDamage: 10
   enemyAttackRange: 1
   enemyAttackRate: 1
+  enemyMaxTargets: 2
   bossAttackDamage: 17
   bossAttackRange: 3
   bossAttackRate: 3
+  bossMaxTargets: 4
   minionExplosionDamage: 10
   miniBossExplosionDamage: 1000
   moveWhileAttacking: 1

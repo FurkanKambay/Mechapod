@@ -60,6 +60,14 @@ namespace Crabgame.Entity
             _                        => 0
         };
 
+        public int MaxTargets => health.EntityType switch
+        {
+            EntityType.PlayerMinion  => GameManager.Config.PlayerMaxTargets,
+            EntityType.EnemyMinion   => GameManager.Config.EnemyMaxTargets,
+            EntityType.EnemyMiniBoss => GameManager.Config.BossMaxTargets,
+            _                        => 0
+        };
+
         [Header("State")]
         [SerializeField] private Vector2 velocity;
         [SerializeField] private Direction moveDirection;
@@ -77,11 +85,13 @@ namespace Crabgame.Entity
 
         private          Transform[]  attackBoxes;
         private          Transform[]  detectionBoxes;
-        private readonly Collider2D[] attackResults    = new Collider2D[5];
+        private          Collider2D[] attackResults;
         private readonly Collider2D[] detectionResults = new Collider2D[1];
 
         private void Awake()
         {
+            attackResults = new Collider2D[MaxTargets];
+
             InitTriggers();
             attackTimer = -attackOffset;
 
