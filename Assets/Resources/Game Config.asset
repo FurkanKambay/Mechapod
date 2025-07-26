@@ -25,7 +25,7 @@ MonoBehaviour:
   enemyMoveSpeed: 0.8
   bossMoveSpeed: 0.4
   playerAttackDamage: 10
-  playerAttackRange: 1
+  playerAttackRange: 1.1
   playerAttackRate: 1
   enemyAttackDamage: 10
   enemyAttackRange: 1
