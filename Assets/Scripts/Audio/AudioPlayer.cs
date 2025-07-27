@@ -17,8 +17,9 @@ namespace Crabgame.Audio
 
     public class AudioPlayer : MonoBehaviour
     {
-        [SerializeField] private StudioEventEmitter garageMusicEmitter;
-        [SerializeField] private StudioEventEmitter battleMusicEmitter;
+        [Header("Music")]
+        [SerializeField] private FMODEvent garageMusic;
+        [SerializeField] private FMODEvent battleMusic;
 
         [Header("Entity")]
         public FMODEvent entityGetHurt;
@@ -42,8 +43,6 @@ namespace Crabgame.Audio
         // Parameters
         private PARAMETER_DESCRIPTION paramEntityType;
         private PARAMETER_DESCRIPTION paramDamageSource;
-
-        // private EventInstance eventInstance;
 
         private void OnEnable()
         {
@@ -71,6 +70,12 @@ namespace Crabgame.Audio
         {
             while (!RuntimeManager.HaveAllBanksLoaded)
                 yield return null;
+
+            garageMusic.Init();
+            battleMusic.Init();
+
+            garageMusic.CreateInstance();
+            battleMusic.CreateInstance();
 
             SetMusicPhase(isNight: false);
 
@@ -136,8 +141,8 @@ namespace Crabgame.Audio
         private void SetMusicPhase(bool isNight)
         {
             // musicEmitter.SetParameter("Game Phase", isNight.GetHashCode());
-            garageMusicEmitter.EventInstance.setPaused(isNight);
-            battleMusicEmitter.EventInstance.setPaused(!isNight);
+            garageMusic.Instance.setPaused(isNight);
+            battleMusic.Instance.setPaused(!isNight);
         }
 
         private void Game_PhaseChanged() => SetMusicPhase(GameManager.Instance.IsNight);

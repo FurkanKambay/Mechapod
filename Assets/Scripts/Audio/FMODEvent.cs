@@ -22,17 +22,27 @@ namespace Crabgame.Audio
 
         public void PlayOneShot()
         {
+            bool success = CreateInstance();
+
+            if (!success)
+                return;
+
+            instance.release();
+        }
+
+        public bool CreateInstance()
+        {
             if (!Description.isValid())
             {
 #if UNITY_EDITOR
                 Debug.LogWarning($"Invalid FMOD event description: {reference.Path}", AudioPlayer.Instance);
 #endif
-                return;
+                return false;
             }
 
             Description.createInstance(out instance);
-            Instance.start();
-            Instance.release();
+            instance.start();
+            return true;
         }
     }
 }
