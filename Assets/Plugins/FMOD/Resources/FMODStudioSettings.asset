@@ -599,7 +599,7 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMODProject/Shovel.fspro
+  sourceProjectPath: FMODProject/Mechapod.fspro
   sourceBankPath: FMODProject/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 1
