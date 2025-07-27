@@ -193,8 +193,11 @@ namespace Crabgame.Managers
                 NextWave();
         }
 
-        private void Golem_Died(Health source) =>
+        private void Golem_Died(Health source)
+        {
+            Time.timeScale = 1;
             StartCoroutine(GameFail());
+        }
 
         private IEnumerator GameSuccess()
         {
