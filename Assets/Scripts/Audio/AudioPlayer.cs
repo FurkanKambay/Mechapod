@@ -99,7 +99,18 @@ namespace Crabgame.Audio
             entityGetHurt.Description.getParameterDescriptionByName("Damage Source", out paramDamageSource);
         }
 
-        private EventInstance golemBeamInstance;
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            if (!RuntimeManager.StudioSystem.isValid())
+                return;
+
+            // RuntimeManager.PauseAllEvents(!hasFocus);
+
+            if (!hasFocus)
+                RuntimeManager.CoreSystem.mixerSuspend();
+            else
+                RuntimeManager.CoreSystem.mixerResume();
+        }
 
         private void Golem_BeamStarted() =>
             golemLaser.PlayOneShot();
