@@ -5,9 +5,11 @@
 
 [Shovel Jam 2025 entry](https://itch.io/jam/shovel-jam-2025/rate/3713660) | [▶️ Gameplay Video](https://www.youtube.com/watch?v=BWzBbAGA6Jk)
 
-You are stranded on a dead planet that's been taken over by ancient artificial technology built by the planet's originally native inhabitants.
+You are stranded on a dead planet that's been taken over by ancient artificial technology
+built by the planet's long-extinct native inhabitants.
 
-By reverse engineering their tech, you must use the scraps you find around the crash site to get a Golem started and build more Frames to ensure your survival.
+Gather **scraps** around the crash site, reverse engineer the fauna's tech to **build** more Frames,
+and **upgrade** your Golem for new abilities to ensure your survival.
 
 Will you live to see the light of another day? <br>
 Only your skills in the battlefield will tell!
@@ -17,24 +19,30 @@ Only your skills in the battlefield will tell!
 ## Controls
 
 <dl>
-    <dt>Move & Aim</dt>
+    <dt>
+        Move Frames & Aim Laser
+    </dt>
     <dd>
-        🖱️ <kbd>Move Mouse</kbd> <br />
-        📱 <kbd>Drag Touchscreen</kbd>
+        🖱️ Mouse (Move) <br />
+        🎮 Right Stick <br />
+        📱 Touchscreen
     </dd>
-    <dt>Ability</dt>
+    <dt>
+        Ability (Fire Laser)
+    </dt>
     <dd>
-        🖱️ <kbd>Left Mouse Button</kbd> <br />
-        📲 <kbd>Tap Touchscreen</kbd>
+        🖱️ LMB (Click) | ⌨️ <kbd>Space</kbd> <br />
+        🎮 West Button <br />
     </dd>
 </dl>
 
-<h2>How to play</h2>
+## How to play
+
 <p>
-    Use your <strong>mouse</strong> 🖱️ (or touchscreen 📱) to lead your
-    <em>Frames</em> into battle! Collect scrap to buy upgrades, and beat the
-    waves of enemies. There's a mini-boss too, and we're planning on adding a
-    full-on Boss after the jam!
+    Use your 🖱️ mouse (🎮 Right Stick, 📱 touchscreen) to lead your <em>Frames</em> into battle!
+    Collect scrap to buy upgrades, and beat the waves of enemies.
+    Press 🖱️ LMB (⌨️ <kbd>Space</kbd>, 🎮 West Button) to use your Golem's upgraded arm.
+    Persevere through enemy waves and beat mini-bosses until night 10.
 </p>
 
 ## Credits 🦀
