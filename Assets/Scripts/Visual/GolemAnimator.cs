@@ -45,6 +45,7 @@ namespace Crabgame.Visual
 
         private static readonly int AnimAttachArm = Animator.StringToHash("attach arm");
         private static readonly int AnimArmBlast  = Animator.StringToHash("arm blast");
+        private static readonly int AnimReset  = Animator.StringToHash("reset");
 
 #region Unity Lifetime
         private void Awake()
@@ -76,6 +77,7 @@ namespace Crabgame.Visual
             golem.Health.OnDeath += Health_Death;
 
             GameManager.PlayerState.OnBoughtArm += Golem_ArmAttached;
+            GameManager.PlayerState.OnReset += Golem_Reset;
         }
 
         private void OnValidate()
@@ -93,6 +95,7 @@ namespace Crabgame.Visual
             golem.Health.OnDeath -= Health_Death;
 
             GameManager.PlayerState.OnBoughtArm -= Golem_ArmAttached;
+            GameManager.PlayerState.OnReset -= Golem_Reset;
         }
 
         private void Update()
@@ -147,6 +150,9 @@ namespace Crabgame.Visual
                 explode.SetActive(false);
         }
 #endregion
+
+        private void Golem_Reset() =>
+            animator.SetTrigger(AnimReset);
 
         private void Golem_ArmAttached() =>
             animator.SetTrigger(AnimAttachArm);

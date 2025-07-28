@@ -11,6 +11,7 @@ namespace Crabgame.Player
         public event Action OnBoughtArm;
         public event Action OnBoughtLeg;
         public event Action OnBoughtMinions;
+        public event Action OnReset;
 
         public          int scrapAmount;
         [Min(1)] public int minionAmount;
@@ -101,6 +102,8 @@ namespace Crabgame.Player
 
             GolemHasArm = false;
             GolemHasLeg = false;
+
+            OnReset?.Invoke();
         }
     }
 }
