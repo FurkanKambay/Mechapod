@@ -5,6 +5,62 @@
     font-size: .8em;
 }
 
+/* Left column images */
+.left_col img {
+    transform-origin: left;
+}
+
+.left_col img[align=left] {
+    margin-right: 12px;
+    transform-origin: left;
+}
+
+.left_col img[align=right] {
+    margin-left: 12px;
+    transform-origin: center;
+}
+
+.left_col img {
+    transition: scale 0.05s;
+    scale: 100%;
+}
+
+.left_col img:hover {
+    transition: scale 0.1s;
+    scale: 200%;
+}
+
+/* Left column images */
+
+/* Right column images */
+.right_col img {
+    transition-property: scale, margin-top, margin-bottom;
+    transition-duration: 0.1s;
+
+    scale: 100%;
+    transform-origin: right;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.right_col img:hover {
+    transition-property: scale, margin-top, margin-bottom;
+    transition-duration: 0.1s;
+
+    scale: 150%;
+    transform-origin: right;
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-right: 20px;
+}
+
+/* Right column images */
+
+/* https://nnda.itch.io/pitch */
+
 #wrapper {
     --b: var(--itchio_bg_color);
     --btn: var(--itchio_button_color);
@@ -350,9 +406,23 @@ a.custom-lb {
 }
 
 /* Furkan */
+/*  */
 
-span.custom-lb.custom-new {
+.custom-info dt,
+.custom-info dd {
+    margin-bottom: 16px;
 }
+
+.custom-info dt {
+    color: #ff6973;
+}
+
+.custom-info dt * {
+    color: rgb(87, 80, 80);
+}
+
+/* Updates */
+span.custom-lb.custom-new {}
 
 span.custom-lb.custom-balance {
     background: #ffeecc;
@@ -387,3 +457,5 @@ span.custom-fix::after {
 span.custom-perf::after {
     content: "performance";
 }
+
+/* Updates */
